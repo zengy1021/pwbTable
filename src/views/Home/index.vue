@@ -1,5 +1,5 @@
 <template>
-  <div class="home">首页</div>
+  <div class="home">{{ title }}</div>
 </template>
 
 <script lang="ts">
@@ -9,8 +9,6 @@ import { Component, Vue } from 'vue-property-decorator'
   components: {}
 })
 export default class Home extends Vue {
-  data() {
-    return {}
-  }
+  private title = '首页'
 }
 </script>

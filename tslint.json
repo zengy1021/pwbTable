@@ -32,6 +32,7 @@
     "semicolon": [
       false,
       "always"
-    ]
+    ],
+    "trailing-comma": false
   }
 }

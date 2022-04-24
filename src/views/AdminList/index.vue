@@ -14,32 +14,38 @@
     </el-table>
   </div>
 </template>
-
 <script lang="ts">
-import api from './api/index.js'
-export default {
-  data() {
-    return {
-      list: []
-    }
-  },
-  created() {
+import { Component, Vue } from 'vue-property-decorator'
+import api from './api/index'
+
+@Component({
+  components: {}
+})
+export default class AdminList extends Vue {
+  private list: any = []
+  private created() {
     this.requestData()
-  },
-  methods: {
-    async requestData() {
-      let params = {
-        dataType: 'chatStart'
-      }
-      let res = await api.getDataList(params)
-      console.log(res)
-      if (res.errorCode == 200) {
-        this.list = res.date || []
-      }
+  }
+  private async requestData() {
+    interface Params {
+      dataType: string // 请求数据类型参数
+    }
+    interface Res {
+      errorCode: number // 返回数据类型状态码
+      data: any // 返回数据
+    }
+    const params: Params = {
+      dataType: 'chatStart'
+    }
+    const res: any = await api.getDataList(params, {})
+    // console.log(res)
+    if (res.errorCode === 200) {
+      this.list = res.data || []
     }
   }
 }
 </script>
+
 <style lang="scss" scoped>
 .admin_list {
   margin-top: 20px;

@@ -11,15 +11,9 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "baseUrl": ".",
     "types": [
       "webpack-env"
     ],
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
     "lib": [
       "esnext",
       "dom",
@@ -27,14 +21,26 @@
       "scripthost"
     ]
   },
+  "trailing-comma": [false, {
+    "singleline": "never",
+    "multiline": {
+      "objects": "ignore",
+      "arrays": "always",
+      "functions": "never",
+      "typeLiterals": "ignore"
+    }
+  }],
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+    "**/*.ts",
+     "**/*.tsx"
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "extends": "./tsconfig.extends.json"
 }

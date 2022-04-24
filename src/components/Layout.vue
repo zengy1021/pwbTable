@@ -18,6 +18,7 @@
 <script lang="ts">
 import Menu from '@/components/Menu.vue'
 import Header from '@/components/Header.vue'
+
 // import Footer from "@/components/Footer";
 export default {
   components: {
