@@ -33,10 +33,26 @@ export default {
           icon: 'el-icon-s-home'
         },
         {
-          title: '列表',
+          title: 'pwb数据表格',
           path: '/adminList',
           icon: 'el-icon-menu'
         },
+        {
+          title: '枚举配置',
+          path: '/enumList',
+          icon: 'el-icon-menu'
+        },
+        {
+          title: '表头配置',
+          path: '/tableHeaderList',
+          icon: 'el-icon-menu'
+        },
+        {
+          title: '模块配置',
+          path: '/moduleEnumList',
+          icon: 'el-icon-menu'
+        }
+
         // {
         //   title: '娱乐',
         //   path: '/randomSize',
