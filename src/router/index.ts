@@ -28,7 +28,11 @@ const routes: RouteConfig[] = [
     name: 'ModuleEnumList',
     component: () => import(/* webpackChunkName: "about" */ '@/views/ModuleEnumList/index.vue'),
   },
-
+  { // 数据展示
+    path: '/datalist',
+    name: 'DataList',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/DataList/index.vue'),
+  },
 ];
 
 const router = new VueRouter({

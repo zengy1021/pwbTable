@@ -37,7 +37,7 @@ let requestFlag = false
 // 是否可以请求标识   true：阻止所有请求   false：允许请求
 const http = (url: string, method: string, options: any = {}) => {
   const baseUrl = ''
-  return (data: any, paramsSerializer: any) => {
+  return (data: any, paramsSerializer: any = null) => {
     const params = data
     // 数据处理
     const headers = options.headers || {
@@ -71,7 +71,7 @@ const http = (url: string, method: string, options: any = {}) => {
         .then((response) => {
           const res = response.data
           const code = response.status
-          if (res.errorCode === 200) {
+          if (res.code === 200) {
             requestFlag = false
             resolve(res)
           } else {

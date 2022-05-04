@@ -39,7 +39,7 @@ export default class AdminList extends Vue {
     }
     const res: any = await api.getDataList(params, {})
     // console.log(res)
-    if (res.errorCode === 200) {
+    if (res.code === 200) {
       this.list = res.data || []
     }
   }

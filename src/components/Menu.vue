@@ -2,7 +2,7 @@
   <div class="menuBox">
     <div class="logo">
       <el-avatar shape="square" size="large" :src="logoImg"></el-avatar>
-      <span class="name">彭玮标</span>
+      <!-- <span class="name">彭玮标</span> -->
     </div>
     <el-menu
       background-color="#fff"
@@ -37,19 +37,24 @@ export default {
           path: '/adminList',
           icon: 'el-icon-menu'
         },
+        // {
+        //   title: '枚举配置',
+        //   path: '/enumList',
+        //   icon: 'el-icon-menu'
+        // },
+        // {
+        //   title: '表头配置',
+        //   path: '/tableHeaderList',
+        //   icon: 'el-icon-menu'
+        // },
+        // {
+        //   title: '模块配置',
+        //   path: '/moduleEnumList',
+        //   icon: 'el-icon-menu'
+        // },
         {
-          title: '枚举配置',
-          path: '/enumList',
-          icon: 'el-icon-menu'
-        },
-        {
-          title: '表头配置',
-          path: '/tableHeaderList',
-          icon: 'el-icon-menu'
-        },
-        {
-          title: '模块配置',
-          path: '/moduleEnumList',
+          title: '数据日志',
+          path: '/dataList',
           icon: 'el-icon-menu'
         }
 
@@ -60,7 +65,7 @@ export default {
         // }
       ],
       logoImg:
-        'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
+        'https://demo.echatsoft.com/mg/images/rainbowred.gif'
     }
   },
   computed: {
@@ -115,7 +120,7 @@ export default {
     color: #61cad7;
   }
 }
-.logo {
+::v-deep.logo {
   text-align: left;
   height: 100px;
   // border-bottom: 1px solid #666;
@@ -123,15 +128,23 @@ export default {
   color: #212123;
   font-weight: 700;
   .el-avatar {
-    margin-left: 50px;
+    // margin-left: 50px;
+    // text-align: center;
+    margin: auto;
+    width: 100%;
+    background: transparent;
     vertical-align: middle;
+    img{
+      margin: auto !important;
+      // text-align: center;
+    }
   }
-  .name {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 10px;
-    height: 40x;
-    line-height: 40px;
-  }
+  // .name {
+  //   display: inline-block;
+  //   vertical-align: middle;
+  //   margin-left: 10px;
+  //   height: 40x;
+  //   line-height: 40px;
+  // }
 }
 </style>
