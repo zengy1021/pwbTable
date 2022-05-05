@@ -35,7 +35,7 @@ export default {
         {
           title: 'pwb数据表格',
           path: '/adminList',
-          icon: 'el-icon-menu'
+          icon: 'el-icon-smoking'
         },
         // {
         //   title: '枚举配置',
@@ -55,7 +55,7 @@ export default {
         {
           title: '数据日志',
           path: '/dataList',
-          icon: 'el-icon-menu'
+          icon: 'el-icon-s-order'
         }
 
         // {
