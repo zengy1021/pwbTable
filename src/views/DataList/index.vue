@@ -11,6 +11,8 @@
         align="right">
       </el-date-picker>
       <el-button type="primary" @click="search" style="margin-left:10px;">查询</el-button>
+      <el-button icon="el-icon-refresh" circle @click="refresh"></el-button>
+      
     </div>
     <div class="table_content">
       <el-table ref="table" :data="list" row-key="id" :expand-row-keys="expends"  height="calc(100% - 10px)" default-expand-all highlight-current-row stripe>
@@ -23,17 +25,25 @@
               <el-form label-position="left" inline class="demo-table-expand expend_content">
                 <el-row>
                 <el-form-item label="ciphertext">
-                  
+                  <template slot="label">
+                    <span class="expand_label">{{'ciphertext'}}</span>
+                  </template>
                   <span class="break_all" style="white-space: pre-wrap;">{{ props.row.ciphertext }}</span>
                 </el-form-item>
                 </el-row>
                 <el-row>
                 <el-form-item label="plaintext">
+                    <template slot="label">
+                    <span class="expand_label">{{'plaintext'}}</span>
+                  </template>
                   <span class="break_all">{{ props.row.plaintext }}</span>
                 </el-form-item>
                 </el-row>
                 <el-row>
                 <el-form-item label="debug">
+                    <template slot="label">
+                    <span class="expand_label">{{'debug'}}</span>
+                  </template>
                   <span class="break_all">{{ props.row.debug }}</span>
                 </el-form-item>
                 </el-row>
@@ -122,7 +132,7 @@ export default class DataList extends Vue {
     }
     if(this.searchObj.date&&this.searchObj.date[0]&&this.searchObj.date[1]){
       params.startDate = dayJs(this.searchObj.date[0]).format('YYYY-MM-DD HH:mm:ss')
-      params.endDate = dayJs(this.searchObj.date[0]).format('YYYY-MM-DD HH:mm:ss')
+      params.endDate = dayJs(this.searchObj.date[1]).format('YYYY-MM-DD HH:mm:ss')
     }
     const res: any = await api.getDataList(params,{})
     // console.log(res)
@@ -154,6 +164,9 @@ export default class DataList extends Vue {
       this.expends = this.list.map((item:any)=>item.id)
     }
     // this.$refs.table.toggleRowExpansion()
+  }
+  private refresh() {
+    this.requestData()
   }
   
 }
@@ -193,5 +206,9 @@ export default class DataList extends Vue {
 .break_all{
   word-break: break-all;
   white-space: pre-wrap;
+}
+.expand_label{
+  font-weight: 700;
+  color: #ff7070;
 }
 </style>
