@@ -15,7 +15,7 @@
       
     </div>
     <div class="table_content">
-      <el-table ref="table" :data="list" row-key="id" :expand-row-keys="expends"  height="calc(100% - 10px)" default-expand-all highlight-current-row stripe>
+      <el-table ref="table" :data="list" row-key="id" :expand-row-keys="expends"  height="calc(100% - 10px)" highlight-current-row stripe>
         <el-table-column type="expand">
             <template slot="header">
               <el-checkbox :checked="expandStatus" @change="changeExpend"></el-checkbox>
@@ -23,6 +23,14 @@
             </template>
             <template slot-scope="props">
               <el-form label-position="left" inline class="demo-table-expand expend_content">
+                 <el-row>
+                <el-form-item label="method">
+                  <template slot="label">
+                    <span class="expand_label">{{'method'}}</span>
+                  </template>
+                  <span class="break_all" style="white-space: pre-wrap;">{{ props.row.method }}</span>
+                </el-form-item>
+                </el-row>
                 <el-row>
                 <el-form-item label="ciphertext">
                   <template slot="label">
@@ -77,7 +85,7 @@ import dayJs from 'dayJs'
 })
 export default class DataList extends Vue {
   private list: any = []
-  private expandStatus:Boolean = true
+  private expandStatus:Boolean = false
   private searchObj:any = {}
   private pickerOptions:any = {
           shortcuts: [{
