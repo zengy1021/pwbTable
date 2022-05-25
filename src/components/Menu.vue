@@ -37,6 +37,7 @@ export default {
           path: '/adminList',
           icon: 'el-icon-smoking'
         },
+
         // {
         //   title: '枚举配置',
         //   path: '/enumList',
@@ -56,6 +57,11 @@ export default {
           title: '数据日志',
           path: '/dataList',
           icon: 'el-icon-s-order'
+        },
+        {
+          title: '消息测试',
+          path: '/messageList',
+          icon: 'el-icon-toilet-paper'
         }
 
         // {
@@ -64,8 +70,7 @@ export default {
         //   icon: 'el-icon-s-promotion'
         // }
       ],
-      logoImg:
-        'https://demo.echatsoft.com/mg/images/rainbowred.gif'
+      logoImg: 'https://demo.echatsoft.com/mg/images/rainbowred.gif'
     }
   },
   computed: {
@@ -134,7 +139,7 @@ export default {
     width: 100%;
     background: transparent;
     vertical-align: middle;
-    img{
+    img {
       margin: auto !important;
       // text-align: center;
     }

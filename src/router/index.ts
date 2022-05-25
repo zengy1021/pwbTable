@@ -33,6 +33,11 @@ const routes: RouteConfig[] = [
     name: 'DataList',
     component: () => import(/* webpackChunkName: "about" */ '@/views/DataList/index.vue'),
   },
+  { // 数据展示
+    path: '/messageList',
+    name: 'MessageList',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/MessageList/index.vue'),
+  },
 ];
 
 const router = new VueRouter({
