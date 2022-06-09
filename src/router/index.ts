@@ -38,6 +38,11 @@ const routes: RouteConfig[] = [
     name: 'MessageList',
     component: () => import(/* webpackChunkName: "about" */ '@/views/MessageList/index.vue'),
   },
+  { // ts联系页面
+    path: '/tsTestPage',
+    name: 'TsTestPage',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/TsTestPage/index.vue'),
+  },
 ];
 
 const router = new VueRouter({
