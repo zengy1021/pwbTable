@@ -140,7 +140,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import api from './api/index'
-import dayJs from 'dayJs'
+import dayJs from 'dayjs'
 
 @Component({
   components: {}
