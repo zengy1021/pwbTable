@@ -38,6 +38,16 @@ const routes: RouteConfig[] = [
     name: 'MessageList',
     component: () => import(/* webpackChunkName: "about" */ '@/views/MessageList/index.vue'),
   },
+  { // 一洽配置
+    path: '/echatConfig',
+    name: 'EchatConfig',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/EchatConfig/index.vue'),
+  },
+  { // 微信配置
+    path: '/wechatConfig',
+    name: 'WechatConfig',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/WechatConfig/index.vue'),
+  },
   { // ts联系页面
     path: '/tsTestPage',
     name: 'TsTestPage',

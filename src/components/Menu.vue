@@ -62,6 +62,16 @@ export default {
           title: '消息测试',
           path: '/messageList',
           icon: 'el-icon-toilet-paper'
+        },
+        {
+          title: '一洽配置',
+          path: '/echatConfig',
+          icon: 'el-icon-s-platform'
+        },
+        {
+          title: '微信配置',
+          path: '/wechatConfig',
+          icon: 'el-icon-s-platform'
         }
 
         // {

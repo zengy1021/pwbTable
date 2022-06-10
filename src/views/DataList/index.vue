@@ -129,7 +129,7 @@ export default class DataList extends Vue {
       pageSize:Number,
       startDate?:String,
       endDate?:String
-    }
+    }1
     interface Res {
       errorCode: number // 返回数据类型状态码
       data: any // 返回数据
