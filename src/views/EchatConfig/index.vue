@@ -23,7 +23,6 @@
         </div>
         <div style="margin-top: 20px">
           <el-button type="success" @click="addCompId">添加公司</el-button>
-<!--          <el-button @click="setCurrent">取消选择</el-button>-->
         </div>
 <!--        <div class="page_info">-->
 <!--          <el-pagination-->
@@ -144,7 +143,6 @@ export default class DataList extends Vue {
       if (valid) {
         // 调用更新接口
         const result: any = await api.updateEchatConfigDataByCompId(form);
-        console.log(result.code)
         if (result.code == 200) {
           this.$message({
             type:'success',
