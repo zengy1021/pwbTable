@@ -203,8 +203,8 @@ export default class DataList extends Vue {
     this.$prompt('请输入应用名称', '提示', {
       confirmButtonText: '确定',
       cancelButtonText: '取消',
-      inputPattern: /^[\u4e00-\u9fa5_a-zA-Z0-9]+$]?/,
-      inputErrorMessage: '输入格式只支持中文、数字、英文字母'
+      inputPattern: /^[\u4e00-\u9fa5\,\.\/\;\'\[\]\-\=\<\>\?\:\"\{\}\_\+\@\&\(\)\\\|\「\」\、\【\】\，\。\《\》 _a-zA-Z0-9]+$]?/,
+      inputErrorMessage: '输入格式只支持中文、数字、英文字母和部分字符'
     }).then(async (val: any) => {
       let applicationName : string = val.value;
       let compId : string = this.gbCompId;
