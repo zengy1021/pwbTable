@@ -78,6 +78,13 @@
           <el-form-item label="mediaUrl" prop="mediaUrl">
             <el-input v-model="form.mediaUrl" clearable></el-input>
           </el-form-item>
+          <el-form-item label="欢迎语">
+            <el-input
+                v-model="form.routeMenu"
+                type="textarea"
+                :autosize="{ minRows: 1, maxRows: 1000 }"
+            ></el-input>
+          </el-form-item>
           <div class="btn-warp">
             <el-button @click="save" type="success">保存</el-button>
             <el-button @click="del" type="danger">删除应用</el-button>
@@ -105,7 +112,8 @@ export default class DataList extends Vue {
     token: '',
     secret: '',
     mediaId: '',
-    mediaUrl: ''
+    mediaUrl: '',
+    routeMenu: ''
   }
   private wechatData: any = []
   private rules: any = {
@@ -159,6 +167,7 @@ export default class DataList extends Vue {
       this.form.secret = res.data.secret;
       this.form.mediaId = res.data.mediaId;
       this.form.mediaUrl = res.data.mediaUrl;
+      this.form.routeMenu = res.data.routeMenu;
       this.form.applicationName = res.data.applicationName;
     }
   }
@@ -192,6 +201,7 @@ export default class DataList extends Vue {
     this.form.secret = '';
     this.form.mediaId = '';
     this.form.mediaUrl = '';
+    this.form.routeMenu = '';
     this.form.applicationName = '';
   }
 
