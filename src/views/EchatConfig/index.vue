@@ -161,6 +161,7 @@ export default class DataList extends Vue {
             type:'success',
             message:'保存成功'
           });
+          this.requestData();
         } else {
           this.$message({
             type:'error',
