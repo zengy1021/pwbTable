@@ -17,7 +17,12 @@
             <el-table-column
                 prop="compId"
                 label="compId"
-                width="400">
+                width="250">
+            </el-table-column>
+            <el-table-column
+                prop="compName"
+                label="公司名称"
+                width="250">
             </el-table-column>
           </el-table>
         </div>
@@ -51,6 +56,9 @@
           size="medium"
         >
           <div class="form_title">公司配置</div>
+          <el-form-item label="公司名称" prop="compName">
+            <el-input v-model="form.compName" clearable></el-input>
+          </el-form-item>
           <el-form-item label="appId" prop="appId">
             <el-input v-model="form.appId" clearable></el-input>
           </el-form-item>
@@ -89,6 +97,7 @@ export default class DataList extends Vue {
   private list: any = []
   private form: any = {
     compId: '',
+    compName: '',
     appId: '',
     aesKey: '',
     token: ''
@@ -96,6 +105,9 @@ export default class DataList extends Vue {
   private rules: any = {
     appId: [
       { required: true, message: 'appId不能为空', trigger:'blur'}
+    ],
+    compName: [
+      { required: true, message: '公司名称不能为空', trigger:'blur'}
     ],
     aesKey: [
       { required: true, message: 'aesKey不能为空', trigger:'blur'}
@@ -126,6 +138,7 @@ export default class DataList extends Vue {
     if (res.code == 200) {
       this.form.compId = res.data.compId;
       this.form.appId = res.data.appId;
+      this.form.compName = res.data.compName;
       this.form.aesKey = res.data.aesKey;
       this.form.token = res.data.token;
     }
@@ -183,6 +196,7 @@ export default class DataList extends Vue {
         // 刷新公司配置
         this.form.compId = compId;
         this.form.appId = '';
+        this.form.compName = '';
         this.form.aesKey = '';
         this.form.token = '';
       }else if (result.code == 400){
@@ -229,6 +243,7 @@ export default class DataList extends Vue {
       // 刷新公司配置
       this.form.compId = '';
       this.form.appId = '';
+      this.form.compName = '';
       this.form.aesKey = '';
       this.form.token = '';
     });
