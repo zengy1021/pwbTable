@@ -18,5 +18,9 @@ export default {
     }
     return request.get(flag + `/echatserver/reqinfo/list/${pageNum}/${pageSize}`,{})(pathParams?pathParams:data)
   },
+  // 清空日志
+  delDataList(id: string){
+    return request.delete(flag + '/echatserver/reqinfo', {})(id)
+  }
   // getDataList: request.get(flag + '/echatserver/reqinfo/list/{pageNum}/{pageSize}', {})
 } 

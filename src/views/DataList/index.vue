@@ -11,8 +11,9 @@
         align="right">
       </el-date-picker>
       <el-button type="primary" @click="search" style="margin-left:10px;">查询</el-button>
+      <el-button @click="del" type="danger" style="margin-left:10px;">清空</el-button>
       <el-button icon="el-icon-refresh" circle @click="refresh"></el-button>
-      
+
     </div>
     <div class="table_content">
       <el-table ref="table" :data="list" row-key="id" :expand-row-keys="expends"  height="calc(100% - 10px)" highlight-current-row stripe>
@@ -129,7 +130,7 @@ export default class DataList extends Vue {
       pageSize:Number,
       startDate?:String,
       endDate?:String
-    }1
+    }
     interface Res {
       errorCode: number // 返回数据类型状态码
       data: any // 返回数据
@@ -159,6 +160,13 @@ export default class DataList extends Vue {
     this.requestData()
 
   }
+
+  private async del() {
+    const id = '';
+    await api.delDataList(id);
+    this.search()
+  }
+
   private changePage(page:any){
     this.pageInfo.pageNum = page
     this.pageInfo.pageSize = 20
