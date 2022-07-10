@@ -34,6 +34,16 @@ const routes: RouteConfig[] = [
     component: () => import(/* webpackChunkName: "about" */ '@/views/DataList/index.vue'),
   },
   { // 数据展示
+    path: '/logData',
+    name: 'logData',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/logData/index.vue'),
+  },
+  { // 对话数据
+    path: '/chatData',
+    name: 'chatData',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/chatData/index.vue'),
+  },
+  { // 数据展示
     path: '/messageList',
     name: 'MessageList',
     component: () => import(/* webpackChunkName: "about" */ '@/views/MessageList/index.vue'),
@@ -47,6 +57,11 @@ const routes: RouteConfig[] = [
     path: '/wechatConfig',
     name: 'WechatConfig',
     component: () => import(/* webpackChunkName: "about" */ '@/views/WechatConfig/index.vue'),
+  },
+  { // 工具
+    path: '/tools',
+    name: 'Tools',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/Tools/index.vue'),
   },
   { // ts联系页面
     path: '/tsTestPage',

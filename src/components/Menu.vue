@@ -59,6 +59,16 @@ export default {
           icon: 'el-icon-s-order'
         },
         {
+          title: '新数据日志',
+          path: '/logData',
+          icon: 'el-icon-s-order'
+        },
+        {
+          title: '对话数据',
+          path: '/chatData',
+          icon: 'el-icon-s-order'
+        },
+        {
           title: '消息测试',
           path: '/messageList',
           icon: 'el-icon-toilet-paper'
@@ -71,6 +81,11 @@ export default {
         {
           title: '微信配置',
           path: '/wechatConfig',
+          icon: 'el-icon-s-platform'
+        },
+        {
+          title: '工具',
+          path: '/tools',
           icon: 'el-icon-s-platform'
         }
 

@@ -1,16 +1,6 @@
 <template>
   <div class="admin_list">
     <div class="search_box">
-       <el-date-picker
-        v-model="searchObj.date"
-        type="datetimerange"
-        :picker-options="pickerOptions"
-        range-separator="至"
-        start-placeholder="开始日期"
-        end-placeholder="结束日期"
-        align="right">
-      </el-date-picker>
-      <el-button type="primary" @click="search" style="margin-left:10px;">查询</el-button>
       <el-button @click="del" type="danger" style="margin-left:10px;">清空</el-button>
       <el-button icon="el-icon-refresh" circle @click="refresh"></el-button>
 
@@ -48,21 +38,20 @@
                   <span class="break_all">{{ props.row.plaintext }}</span>
                 </el-form-item>
                 </el-row>
-                <el-row>
-                <el-form-item label="debug">
-                    <template slot="label">
-                    <span class="expand_label">{{'debug'}}</span>
-                  </template>
-                  <span class="break_all">{{ props.row.debug }}</span>
-                </el-form-item>
-                </el-row>
+<!--                <el-row>-->
+<!--                <el-form-item label="debug">-->
+<!--                    <template slot="label">-->
+<!--                    <span class="expand_label">{{'debug'}}</span>-->
+<!--                  </template>-->
+<!--                  <span class="break_all">{{ props.row.debug }}</span>-->
+<!--                </el-form-item>-->
+<!--                </el-row>-->
               </el-form>
             </template>
         </el-table-column>
         <el-table-column width="120" prop="id" label="ID"> </el-table-column>
-        <el-table-column width="140" prop="timeStamp" label="timeStamp"> </el-table-column>
-        <el-table-column width="160" prop="time" label="日期"> </el-table-column>
-        <el-table-column prop="gurl" label="url">
+        <el-table-column width="140" prop="timestamp" label="时间戳"> </el-table-column>
+        <el-table-column prop="url" label="url">
         </el-table-column>
       </el-table>
     </div>
@@ -140,11 +129,7 @@ export default class DataList extends Vue {
       pageNum:this.pageInfo.pageNum,
       pageSize:this.pageInfo.pageSize
     }
-    if(this.searchObj.date&&this.searchObj.date[0]&&this.searchObj.date[1]){
-      params.startDate = dayJs(this.searchObj.date[0]).format('YYYY-MM-DD HH:mm:ss')
-      params.endDate = dayJs(this.searchObj.date[1]).format('YYYY-MM-DD HH:mm:ss')
-    }
-    const res: any = await api.getDataList(params,{})
+    const res: any = await api.getDataList(params)
     // console.log(res)
     if (res.code === 200) {
       this.pageInfo.total = 0
@@ -163,8 +148,7 @@ export default class DataList extends Vue {
   }
 
   private async del() {
-    const id = '';
-    await api.delDataList(id);
+    await api.delDataList();
     this.search()
   }
 
