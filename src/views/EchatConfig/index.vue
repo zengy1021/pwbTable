@@ -186,7 +186,7 @@ export default class DataList extends Vue {
       let compId : string = val.value;
       let echatConfig = new EchatConfig();
       echatConfig.setCompId(compId);
-      const result = await api.addEchatConfigDataByCompId(echatConfig);
+      const result: any = await api.addEchatConfigDataByCompId(echatConfig);
       if (result.code == 200) {
         this.$message({
           type:'success',
@@ -232,7 +232,7 @@ export default class DataList extends Vue {
       type: 'warning'
     }).then(async () => {
       // 删除数据
-      const result = await api.deleteEchatConfigDataByCompId(this.form);
+      const result: any = await api.deleteEchatConfigDataByCompId(this.form);
       if (result.code == 200) {
         this.$message({
           type:'success',
@@ -253,7 +253,7 @@ export default class DataList extends Vue {
 
 class EchatConfig {
   // 公司id
-  private compId: string;
+  private compId: string = '';
 
   setCompId(compId: string): void {
     this.compId = compId;

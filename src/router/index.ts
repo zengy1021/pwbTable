@@ -43,6 +43,16 @@ const routes: RouteConfig[] = [
     name: 'chatData',
     component: () => import(/* webpackChunkName: "about" */ '@/views/chatData/index.vue'),
   },
+  { // 浏览数据
+    path: '/trackData',
+    name: 'trackData',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/trackData/index.vue'),
+  },
+  { // 工单数据
+    path: '/ticketData',
+    name: 'ticketData',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/ticketData/index.vue'),
+  },
   { // 数据展示
     path: '/messageList',
     name: 'MessageList',

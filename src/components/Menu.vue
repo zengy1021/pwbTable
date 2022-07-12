@@ -32,11 +32,11 @@ export default {
           path: '/home',
           icon: 'el-icon-s-home'
         },
-        {
-          title: 'pwb数据表格',
-          path: '/adminList',
-          icon: 'el-icon-smoking'
-        },
+        // {
+        //   title: 'pwb数据表格',
+        //   path: '/adminList',
+        //   icon: 'el-icon-smoking'
+        // },
 
         // {
         //   title: '枚举配置',
@@ -53,13 +53,13 @@ export default {
         //   path: '/moduleEnumList',
         //   icon: 'el-icon-menu'
         // },
+        // {
+        //   title: '数据日志',
+        //   path: '/dataList',
+        //   icon: 'el-icon-s-order'
+        // },
         {
           title: '数据日志',
-          path: '/dataList',
-          icon: 'el-icon-s-order'
-        },
-        {
-          title: '新数据日志',
           path: '/logData',
           icon: 'el-icon-s-order'
         },
@@ -69,10 +69,20 @@ export default {
           icon: 'el-icon-s-order'
         },
         {
-          title: '消息测试',
-          path: '/messageList',
-          icon: 'el-icon-toilet-paper'
+          title: '浏览数据',
+          path: '/trackData',
+          icon: 'el-icon-s-order'
         },
+        {
+          title: '工单数据',
+          path: '/ticketData',
+          icon: 'el-icon-s-order'
+        },
+        // {
+        //   title: '消息测试',
+        //   path: '/messageList',
+        //   icon: 'el-icon-toilet-paper'
+        // },
         {
           title: '一洽配置',
           path: '/echatConfig',
@@ -83,11 +93,11 @@ export default {
           path: '/wechatConfig',
           icon: 'el-icon-s-platform'
         },
-        {
-          title: '工具',
-          path: '/tools',
-          icon: 'el-icon-s-platform'
-        }
+        // {
+        //   title: '工具',
+        //   path: '/tools',
+        //   icon: 'el-icon-s-platform'
+        // }
 
         // {
         //   title: '娱乐',

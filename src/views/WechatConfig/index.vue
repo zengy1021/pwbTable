@@ -221,7 +221,7 @@ export default class DataList extends Vue {
       let wechatConfig = new WechatConfig();
       wechatConfig.setCompId(compId);
       wechatConfig.setApplicationName(applicationName);
-      const result = await api.addWechatConfig(wechatConfig);
+      const result: any = await api.addWechatConfig(wechatConfig);
       if (result.code == 200) {
         this.$message({
           type:'success',
@@ -288,7 +288,7 @@ export default class DataList extends Vue {
       type: 'warning'
     }).then(async () => {
       // 删除数据
-      const result = await api.deleteWechatConfigById(this.form);
+      const result: any = await api.deleteWechatConfigById(this.form);
       if (result.code == 200) {
         this.$message({
           type:'success',
@@ -304,8 +304,8 @@ export default class DataList extends Vue {
 
 class WechatConfig {
   // 公司id
-  private applicationName: string;
-  private compId: string;
+  private applicationName: string ='';
+  private compId: string ='';
 
   setApplicationName(applicationName: string): void {
     this.applicationName = applicationName;
