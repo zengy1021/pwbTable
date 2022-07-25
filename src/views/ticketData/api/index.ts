@@ -20,7 +20,7 @@ export default {
   },
   // 清空日志
   delDataList() {
-    return request.delete('/eApi/ticket', {})
+    return request.delete('/eApi/ticket', {})(null)
   }
   // getDataList: request.get(flag + '/echatserver/reqinfo/list/{pageNum}/{pageSize}', {})
 }

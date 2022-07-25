@@ -14,14 +14,6 @@
             </template>
             <template slot-scope="props">
               <el-form label-position="left" inline class="demo-table-expand expend_content">
-                 <el-row>
-                <el-form-item label="method">
-                  <template slot="label">
-                    <span class="expand_label">{{'method'}}</span>
-                  </template>
-                  <span class="break_all" style="white-space: pre-wrap;">{{ props.row.method }}</span>
-                </el-form-item>
-                </el-row>
                 <el-row>
                 <el-form-item label="ciphertext">
                   <template slot="label">
@@ -38,6 +30,14 @@
                   <span class="break_all">{{ props.row.plaintext }}</span>
                 </el-form-item>
                 </el-row>
+                <el-row>
+                  <el-form-item label="method">
+                    <template slot="label">
+                      <span class="expand_label">{{'method'}}</span>
+                    </template>
+                    <span class="break_all" style="white-space: pre-wrap;">{{ props.row.method }}</span>
+                  </el-form-item>
+                </el-row>
 <!--                <el-row>-->
 <!--                <el-form-item label="debug">-->
 <!--                    <template slot="label">-->
@@ -49,8 +49,8 @@
               </el-form>
             </template>
         </el-table-column>
-        <el-table-column width="120" prop="id" label="ID"> </el-table-column>
-        <el-table-column width="140" prop="timestamp" label="时间戳"> </el-table-column>
+        <el-table-column width="120" prop="msgId" label="msgId"> </el-table-column>
+        <el-table-column width="140" prop="dataType" label="事件类型"> </el-table-column>
         <el-table-column prop="url" label="url">
         </el-table-column>
       </el-table>
