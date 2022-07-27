@@ -38,6 +38,30 @@
                     <span class="break_all" style="white-space: pre-wrap;">{{ props.row.method }}</span>
                   </el-form-item>
                 </el-row>
+                <el-row>
+                  <el-form-item label="事件发生时间">
+                    <template slot="label">
+                      <span class="expand_label">{{'事件发生时间'}}</span>
+                    </template>
+                    <span class="break_all" style="white-space: pre-wrap;">{{ props.row.timestamp}}</span>
+                  </el-form-item>
+                </el-row>
+                <el-row>
+                  <el-form-item label="请求接收时间">
+                    <template slot="label">
+                      <span class="expand_label">{{'请求接收时间'}}</span>
+                    </template>
+                    <span class="break_all" style="white-space: pre-wrap;">{{ props.row.postTime }}</span>
+                  </el-form-item>
+                </el-row>
+                <el-row>
+                  <el-form-item label="时间差">
+                    <template slot="label">
+                      <span class="expand_label">{{'时间差'}}</span>
+                    </template>
+                    <span class="break_all" style="white-space: pre-wrap;">{{ (props.row.postTime - props.row.timestamp)/1000 }} 秒</span>
+                  </el-form-item>
+                </el-row>
 <!--                <el-row>-->
 <!--                <el-form-item label="debug">-->
 <!--                    <template slot="label">-->

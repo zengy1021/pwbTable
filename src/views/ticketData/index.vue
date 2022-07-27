@@ -40,13 +40,13 @@
                   <template slot="label">
                     <span class="expand_label">{{ 'jobTitle（工单标题）'}} </span>
                   </template>
-                  <span class="break_all">{{ props.row.jobTitle }}</span>
+                  <span class="break_all">{{ props.row.title }}</span>
                 </el-form-item>
                 <el-form-item label="jobContent">
                   <template slot="label">
                     <span class="expand_label">{{ 'jobContent（工单内容）'}} </span>
                   </template>
-                  <span class="break_all">{{ props.row.jobContent }}</span>
+                  <span class="break_all">{{ props.row.content }}</span>
                 </el-form-item>
                 <el-form-item label="jobTopic">
                   <template slot="label">
@@ -54,23 +54,29 @@
                   </template>
                   <span class="break_all">{{ props.row.jobTopic }}</span>
                 </el-form-item>
-                <el-form-item label="jobTopicName">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobTopicName（工单主题名称。工单更新时，主题产生变化才会有值）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobTopicName }}</span>
-                </el-form-item>
+<!--                <el-form-item label="jobTopicName">-->
+<!--                  <template slot="label">-->
+<!--                    <span class="expand_label">{{ 'jobTopicName（工单主题名称。工单更新时，主题产生变化才会有值）'}} </span>-->
+<!--                  </template>-->
+<!--                  <span class="break_all">{{ props.row.jobTopicName }}</span>-->
+<!--                </el-form-item>-->
                 <el-form-item label="jobRequesterLan">
                   <template slot="label">
                     <span class="expand_label">{{ 'jobRequesterLan（工单请求语言）'}} </span>
                   </template>
-                  <span class="break_all">{{ props.row.jobRequesterLan }}</span>
+                  <span class="break_all">{{ props.row.requesterLan }}</span>
                 </el-form-item>
                 <el-form-item label="jobStyleId">
                   <template slot="label">
                     <span class="expand_label">{{ 'jobStyleId（样式ID）'}} </span>
                   </template>
-                  <span class="break_all">{{ props.row.jobStyleId }}</span>
+                  <span class="break_all">{{ props.row.styleId }}</span>
+                </el-form-item>
+                <el-form-item label="jobStyleId">
+                  <template slot="label">
+                    <span class="expand_label">{{ 'jobStyleName（样式名称）'}} </span>
+                  </template>
+                  <span class="break_all">{{ props.row.styleName }}</span>
                 </el-form-item>
                 <el-form-item label="jobType">
                   <template slot="label">
@@ -80,9 +86,9 @@
                 </el-form-item>
                 <el-form-item label="jobPriority">
                   <template slot="label">
-                    <span class="expand_label">{{ 'jobPriority（工单优先级。1：低 2：正常 3：高 4：紧急）'}} </span>
+                    <span class="expand_label">{{ 'priority（工单优先级。1：低 2：正常 3：高 4：紧急）'}} </span>
                   </template>
-                  <span class="break_all">{{ props.row.jobPriority }}</span>
+                  <span class="break_all">{{ props.row.priority }}</span>
                 </el-form-item>
                 <el-form-item label="jobTemplateId">
                   <template slot="label">
@@ -92,9 +98,9 @@
                 </el-form-item>
                 <el-form-item label="jobStatus">
                   <template slot="label">
-                    <span class="expand_label">{{ 'jobStatus（工单状态。1：新建 2：已开启 3：待回应 4：已挂起 5：已解决 6：已关闭）'}} </span>
+                    <span class="expand_label">{{ 'status（工单状态。1：新建 2：已开启 3：待回应 4：已挂起 5：已解决 6：已关闭）'}} </span>
                   </template>
-                  <span class="break_all">{{ props.row.jobStatus }}</span>
+                  <span class="break_all">{{ props.row.status }}</span>
                 </el-form-item>
                 <el-form-item label="jobMemo">
                   <template slot="label">
@@ -102,78 +108,78 @@
                   </template>
                   <span class="break_all">{{ props.row.jobMemo }}</span>
                 </el-form-item>
-                <el-form-item label="jobUpdaterType">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobUpdaterType（工单更新人类型。—1：客服 0：访客）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobUpdaterType }}</span>
-                </el-form-item>
-                <el-form-item label="jobUpdaterId">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobUpdaterId（工单更新人ID）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobUpdaterId }}</span>
-                </el-form-item>
-                <el-form-item label="jobUpdaterName">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobUpdaterName（工单更新人姓名）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobUpdaterName }}</span>
-                </el-form-item>
+<!--                <el-form-item label="jobUpdaterType">-->
+<!--                  <template slot="label">-->
+<!--                    <span class="expand_label">{{ 'jobUpdaterType（工单更新人类型。—1：客服 0：访客）'}} </span>-->
+<!--                  </template>-->
+<!--                  <span class="break_all">{{ props.row.jobUpdaterType }}</span>-->
+<!--                </el-form-item>-->
+<!--                <el-form-item label="jobUpdaterId">-->
+<!--                  <template slot="label">-->
+<!--                    <span class="expand_label">{{ 'jobUpdaterId（工单更新人ID）'}} </span>-->
+<!--                  </template>-->
+<!--                  <span class="break_all">{{ props.row.jobUpdaterId }}</span>-->
+<!--                </el-form-item>-->
+<!--                <el-form-item label="jobUpdaterName">-->
+<!--                  <template slot="label">-->
+<!--                    <span class="expand_label">{{ 'jobUpdaterName（工单更新人姓名）'}} </span>-->
+<!--                  </template>-->
+<!--                  <span class="break_all">{{ props.row.jobUpdaterName }}</span>-->
+<!--                </el-form-item>-->
                 <el-form-item label="jobRequesterUserId">
                   <template slot="label">
                     <span class="expand_label">{{ 'jobRequesterUserId（请求者ID。访客vipId或客服ID）'}} </span>
                   </template>
-                  <span class="break_all">{{ props.row.jobRequesterUserId }}</span>
+                  <span class="break_all">{{ props.row.requesterUserId }}</span>
                 </el-form-item>
                 <el-form-item label="jobRequesterUserType">
                   <template slot="label">
                     <span class="expand_label">{{ 'jobRequesterUserType（请求者类型。—1：客服 0：访客）'}} </span>
                   </template>
-                  <span class="break_all">{{ props.row.jobRequesterUserType }}</span>
+                  <span class="break_all">{{ props.row.requesterUserType }}</span>
                 </el-form-item>
                 <el-form-item label="jobRequesterUserName">
                   <template slot="label">
                     <span class="expand_label">{{ 'jobRequesterUserName（请求者姓名）'}} </span>
                   </template>
-                  <span class="break_all">{{ props.row.jobRequesterUserName }}</span>
+                  <span class="break_all">{{ props.row.requesterUserName }}</span>
                 </el-form-item>
                 <el-form-item label="jobDepartmentId">
                   <template slot="label">
                     <span class="expand_label">{{ 'jobDepartmentId（工单指派分组ID）'}} </span>
                   </template>
-                  <span class="break_all">{{ props.row.jobDepartmentId }}</span>
+                  <span class="break_all">{{ props.row.departmentId }}</span>
                 </el-form-item>
                 <el-form-item label="jobDepartmentName">
                   <template slot="label">
                     <span class="expand_label">{{ 'jobDepartmentName（工单指派分组名称）'}} </span>
                   </template>
-                  <span class="break_all">{{ props.row.jobDepartmentName }}</span>
+                  <span class="break_all">{{ props.row.departmentName }}</span>
                 </el-form-item>
-                <el-form-item label="jobDistributeUserId">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobDistributeUserId（工单指派客服ID）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobDistributeUserId }}</span>
-                </el-form-item>
-                <el-form-item label="jobDistributeUserName">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobDistributeUserName（工单指派客服姓名）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobDistributeUserName }}</span>
-                </el-form-item>
-                <el-form-item label="jobDistributeUserRole">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobDistributeUserRole（工单指派客服角色）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobDistributeUserRole }}</span>
-                </el-form-item>
-                <el-form-item label="jobDistributeUserLogName">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobDistributeUserLogName（工单指派客服登录名）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobDistributeUserLogName }}</span>
-                </el-form-item>
+<!--                <el-form-item label="jobDistributeUserId">-->
+<!--                  <template slot="label">-->
+<!--                    <span class="expand_label">{{ 'jobDistributeUserId（工单指派客服ID）'}} </span>-->
+<!--                  </template>-->
+<!--                  <span class="break_all">{{ props.row.jobDistributeUserId }}</span>-->
+<!--                </el-form-item>-->
+<!--                <el-form-item label="jobDistributeUserName">-->
+<!--                  <template slot="label">-->
+<!--                    <span class="expand_label">{{ 'jobDistributeUserName（工单指派客服姓名）'}} </span>-->
+<!--                  </template>-->
+<!--                  <span class="break_all">{{ props.row.jobDistributeUserName }}</span>-->
+<!--                </el-form-item>-->
+<!--                <el-form-item label="jobDistributeUserRole">-->
+<!--                  <template slot="label">-->
+<!--                    <span class="expand_label">{{ 'jobDistributeUserRole（工单指派客服角色）'}} </span>-->
+<!--                  </template>-->
+<!--                  <span class="break_all">{{ props.row.jobDistributeUserRole }}</span>-->
+<!--                </el-form-item>-->
+<!--                <el-form-item label="jobDistributeUserLogName">-->
+<!--                  <template slot="label">-->
+<!--                    <span class="expand_label">{{ 'jobDistributeUserLogName（工单指派客服登录名）'}} </span>-->
+<!--                  </template>-->
+<!--                  <span class="break_all">{{ props.row.jobDistributeUserLogName }}</span>-->
+<!--                </el-form-item>-->
                 <el-form-item label="jobFollowerIds">
                   <template slot="label">
                     <span class="expand_label">{{ 'jobFollowerIds（工单跟踪者ID列表）'}} </span>
@@ -188,15 +194,15 @@
                 </el-form-item>
                 <el-form-item label="jobReplyEmail">
                   <template slot="label">
-                    <span class="expand_label">{{ 'jobReplyEmail（回复邮箱地址）'}} </span>
+                    <span class="expand_label">{{ 'replyEmail（回复邮箱地址）'}} </span>
                   </template>
-                  <span class="break_all">{{ props.row.jobReplyEmail }}</span>
+                  <span class="break_all">{{ props.row.replyEmail }}</span>
                 </el-form-item>
                 <el-form-item label="jobReplyPhone">
                   <template slot="label">
-                    <span class="expand_label">{{ 'jobReplyPhone（回复邮箱地址）'}} </span>
+                    <span class="expand_label">{{ 'replyPhone（回复邮箱地址）'}} </span>
                   </template>
-                  <span class="break_all">{{ props.row.jobReplyPhone }}</span>
+                  <span class="break_all">{{ props.row.replyPhone }}</span>
                 </el-form-item>
                 <el-form-item label="jobReplyType">
                   <template slot="label">
@@ -807,11 +813,10 @@
         </el-table-column>
         <el-table-column width="120" prop="companyId" label="companyId"> </el-table-column>
         <el-table-column width="120" prop="jobId" label="jobId"> </el-table-column>
-        <el-table-column width="160" prop="jobTitle" label="工单标题"> </el-table-column>
-        <el-table-column width="160" prop="jobRequesterUserName" label="工单请求人"> </el-table-column>
+        <el-table-column width="160" prop="title" label="工单标题"> </el-table-column>
+        <el-table-column width="160" prop="requesterUserId" label="工单请求人"> </el-table-column>
         <el-table-column width="160" prop="visitorName" label="访客"></el-table-column>
-        <el-table-column width="160" prop="createBy" label="创建事件"></el-table-column>
-        <el-table-column prop="updateBy" label="更新事件"></el-table-column>
+        <el-table-column prop="createTime" label="创建时间"></el-table-column>
       </el-table>
     </div>
 

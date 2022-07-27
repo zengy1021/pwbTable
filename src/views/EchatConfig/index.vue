@@ -15,12 +15,12 @@
                 width="100">
             </el-table-column>
             <el-table-column
-                prop="compId"
-                label="compId"
+                prop="companyId"
+                label="公司ID"
                 width="250">
             </el-table-column>
             <el-table-column
-                prop="compName"
+                prop="companyName"
                 label="公司名称"
                 width="250">
             </el-table-column>
@@ -120,8 +120,7 @@ export default class DataList extends Vue {
     this.requestData()
   }
   private async requestData() {
-    const compId: string = "";
-    const res: any = await api.getEchatConfigDataList(compId)
+    const res: any = await api.getEchatConfigDataList()
     if (res.code === 200) {
       this.data = res.data;
     }
@@ -136,9 +135,9 @@ export default class DataList extends Vue {
   private async handleCurrentChange(val: any) {
     const res: any = await api.getEchatConfigDataByCompId(val.compId);
     if (res.code == 200) {
-      this.form.compId = res.data.compId;
+      this.form.compId = res.data.companyId;
       this.form.appId = res.data.appId;
-      this.form.compName = res.data.compName;
+      this.form.compName = res.data.companyName;
       this.form.aesKey = res.data.aesKey;
       this.form.token = res.data.token;
     }

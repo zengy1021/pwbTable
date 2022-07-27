@@ -20,8 +20,8 @@ export default {
     return request.get(flag + `/echatserver/reqinfo/list/${pageNum}/${pageSize}`,{})(pathParams?pathParams:data)
   },
   // 一洽配置-查询所有数据
-  getEchatConfigDataList(compId:string){
-    return request.get(flag + `/echatserver/system/config/echat/list`,{})(compId)
+  getEchatConfigDataList(){
+    return request.get(`/extension/companyconfig/list/1/1000`,{})(null)
   },
   //一洽配置-根据id查看详情
   getEchatConfigDataByCompId(compId:string){
