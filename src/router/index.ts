@@ -33,10 +33,30 @@ const routes: RouteConfig[] = [
     name: 'DataList',
     component: () => import(/* webpackChunkName: "about" */ '@/views/DataList/index.vue'),
   },
-  { // 数据展示
+  { // 数据日志
     path: '/logData',
     name: 'logData',
     component: () => import(/* webpackChunkName: "about" */ '@/views/logData/index.vue'),
+  },
+  { // 公司状态
+    path: '/companyStatus',
+    name: 'companyStatus',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/status/companyStatus/index.vue'),
+  },
+  { // 路由状态
+    path: '/routeStatus',
+    name: 'routeStatus',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/status/routeStatus/index.vue'),
+  },
+  { // 接待组状态
+    path: '/skillStatus',
+    name: 'skillStatus',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/status/skillStatus/index.vue'),
+  },
+  { // 客服状态
+    path: '/staffStatus',
+    name: 'staffStatus',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/status/staffStatus/index.vue'),
   },
   { // 对话数据
     path: '/chatData',

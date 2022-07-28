@@ -56,11 +56,11 @@
           size="medium"
         >
           <div class="form_title">公司配置</div>
-          <el-form-item label="公司名称" prop="compName">
-            <el-input v-model="form.compName" clearable></el-input>
+          <el-form-item label="公司名称" prop="companyName">
+            <el-input v-model="form.companyName" clearable></el-input>
           </el-form-item>
-          <el-form-item label="appId" prop="appId">
-            <el-input v-model="form.appId" clearable></el-input>
+          <el-form-item label="appid" prop="appid">
+            <el-input v-model="form.appid" clearable></el-input>
           </el-form-item>
           <el-form-item label="aesKey" prop="aesKey">
             <el-input v-model="form.aesKey" clearable></el-input>
@@ -96,17 +96,18 @@ export default class DataList extends Vue {
   private data: any = []
   private list: any = []
   private form: any = {
-    compId: '',
-    compName: '',
-    appId: '',
+    companyId: '',
+    companyName: '',
+    appid: '',
     aesKey: '',
     token: ''
   }
+
   private rules: any = {
-    appId: [
+    appid: [
       { required: true, message: 'appId不能为空', trigger:'blur'}
     ],
-    compName: [
+    companyName: [
       { required: true, message: '公司名称不能为空', trigger:'blur'}
     ],
     aesKey: [
@@ -122,7 +123,7 @@ export default class DataList extends Vue {
   private async requestData() {
     const res: any = await api.getEchatConfigDataList()
     if (res.code === 200) {
-      this.data = res.data;
+      this.data = res.data.list;
     }
   }
 
@@ -133,13 +134,15 @@ export default class DataList extends Vue {
    * @private
    */
   private async handleCurrentChange(val: any) {
-    const res: any = await api.getEchatConfigDataByCompId(val.compId);
-    if (res.code == 200) {
-      this.form.compId = res.data.companyId;
-      this.form.appId = res.data.appId;
-      this.form.compName = res.data.companyName;
-      this.form.aesKey = res.data.aesKey;
-      this.form.token = res.data.token;
+    // 遍历公司信息数组，根据companyId知道到数据
+    for (let i = 0; i < this.data.length; i++) {
+      if(this.data[i].companyId == val.companyId) {
+        this.form.companyId = this.data[i].companyId;
+        this.form.appid = this.data[i].appid;
+        this.form.companyName = this.data[i].companyName;
+        this.form.aesKey = this.data[i].aesKey;
+        this.form.token = this.data[i].token;
+      }
     }
   }
 
@@ -194,9 +197,9 @@ export default class DataList extends Vue {
         // 刷新公司id列表
         this.requestData();
         // 刷新公司配置
-        this.form.compId = compId;
-        this.form.appId = '';
-        this.form.compName = '';
+        this.form.companyId = compId;
+        this.form.appid = '';
+        this.form.companyName = '';
         this.form.aesKey = '';
         this.form.token = '';
       }else if (result.code == 400){
@@ -241,9 +244,9 @@ export default class DataList extends Vue {
       // 刷新公司id列表
       this.requestData();
       // 刷新公司配置
-      this.form.compId = '';
-      this.form.appId = '';
-      this.form.compName = '';
+      this.form.companyId = '';
+      this.form.appid = '';
+      this.form.companyName = '';
       this.form.aesKey = '';
       this.form.token = '';
     });

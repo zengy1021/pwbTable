@@ -33,7 +33,7 @@ export default {
   },
   //一洽配置-更新数据
   updateEchatConfigDataByCompId(val: any){
-    return request.put(flag + `/echatserver/system/config/echat`,{})(val)
+    return request.put(`/extension/companyconfig`,{})(val)
   },
   //一洽配置-更新数据
   deleteEchatConfigDataByCompId(val: any){

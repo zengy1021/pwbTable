@@ -64,6 +64,26 @@ export default {
           icon: 'el-icon-s-order'
         },
         {
+          title: '公司状态',
+          path: '/companyStatus',
+          icon: 'el-icon-s-order'
+        },
+        {
+          title: '路由状态',
+          path: '/routeStatus',
+          icon: 'el-icon-s-order'
+        },
+        {
+          title: '接待组状态',
+          path: '/skillStatus',
+          icon: 'el-icon-s-order'
+        },
+        {
+          title: '客服状态',
+          path: '/staffStatus',
+          icon: 'el-icon-s-order'
+        },
+        {
           title: '对话数据',
           path: '/chatData',
           icon: 'el-icon-s-order'
