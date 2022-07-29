@@ -13,810 +13,419 @@
             <!-- <el-button @click="changeExpend">展开/收起</el-button> -->
           </template>
           <template slot-scope="props">
-            <el-form label-position="left" inline class="demo-table-expand expend_content">
-              <el-row>
-                <el-form-item label="jobId">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobId（工单ID）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobId }}</span>
-                </el-form-item>
-                <el-form-item label="jobAttribute">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobAttribute（工单属性。1：内部工单 2：外部工单）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobAttribute }}</span>
-                </el-form-item>
-              </el-row>
-              <el-row>
-                <el-form-item label="">
-                  <template slot="label">
-                    <span class="tt_label">{{'JobData 访客数据'}}</span>
-                  </template>
-                </el-form-item>
-              </el-row>
-              <el-row>
-                <el-form-item label="jobTitle">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobTitle（工单标题）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.title }}</span>
-                </el-form-item>
-                <el-form-item label="jobContent">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobContent（工单内容）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.content }}</span>
-                </el-form-item>
-                <el-form-item label="jobTopic">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobTopic（工单主题ID）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobTopic }}</span>
-                </el-form-item>
-<!--                <el-form-item label="jobTopicName">-->
-<!--                  <template slot="label">-->
-<!--                    <span class="expand_label">{{ 'jobTopicName（工单主题名称。工单更新时，主题产生变化才会有值）'}} </span>-->
-<!--                  </template>-->
-<!--                  <span class="break_all">{{ props.row.jobTopicName }}</span>-->
-<!--                </el-form-item>-->
-                <el-form-item label="jobRequesterLan">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobRequesterLan（工单请求语言）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.requesterLan }}</span>
-                </el-form-item>
-                <el-form-item label="jobStyleId">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobStyleId（样式ID）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.styleId }}</span>
-                </el-form-item>
-                <el-form-item label="jobStyleId">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobStyleName（样式名称）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.styleName }}</span>
-                </el-form-item>
-                <el-form-item label="jobType">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobType（工单类型。1：问题 2：事务 3：故障 4：任务）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobType }}</span>
-                </el-form-item>
-                <el-form-item label="jobPriority">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'priority（工单优先级。1：低 2：正常 3：高 4：紧急）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.priority }}</span>
-                </el-form-item>
-                <el-form-item label="jobTemplateId">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobTemplateId（工单模版ID）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobTemplateId }}</span>
-                </el-form-item>
-                <el-form-item label="jobStatus">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'status（工单状态。1：新建 2：已开启 3：待回应 4：已挂起 5：已解决 6：已关闭）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.status }}</span>
-                </el-form-item>
-                <el-form-item label="jobMemo">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobMemo（工单备注）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobMemo }}</span>
-                </el-form-item>
-<!--                <el-form-item label="jobUpdaterType">-->
-<!--                  <template slot="label">-->
-<!--                    <span class="expand_label">{{ 'jobUpdaterType（工单更新人类型。—1：客服 0：访客）'}} </span>-->
-<!--                  </template>-->
-<!--                  <span class="break_all">{{ props.row.jobUpdaterType }}</span>-->
-<!--                </el-form-item>-->
-<!--                <el-form-item label="jobUpdaterId">-->
-<!--                  <template slot="label">-->
-<!--                    <span class="expand_label">{{ 'jobUpdaterId（工单更新人ID）'}} </span>-->
-<!--                  </template>-->
-<!--                  <span class="break_all">{{ props.row.jobUpdaterId }}</span>-->
-<!--                </el-form-item>-->
-<!--                <el-form-item label="jobUpdaterName">-->
-<!--                  <template slot="label">-->
-<!--                    <span class="expand_label">{{ 'jobUpdaterName（工单更新人姓名）'}} </span>-->
-<!--                  </template>-->
-<!--                  <span class="break_all">{{ props.row.jobUpdaterName }}</span>-->
-<!--                </el-form-item>-->
-                <el-form-item label="jobRequesterUserId">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobRequesterUserId（请求者ID。访客vipId或客服ID）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.requesterUserId }}</span>
-                </el-form-item>
-                <el-form-item label="jobRequesterUserType">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobRequesterUserType（请求者类型。—1：客服 0：访客）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.requesterUserType }}</span>
-                </el-form-item>
-                <el-form-item label="jobRequesterUserName">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobRequesterUserName（请求者姓名）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.requesterUserName }}</span>
-                </el-form-item>
-                <el-form-item label="jobDepartmentId">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobDepartmentId（工单指派分组ID）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.departmentId }}</span>
-                </el-form-item>
-                <el-form-item label="jobDepartmentName">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobDepartmentName（工单指派分组名称）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.departmentName }}</span>
-                </el-form-item>
-<!--                <el-form-item label="jobDistributeUserId">-->
-<!--                  <template slot="label">-->
-<!--                    <span class="expand_label">{{ 'jobDistributeUserId（工单指派客服ID）'}} </span>-->
-<!--                  </template>-->
-<!--                  <span class="break_all">{{ props.row.jobDistributeUserId }}</span>-->
-<!--                </el-form-item>-->
-<!--                <el-form-item label="jobDistributeUserName">-->
-<!--                  <template slot="label">-->
-<!--                    <span class="expand_label">{{ 'jobDistributeUserName（工单指派客服姓名）'}} </span>-->
-<!--                  </template>-->
-<!--                  <span class="break_all">{{ props.row.jobDistributeUserName }}</span>-->
-<!--                </el-form-item>-->
-<!--                <el-form-item label="jobDistributeUserRole">-->
-<!--                  <template slot="label">-->
-<!--                    <span class="expand_label">{{ 'jobDistributeUserRole（工单指派客服角色）'}} </span>-->
-<!--                  </template>-->
-<!--                  <span class="break_all">{{ props.row.jobDistributeUserRole }}</span>-->
-<!--                </el-form-item>-->
-<!--                <el-form-item label="jobDistributeUserLogName">-->
-<!--                  <template slot="label">-->
-<!--                    <span class="expand_label">{{ 'jobDistributeUserLogName（工单指派客服登录名）'}} </span>-->
-<!--                  </template>-->
-<!--                  <span class="break_all">{{ props.row.jobDistributeUserLogName }}</span>-->
-<!--                </el-form-item>-->
-                <el-form-item label="jobFollowerIds">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobFollowerIds（工单跟踪者ID列表）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobFollowerIds }}</span>
-                </el-form-item>
-                <el-form-item label="jobFollowerNames">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobFollowerNames（工单跟踪者名称列表）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobFollowerNames }}</span>
-                </el-form-item>
-                <el-form-item label="jobReplyEmail">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'replyEmail（回复邮箱地址）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.replyEmail }}</span>
-                </el-form-item>
-                <el-form-item label="jobReplyPhone">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'replyPhone（回复邮箱地址）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.replyPhone }}</span>
-                </el-form-item>
-                <el-form-item label="jobReplyType">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobReplyType（工单回复类型。1：内部回复 2：外部回复 3：内部回复和外部回复）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobReplyType }}</span>
-                </el-form-item>
-                <el-form-item label="jobReplyContent">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobReplyContent（工单回复内容）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobReplyContent }}</span>
-                </el-form-item>
-                <el-form-item label="jobEvaluateDatetime">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobEvaluateDatetime（用户评价时间。时间戳）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobEvaluateDatetime }}</span>
-                </el-form-item>
-                <el-form-item label="jobMainItem">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobMainItem（满意度。1：非常差评 2：不满意 3：一般 4：满意 5：非常满意）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobMainItem }}</span>
-                </el-form-item>
-                <el-form-item label="jobComment">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobComment（评价备注内容）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobComment }}</span>
-                </el-form-item>
-                <el-form-item label="jobSubItems">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobSubItems（评价子项。String数组）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobSubItems }}</span>
-                </el-form-item>
-                <el-form-item label="jobLink">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'jobLink（工单链接）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.jobLink }}</span>
-                </el-form-item>
-                <el-form-item label="t1">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't1（工单自定义字段1）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t1 }}</span>
-                </el-form-item>
-                <el-form-item label="t2">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't2（工单自定义字段2）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t2 }}</span>
-                </el-form-item>
-                <el-form-item label="t3">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't3（工单自定义字段3）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t3 }}</span>
-                </el-form-item>
-                <el-form-item label="t4">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't4（工单自定义字段4）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t4 }}</span>
-                </el-form-item>
-                <el-form-item label="t5">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't5（工单自定义字段5）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t5 }}</span>
-                </el-form-item>
-                <el-form-item label="t6">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't6（工单自定义字段6）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t6 }}</span>
-                </el-form-item>
-                <el-form-item label="t7">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't7（工单自定义字段7）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t7 }}</span>
-                </el-form-item>
-                <el-form-item label="t8">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't8（工单自定义字段8）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t8 }}</span>
-                </el-form-item>
-                <el-form-item label="t9">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't9（工单自定义字段9）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t9 }}</span>
-                </el-form-item>
-                <el-form-item label="t10">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't10（工单自定义字段10）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t10 }}</span>
-                </el-form-item>
-                <el-form-item label="t11">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't11（工单自定义字段11）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t11 }}</span>
-                </el-form-item>
-                <el-form-item label="t12">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't12（工单自定义字段12）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t12 }}</span>
-                </el-form-item>
-                <el-form-item label="t13">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't13（工单自定义字段13）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t13 }}</span>
-                </el-form-item>
-                <el-form-item label="t14">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't14（工单自定义字段14）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t14 }}</span>
-                </el-form-item>
-                <el-form-item label="t15">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't15（工单自定义字段15）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t15 }}</span>
-                </el-form-item>
-                <el-form-item label="t16">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't16（工单自定义字段16）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t16 }}</span>
-                </el-form-item>
-                <el-form-item label="t17">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't17（工单自定义字段17）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t17 }}</span>
-                </el-form-item>
-                <el-form-item label="t18">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't18（工单自定义字段18）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t18 }}</span>
-                </el-form-item>
-                <el-form-item label="t19">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't19（工单自定义字段19）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t19 }}</span>
-                </el-form-item>
-                <el-form-item label="t20">
-                  <template slot="label">
-                    <span class="expand_label">{{ 't20（工单自定义字段20）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.t20 }}</span>
-                </el-form-item>
-              </el-row>
-              <el-row>
-                <el-form-item label="">
-                  <template slot="label">
-                    <span class="tt_label">{{'VisitorData 访客数据'}}</span>
-                  </template>
-                </el-form-item>
-              </el-row>
-              <el-row>
-                <el-form-item label="visitorId">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'visitorId（访客唯一值。身份描述+ID）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.visitorId }}</span>
-                </el-form-item>
-                <el-form-item label="visitorType">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'visitorType（访客身份类型。—1：未知 0：游客(web) 1：会员(vip) 2：SDK游客(sdk) 4：微信（wechat) 5：自定义接口(custom)）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.visitorType }}</span>
-                </el-form-item>
-                <el-form-item label="visitorName">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'visitorName（访客姓名）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.visitorName }}</span>
-                </el-form-item>
-                <el-form-item label="visitorPhoto">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'visitorPhoto（访客头像）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.visitorPhoto }}</span>
-                </el-form-item>
-                <el-form-item label="visitorEnterTime">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'visitorEnterTime（访客进入的时间）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.visitorEnterTime }}</span>
-                </el-form-item>
-                <el-form-item label="visitorMedia">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'visitorMedia（客户端媒介。1：PC网页 2：手机网页 5：微信 6：sdk 200：自定义渠道）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.visitorMedia }}</span>
-                </el-form-item>
-                <el-form-item label="visitTimes">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'visitTimes（访客来访次数）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.visitTimes }}</span>
-                </el-form-item>
-                <el-form-item label="visitorLan">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'visitorLan（访问者语言）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.visitorLan }}</span>
-                </el-form-item>
-                <el-form-item label="visitorIp">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'visitorIp（访客来访IP）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.visitorIp }}</span>
-                </el-form-item>
-                <el-form-item label="visitorCountry">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'visitorCountry（访客所在国家）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.visitorCountry }}</span>
-                </el-form-item>
-                <el-form-item label="visitorProvince">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'visitorProvince（访客所在省份）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.visitorProvince }}</span>
-                </el-form-item>
-                <el-form-item label="visitorCity">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'visitorCity（访客所在城市）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.visitorCity }}</span>
-                </el-form-item>
-                <el-form-item label="browserName">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'browserName（访客的浏览器）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.browserName }}</span>
-                </el-form-item>
-                <el-form-item label="browserVersion">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'browserVersion（访客的浏览器版本）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.browserVersion }}</span>
-                </el-form-item>
-                <el-form-item label="screenResolution">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'screenResolution（访客的屏幕分辨率）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.screenResolution }}</span>
-                </el-form-item>
-                <el-form-item label="osName">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'osName（访客操作系统）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.osName }}</span>
-                </el-form-item>
-                <el-form-item label="osVersion">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'osVersion（操作系统版本）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.osVersion }}</span>
-                </el-form-item>
-                <el-form-item label="se">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'se（访客来访的搜索引擎）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.se }}</span>
-                </el-form-item>
-                <el-form-item label="keyword">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'keyword（访客来访的搜索关键字）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.keyword }}</span>
-                </el-form-item>
-                <el-form-item label="biddingWord">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'biddingWord（推广词）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.biddingWord }}</span>
-                </el-form-item>
-                <el-form-item label="keywordType">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'keywordType（关键词类型。0：未区分SEO、推广 1：自然优化 2： 推广）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.keywordType }}</span>
-                </el-form-item>
-                <el-form-item label="referPage">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'referPage（访客来源的URL。如果是微信，就是公众号名）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.referPage }}</span>
-                </el-form-item>
-                <el-form-item label="firstTime">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'firstTime（进入网站的时间）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.firstTime }}</span>
-                </el-form-item>
-                <el-form-item label="firstPage">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'firstPage（落地页）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.firstPage }}</span>
-                </el-form-item>
-                <el-form-item label="firstPageTitle">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'firstPageTitle（落地页面标题）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.firstPageTitle }}</span>
-                </el-form-item>
-                <el-form-item label="firstPageAliae">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'firstPageAliae（落地页面别名）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.firstPageAliae }}</span>
-                </el-form-item>
-                <el-form-item label="lastChatTime">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'lastChatTime（上次对话时间）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.lastChatTime }}</span>
-                </el-form-item>
-                <el-form-item label="lastChatStaffId">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'lastChatStaffId（上次对话客服ID）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.lastChatStaffId }}</span>
-                </el-form-item>
-                <el-form-item label="lastChatStaffLogName">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'lastChatStaffLogName（上次对话客服账号）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.lastChatStaffLogName }}</span>
-                </el-form-item>
-                <el-form-item label="lastChatStaffName">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'lastChatStaffName（上次对话客服姓名）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.lastChatStaffName }}</span>
-                </el-form-item>
-              </el-row>
-              <el-row>
-                <el-form-item label="">
-                  <template slot="label">
-                    <span class="tt_label">{{'RouteData 路由数据'}}</span>
-                  </template>
-                </el-form-item>
-              </el-row>
-              <el-row>
-                <el-form-item label="routeId">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'routeId（接入对话的路由ID。—1：web访客的默认路由 —2：微信对话的默认路由 —3：SDK对话的默认路由）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.routeId }}</span>
-                </el-form-item>
-                <el-form-item label="routeName">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'routeName（路由名称）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.routeName }}</span>
-                </el-form-item>
-                <el-form-item label="styleId">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'styleId（路由所使用的样式ID）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.styleId }}</span>
-                </el-form-item>
-                <el-form-item label="styleName">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'styleName（路由所使用样式的名称）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.styleName }}</span>
-                </el-form-item>
-                <el-form-item label="chatDepartmentId">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'chatDepartmentId（本次分配对话的分组ID。如果是全部人员可接待则ID为0）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.chatDepartmentId }}</span>
-                </el-form-item>
-                <el-form-item label="chatDepartmentName">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'chatDepartmentName（本地分配对话的分组名称）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.chatDepartmentName }}</span>
-                </el-form-item>
-              </el-row>
-              <el-row>
-                <el-form-item label="">
-                  <template slot="label">
-                    <span class="tt_label">{{'CrmData 客户数据'}}</span>
-                  </template>
-                </el-form-item>
-              </el-row>
-              <el-row>
-                <el-form-item label="crmId">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'crmId（CRM客户ID）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.crmId }}</span>
-                </el-form-item>
-                <el-form-item label="name">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'name（客户姓名）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.name }}</span>
-                </el-form-item>
-                <el-form-item label="phone">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'phone（客户电话号码）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.phone }}</span>
-                </el-form-item>
-                <el-form-item label="qq">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'qq（客户qq号码）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.qq }}</span>
-                </el-form-item>
-                <el-form-item label="wechat">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'wechat（客户微信号）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.wechat }}</span>
-                </el-form-item>
-                <el-form-item label="email">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'email（客户邮箱地址）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.email }}</span>
-                </el-form-item>
-                <el-form-item label="address">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'address（客户地址）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.address }}</span>
-                </el-form-item>
-                <el-form-item label="nickName">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'nickName（客户的昵称）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.nickName }}</span>
-                </el-form-item>
-                <el-form-item label="gender">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'gender（性别。0：未知 1：男 2：女）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.gender }}</span>
-                </el-form-item>
-                <el-form-item label="memo">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'memo（客户信息备注）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.memo }}</span>
-                </el-form-item>
-                <el-form-item label="maritalStatus">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'maritalStatus（婚姻状况。0：未知 1：未婚 2：已婚）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.maritalStatus }}</span>
-                </el-form-item>
-                <el-form-item label="age">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'age（年龄）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.age }}</span>
-                </el-form-item>
-                <el-form-item label="birthday">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'birthday（客户生日）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.birthday }}</span>
-                </el-form-item>
-                <el-form-item label="c1">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c1（自定义字段1）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c1 }}</span>
-                </el-form-item>
-                <el-form-item label="c2">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c2（自定义字段2）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c2 }}</span>
-                </el-form-item>
-                <el-form-item label="c3">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c3（自定义字段3）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c3 }}</span>
-                </el-form-item>
-                <el-form-item label="c4">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c4（自定义字段4）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c4 }}</span>
-                </el-form-item>
-                <el-form-item label="c5">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c5（自定义字段5）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c5 }}</span>
-                </el-form-item>
-                <el-form-item label="c6">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c6（自定义字段6）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c6 }}</span>
-                </el-form-item>
-                <el-form-item label="c7">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c7（自定义字段7）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c7 }}</span>
-                </el-form-item>
-                <el-form-item label="c8">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c8（自定义字段8）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c8 }}</span>
-                </el-form-item>
-                <el-form-item label="c9">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c9（自定义字段9）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c9 }}</span>
-                </el-form-item>
-                <el-form-item label="c10">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c10（自定义字段10）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c10 }}</span>
-                </el-form-item>
-                <el-form-item label="c11">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c11（自定义字段11）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c11 }}</span>
-                </el-form-item>
-                <el-form-item label="c12">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c12（自定义字段12）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c12 }}</span>
-                </el-form-item>
-                <el-form-item label="c13">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c13（自定义字段13）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c13 }}</span>
-                </el-form-item>
-                <el-form-item label="c14">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c14（自定义字段14）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c14 }}</span>
-                </el-form-item>
-                <el-form-item label="c15">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c15（自定义字段15）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c15 }}</span>
-                </el-form-item>
-                <el-form-item label="c16">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c16（自定义字段16）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c16 }}</span>
-                </el-form-item>
-                <el-form-item label="c17">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c17（自定义字段17）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c17 }}</span>
-                </el-form-item>
-                <el-form-item label="c18">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c18（自定义字段18）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c18 }}</span>
-                </el-form-item>
-                <el-form-item label="c19">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c19（自定义字段19）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c19 }}</span>
-                </el-form-item>
-                <el-form-item label="c20">
-                  <template slot="label">
-                    <span class="expand_label">{{ 'c20（自定义字段20）'}} </span>
-                  </template>
-                  <span class="break_all">{{ props.row.c20 }}</span>
-                </el-form-item>
-              </el-row>
-            </el-form>
+            <el-descriptions size="medium" title="基本字段（ticketRecord）" class="margin-top" :column="3" border>
+              <el-descriptions-item>
+                <template slot="label" >
+                  工单ID<br>(id)
+                </template>
+                {{ props.row.id }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  公司ID<br>(companyId)
+                </template>
+                {{ props.row.companyId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  创建时间<br>(createTime)
+                </template>
+                {{ props.row.createTime }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  创建触发事件<br>(createDataType)
+                </template>
+                {{ props.row.createDataType }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  更新时间<br>(updateTime)
+                </template>
+                {{ props.row.updateTime }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  更新触发事件<br>(updateDataType)
+                </template>
+                {{ props.row.updateDataType }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  扩展数据<br>(myData)
+                </template>
+                {{ props.row.myData }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单ID<br>(jobId)
+                </template>
+                {{ props.row.jobId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单属性<br>(jobAttribute)
+                </template>
+                {{ getJobAttribute(props.row.jobAttribute) }}
+              </el-descriptions-item>
+            </el-descriptions>
+            <el-descriptions size="medium" title="工单数据（JobData）" class="margin-top" :column="3" border>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单标题<br>(jobTitle)
+                </template>
+                {{ props.row.title }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单内容<br>(jobContent)
+                </template>
+                {{ props.row.content }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单主题ID<br>(jobTopic)
+                </template>
+                {{ props.row.jobTopic }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单主题名称。工单更新时，主题产生变化才会有值<br>(jobTopicName)
+                </template>
+                {{ props.row.jobTopicName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单请求语言<br>(jobRequesterLan)
+                </template>
+                {{ props.row.requesterLan }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  样式ID<br>(jobStyleId)
+                </template>
+                {{ props.row.styleId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  样式名称<br>(jobStyleName)
+                </template>
+                {{ props.row.styleName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单类型<br>(jobType)
+                </template>
+                {{ getJobType(props.row.jobType) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单优先级<br>(priority)
+                </template>
+                {{ getJobPriority(props.row.priority) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单模版ID<br>(jobTemplateId)
+                </template>
+                {{ props.row.jobTemplateId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单状态<br>(status)
+                </template>
+                {{ getJobStatus(props.row.status) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单备注<br>(jobMemo)
+                </template>
+                {{ props.row.jobMemo }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单更新人类型。—1：客服 0：访客<br>(jobUpdaterType)
+                </template>
+                {{ props.row.jobUpdaterType }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单更新人ID<br>(jobUpdaterId)
+                </template>
+                {{ props.row.jobUpdaterId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单更新人姓名<br>(jobUpdaterName)
+                </template>
+                {{ props.row.jobUpdaterName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  请求者ID。访客vipId或客服ID<br>(jobRequesterUserId)
+                </template>
+                {{ props.row.requesterUserId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  请求者类型<br>(jobRequesterUserType)
+                </template>
+                {{ getJobRequesterUserType(props.row.requesterUserType) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  请求者姓名<br>(jobRequesterUserName)
+                </template>
+                {{ props.row.requesterUserName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单指派分组ID<br>(jobDepartmentId)
+                </template>
+                {{ props.row.departmentId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单指派分组名称<br>(jobDepartmentName)
+                </template>
+                {{ props.row.departmentName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单指派客服ID<br>(jobDistributeUserId)
+                </template>
+                {{ props.row.jobDistributeUserId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单指派客服姓名<br>(jobDistributeUserName)
+                </template>
+                {{ props.row.jobDistributeUserName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单指派客服角色<br>(jobDistributeUserRole)
+                </template>
+                {{ props.row.jobDistributeUserRole }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单指派客服登录名<br>(jobDistributeUserLogName)
+                </template>
+                {{ props.row.jobDistributeUserLogName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单跟踪者ID列表<br>(jobFollowerIds)
+                </template>
+                {{ props.row.jobFollowerIds }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单跟踪者名称列表<br>(jobFollowerNames)
+                </template>
+                {{ props.row.jobFollowerNames }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  回复邮箱地址<br>(replyEmail)
+                </template>
+                {{ props.row.replyEmail }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  回复邮箱地址<br>(replyPhone)
+                </template>
+                {{ props.row.replyPhone }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单回复类型<br>(jobReplyType)
+                </template>
+                {{ getJobReplyType(props.row.jobReplyType) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单回复内容<br>(jobReplyContent)
+                </template>
+                {{ props.row.jobReplyContent }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  用户评价时间。时间戳<br>(jobEvaluateDatetime)
+                </template>
+                {{ props.row.jobEvaluateDatetime }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  满意度<br>(jobMainItem)
+                </template>
+                {{ getJobMainItem(props.row.jobMainItem) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  评价备注内容<br>(jobComment)
+                </template>
+                {{ props.row.jobComment }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  评价子项。String数组<br>(jobSubItems)
+                </template>
+                {{ props.row.jobSubItems }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单链接<br>(jobLink)
+                </template>
+                {{ props.row.jobLink }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段1<br>(t1)
+                </template>
+                {{ props.row.t1 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段2<br>(t2)
+                </template>
+                {{ props.row.t2 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段3<br>(t3)
+                </template>
+                {{ props.row.t3 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段4<br>(t4)
+                </template>
+                {{ props.row.t4 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段5<br>(t5)
+                </template>
+                {{ props.row.t5 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段6<br>(t6)
+                </template>
+                {{ props.row.t6 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段7<br>(t7)
+                </template>
+                {{ props.row.t7 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段8<br>(t8)
+                </template>
+                {{ props.row.t8 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段9<br>(t9)
+                </template>
+                {{ props.row.t9 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段10<br>(t10)
+                </template>
+                {{ props.row.t10 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段11<br>(t11)
+                </template>
+                {{ props.row.t11 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段12<br>(t12)
+                </template>
+                {{ props.row.t12 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段13<br>(t13)
+                </template>
+                {{ props.row.t13 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段14<br>(t14)
+                </template>
+                {{ props.row.t14 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段15<br>(t15)
+                </template>
+                {{ props.row.t15 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段16<br>(t16)
+                </template>
+                {{ props.row.t16 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段17<br>(t17)
+                </template>
+                {{ props.row.t17 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段18<br>(t18)
+                </template>
+                {{ props.row.t18 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段19<br>(t19)
+                </template>
+                {{ props.row.t19 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单自定义字段20<br>(t20)
+                </template>
+                {{ props.row.t20  }}
+              </el-descriptions-item>
+            </el-descriptions>
           </template>
         </el-table-column>
         <el-table-column width="120" prop="companyId" label="companyId"> </el-table-column>
         <el-table-column width="120" prop="jobId" label="jobId"> </el-table-column>
         <el-table-column width="160" prop="title" label="工单标题"> </el-table-column>
+        <el-table-column width="100" prop="jobAttribute" label="工单属性" :formatter="setJobAttribute"></el-table-column>
         <el-table-column width="160" prop="requesterUserId" label="工单请求人"> </el-table-column>
         <el-table-column width="160" prop="visitorName" label="访客"></el-table-column>
-        <el-table-column prop="createTime" label="创建时间"></el-table-column>
+        <el-table-column width="260" prop="createTime" label="创建时间"></el-table-column>
+        <el-table-column fixed="right" label="工单回复记录">
+          <template slot-scope="scope">
+            <el-popover
+                placement="right"
+                width="600"
+                trigger="click">
+              <el-table :data="contentList">
+                <el-table-column width="170" property="createTime" label="工单回复时间"></el-table-column>
+                <el-table-column width="100" property="jobAttribute" label="工单属性" :formatter="setJobAttribute"></el-table-column>
+                <el-table-column width="150" property="status" label="变更后的工单状态" :formatter="setJobStatus"></el-table-column>
+                <el-table-column width="100" property="replyType" label="回复类型" :formatter="setJobReplyType"></el-table-column>
+              </el-table>
+              <el-button slot="reference" @click="getTicketContent(list[scope.$index])">查看</el-button>
+            </el-popover>
+          </template>
+        </el-table-column>
       </el-table>
     </div>
 
@@ -842,8 +451,194 @@ import dayJs from 'dayjs'
 })
 export default class DataList extends Vue {
   private list: any = []
+  private contentList: any = []
   private expandStatus:Boolean = false
   private searchObj:any = {}
+  // 枚举类型
+  // === Start ====
+  // 工单属性
+  private setJobAttribute(row: any, column: any) {
+    return this.getJobAttribute(row.jobAttribute);
+  }
+  private getJobAttribute(val: Number) {
+    switch (val) {
+      case 1:
+        return "内部工单";
+      case 2:
+        return "外部工单";
+    }
+  }
+  // 工单状态
+  private setJobStatus(row: any, column: any) {
+    return this.getJobStatus(row.status);
+  }
+  private getJobStatus(val: Number) {
+    switch (val) {
+      case 1:
+        return "新建";
+      case 2:
+        return "已开启";
+      case 3:
+        return "待回应";
+      case 4:
+        return "已挂起";
+      case 5:
+        return "已解决";
+      case 6:
+        return "已关闭";
+    }
+  }
+  // 回复类型
+  private setJobReplyType(row: any, column: any) {
+    return this.getJobReplyType(row.status);
+  }
+  private getJobReplyType(val: Number) {
+    switch (val) {
+      case 1:
+        return "内部回复";
+      case 2:
+        return "外部回复";
+      case 3:
+        return "内部回复和外部回复";
+    }
+  }
+  // 工单类型
+  private getJobPriority(val: Number) {
+    switch (val) {
+      case 1:
+        return "低";
+      case 2:
+        return "正常";
+      case 3:
+        return "高";
+      case 4:
+        return "紧急";
+    }
+  }
+  // 工单优先级
+  private getJobType(val: Number) {
+    switch (val) {
+      case 1:
+        return "问题";
+      case 2:
+        return "事务";
+      case 3:
+        return "故障";
+      case 4:
+        return "任务";
+    }
+  }
+  // 请求者
+  private getJobRequesterUserType(val: Number) {
+    switch (val) {
+      case -1:
+        return "客服";
+      case 0:
+        return "访客";
+    }
+  }
+  // 满意度评价等级
+  private getJobMainItem(val: Number) {
+    switch (val) {
+      case 1:
+        return "非常差评";
+      case 2:
+        return "不满意";
+      case 3:
+        return "一般";
+      case 4:
+        return "满意";
+      case 5:
+        return "非常满意";
+    }
+  }
+  // 访客身份类型 todo:公共
+  private getVisitorType(val: Number) {
+    switch (val) {
+      case -1:
+        return "未知";
+      case 0:
+        return "游客";
+      case 1:
+        return "会员";
+      case 4:
+        return "微信公众号渠道";
+      case 5:
+        return "自定义渠道";
+      case 8:
+        return "邮箱渠道";
+    }
+  }
+  // 客户端没接 todo:公共
+  private getVisitorMedia(val: Number) {
+    switch (val) {
+      case 1:
+        return "电脑端网页";
+      case 2:
+        return "移动端网页";
+      case 5:
+        return "微信";
+      case 6:
+        return "Android SDK";
+      case 9:
+        return "自定义渠道";
+      case 11:
+        return "邮箱渠道";
+    }
+  }
+  // 关键词类型 todo:公共
+  private getKeywordType(val: Number) {
+    switch (val) {
+      case 0:
+        return "未区分SEO、推广";
+      case 1:
+        return "自然优化";
+      case 2:
+        return "推广";
+    }
+  }
+  // 接入对话的路由ID todo:公共
+  private getRouteId(val: Number) {
+    switch (val) {
+      case -1:
+        return "web访客的默认路由";
+      case -2:
+        return "微信对话的默认路由";
+      case -3:
+        return "SDK对话的默认路由";
+      case -7:
+        return "自定义渠道的默认路由";
+      default:
+        return val;
+    }
+  }
+  // 性别 todo:公共
+  private getGender(val: Number) {
+    switch (val) {
+      case 0:
+        return "未知";
+      case 1:
+        return "男";
+      case 2:
+        return "女";
+      default:
+        return val;
+    }
+  }
+  // 婚姻状况 todo:公共
+  private getMaritalStatus(val: Number) {
+    switch (val) {
+      case 0:
+        return "未知";
+      case 1:
+        return "未婚";
+      case 2:
+        return "已婚";
+      default:
+        return val;
+    }
+  }
+  // ===  End  ====
   private pickerOptions:any = {
     shortcuts: [{
       text: '最近一周',
@@ -916,6 +711,17 @@ export default class DataList extends Vue {
   private async del() {
     await api.delDataList();
     this.search()
+  }
+
+  private async getTicketContent(val: any ) {
+    interface Params {
+      jobId:Number
+    }
+    const params: Params = {
+      jobId:val.jobId
+    }
+    const res: any = await api.ticketContentList(params);
+    this.contentList = res.data;
   }
 
   private changePage(page:any){

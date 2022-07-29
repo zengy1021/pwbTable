@@ -21,7 +21,7 @@ export default {
   },
   // 一洽配置-查询所有数据
   getEchatConfigDataList(){
-    return request.get(`/extension/companyconfig/list/1/1000`,{})(null)
+    return request.get(`/eApi/companyconfig/list/1/1000`,{})(null)
   },
   //一洽配置-根据id查看详情
   getEchatConfigDataByCompId(compId:string){
@@ -33,7 +33,7 @@ export default {
   },
   //一洽配置-更新数据
   updateEchatConfigDataByCompId(val: any){
-    return request.put(`/extension/companyconfig`,{})(val)
+    return request.put(`/eApi/companyconfig`,{})(val)
   },
   //一洽配置-更新数据
   deleteEchatConfigDataByCompId(val: any){

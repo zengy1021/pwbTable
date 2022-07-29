@@ -16,11 +16,11 @@ export default {
         endDate:params.endDate
       }
     }
-    return request.get(`/extension/staff/list/${pageNum}/${pageSize}`,{})(pathParams)
+    return request.get(`/eApi/staff/list/${pageNum}/${pageSize}`,{})(pathParams)
   },
   // 清空日志
   delDataList(){
-    return request.delete('/extension/staff', {})(null)
+    return request.delete('/eApi/staff', {})(null)
   }
   // getDataList: request.get(flag + '/echatserver/reqinfo/list/{pageNum}/{pageSize}', {})
 } 
