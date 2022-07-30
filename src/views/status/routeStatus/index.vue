@@ -76,7 +76,7 @@
         <el-table-column width="120" prop="companyId" label="公司id"> </el-table-column>
         <el-table-column width="120" prop="routeId" label="路由ID"> </el-table-column>
         <el-table-column width="200" prop="routeName" label="路由名称"> </el-table-column>
-        <el-table-column width="200" prop="routeStatus" label="路由状态，1：在线 2：离线"> </el-table-column>
+        <el-table-column width="200" prop="routeStatus" label="路由状态" :formatter="setRouteStatus"> </el-table-column>
         <el-table-column prop="updateTime" label="状态变更时间">
         </el-table-column>
       </el-table>
@@ -136,6 +136,18 @@ export default class DataList extends Vue {
     pageNum:1,
     pageSize:20,
     total:0
+  }
+  // 路由状态
+  private setRouteStatus(row: any, column: any) {
+    return this.getRouteStatus(row.routeStatus);
+  }
+  private getRouteStatus(val: Number) {
+    switch (val) {
+      case 1:
+        return "在线";
+      case 2:
+        return "离线";
+    }
   }
   private created() {
     this.requestData()

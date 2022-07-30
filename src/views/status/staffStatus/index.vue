@@ -77,7 +77,7 @@
         <el-table-column width="120" prop="staffId" label="客服ID"> </el-table-column>
         <el-table-column width="200" prop="staffName" label="客服名称"> </el-table-column>
         <el-table-column width="200" prop="staffLogname" label="客服账号"> </el-table-column>
-        <el-table-column width="200" prop="staffStatus" label="客服状态，1：在线 2：忙碌 3：离开 4：隐身 5：退出"> </el-table-column>
+        <el-table-column width="200" prop="staffStatus" label="客服状态" :formatter="setStaffStatus"> </el-table-column>
         <el-table-column prop="updateTime" label="状态变更时间">
         </el-table-column>
       </el-table>
@@ -137,6 +137,24 @@ export default class DataList extends Vue {
     pageNum:1,
     pageSize:20,
     total:0
+  }
+  // 客服状态
+  private setStaffStatus(row: any, column: any) {
+    return this.getStaffStatus(row.staffStatus);
+  }
+  private getStaffStatus(val: Number) {
+    switch (val) {
+      case 1:
+        return "在线";
+      case 2:
+        return "忙碌";
+      case 3:
+        return "离开";
+      case 4:
+        return "隐身";
+      case 5:
+        return "退出";
+    }
   }
   private created() {
     this.requestData()

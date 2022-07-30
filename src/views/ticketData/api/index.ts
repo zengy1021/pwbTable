@@ -16,15 +16,15 @@ export default {
         endDate: params.endDate
       }
     }
-    return request.get(`/eApi/ticket/list/${pageNum}/${pageSize}`, {})(pathParams)
+    return request.get(`/extension/ticket/list/${pageNum}/${pageSize}`, {})(pathParams)
   },
   // 工单回复内容
   ticketContentList(param: any) {
-    return request.get('/eApi/ticket/ticketcontent', {})(param)
+    return request.get('/extension/ticket/ticketcontent', {})(param)
   },
   // 清空日志
   delDataList() {
-    return request.delete('/eApi/ticket', {})(null)
+    return request.delete('/extension/ticket', {})(null)
   }
   // getDataList: request.get(flag + '/echatserver/reqinfo/list/{pageNum}/{pageSize}', {})
 }

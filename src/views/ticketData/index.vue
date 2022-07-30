@@ -15,8 +15,8 @@
           <template slot-scope="props">
             <el-descriptions size="medium" title="基本字段（ticketRecord）" class="margin-top" :column="3" border>
               <el-descriptions-item>
-                <template slot="label" >
-                  工单ID<br>(id)
+                <template slot="label">
+                  唯一ID<br>(id)
                 </template>
                 {{ props.row.id }}
               </el-descriptions-item>
@@ -52,7 +52,7 @@
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  扩展数据<br>(myData)
+                  开发者自定义扩展数据<br>(myData)
                 </template>
                 {{ props.row.myData }}
               </el-descriptions-item>
@@ -69,18 +69,244 @@
                 {{ getJobAttribute(props.row.jobAttribute) }}
               </el-descriptions-item>
             </el-descriptions>
-            <el-descriptions size="medium" title="工单数据（JobData）" class="margin-top" :column="3" border>
+            <el-descriptions size="medium" title="访客数据（visitorData）" class="margin-top" :column="3" border>
               <el-descriptions-item>
                 <template slot="label">
-                  工单标题<br>(jobTitle)
+                  访客进入网站的时间<br>(visitorEnterTime)
+                </template>
+                {{ props.row.visitorEnterTime }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客端的媒介<br>(visitorMedia)
+                </template>
+                {{ getVisitorMedia(props.row.visitorMedia) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客类型<br>(visitorType)
+                </template>
+                {{ getVisitorType(props.row.visitorType) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  自定义渠道的渠道ID<br>(mediaId)
+                </template>
+                {{ props.row.mediaId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客ID<br>(visitorId)
+                </template>
+                {{ props.row.visitorId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的姓名<br>(visitorName)
+                </template>
+                {{ props.row.visitorName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的头像地址<br>(visitorPhoto)
+                </template>
+                {{ props.row.visitorPhoto }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的来访次数<br>(visitTimes)
+                </template>
+                {{ props.row.visitTimes }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的浏览器语言<br>(visitorLan)
+                </template>
+                {{ props.row.visitorLan }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的来源IP<br>(visitorIp)
+                </template>
+                {{ props.row.visitorIp }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的来源国家<br>(visitorCountry)
+                </template>
+                {{ props.row.visitorCountry }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的来源省份<br>(visitorProvince)
+                </template>
+                {{ props.row.visitorProvince }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的来源城市<br>(visitorCity)
+                </template>
+                {{ props.row.visitorCity }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的浏览器名称<br>(browserName)
+                </template>
+                {{ props.row.browserName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的浏览器版本号<br>(browserVersion)
+                </template>
+                {{ props.row.browserVersion }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客电脑的分辨率<br>(screenResolution)
+                </template>
+                {{ props.row.screenResolution }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客电脑的操作系统<br>(osName)
+                </template>
+                {{ props.row.osName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客电脑的操作系统版本<br>(osVersion)
+                </template>
+                {{ props.row.osVersion }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客来源的搜索引擎<br>(se)
+                </template>
+                {{ props.row.se }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客来源的关键词<br>(keyword)
+                </template>
+                {{ props.row.keyword }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  推广词<br>(biddingWord)
+                </template>
+                {{ props.row.biddingWord }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  关键字类型<br>(keywordType)
+                </template>
+                {{ getKeywordType(props.row.keywordType) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客进入网站的来源页<br>(referPage)
+                </template>
+                {{ props.row.referPage }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  进入网站的时间<br>(firstTime)
+                </template>
+                {{ props.row.firstTime }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客落地页面的URL<br>(firstPage)
+                </template>
+                {{ props.row.firstPage }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客落地页面的标题<br>(firstPageTitle)
+                </template>
+                {{ props.row.firstPageTitle }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客落地页面的别名<br>(firstPageAlias)
+                </template>
+                {{ props.row.firstPageAlias }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  上次对话的时间<br>(lastChatTime)
+                </template>
+                {{ props.row.lastChatTime }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  上次对话的客服ID.0：首次对话<br>(lastChatStaffId)
+                </template>
+                {{ props.row.lastChatStaffId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  上次对话的客服账号<br>(lastChatStaffLogname)
+                </template>
+                {{ props.row.lastChatStaffLogname }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  上次对话的客服姓名<br>(lastChatStaffName)
+                </template>
+                {{ props.row.lastChatStaffName }}
+              </el-descriptions-item>
+            </el-descriptions>
+            <el-descriptions size="medium" title="路由数据（routeData）" class="margin-top" :column="3" border>
+              <el-descriptions-item>
+                <template slot="label">
+                  接入对话的路由ID<br>(routeId)
+                </template>
+                {{ getRouteId(props.row.routeId) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  路由名称<br>(routeName)
+                </template>
+                {{ props.row.routeName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  路由所使用的样式ID<br>(routeStyleId)
+                </template>
+                {{ props.row.routeStyleId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  路由所使用样式的名称<br>(styleName)
+                </template>
+                {{ props.row.styleName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  本次分配对话的接待组ID<br>(chatDepartmentId)
+                </template>
+                {{ props.row.chatDepartmentId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  本地分配对话的接待组名称<br>(chatDepartmentName)
+                </template>
+                {{ props.row.chatDepartmentName }}
+              </el-descriptions-item>
+            </el-descriptions>
+            <el-descriptions size="medium" title="工单数据（jobData）" class="margin-top" :column="3" border>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单标题<br>(title)
                 </template>
                 {{ props.row.title }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单内容<br>(jobContent)
+                  工单内容<br>(content)
                 </template>
-                {{ props.row.content }}
+                <div v-html="props.row.content"></div>
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
@@ -90,39 +316,117 @@
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单主题名称。工单更新时，主题产生变化才会有值<br>(jobTopicName)
+                  工单主题名称<br>(jobTopicName)
                 </template>
                 {{ props.row.jobTopicName }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单请求语言<br>(jobRequesterLan)
+                  请求者语言<br>(requesterLan)
                 </template>
                 {{ props.row.requesterLan }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  样式ID<br>(jobStyleId)
+                  请求者ID<br>(requesterUserId)
+                </template>
+                {{ props.row.requesterUserId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  请求者类型<br>(requesterUserType)
+                </template>
+                {{ getJobRequesterUserType(props.row.requesterUserType) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  请求者姓名<br>(requesterUserName)
+                </template>
+                {{ props.row.requesterUserName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  样式ID<br>(styleId)
                 </template>
                 {{ props.row.styleId }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  样式名称<br>(jobStyleName)
+                  工单类型<br>(jobType)
                 </template>
-                {{ props.row.styleName }}
+                {{ getJobPriority(props.row.jobType) }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单类型<br>(jobType)
+                  工单指派分组ID<br>(departmentId)
                 </template>
-                {{ getJobType(props.row.jobType) }}
+                {{ props.row.departmentId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单指派分组<br>(departmentName)
+                </template>
+                {{ props.row.departmentName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单指派客服ID<br>(distributeUserId)
+                </template>
+                {{ props.row.distributeUserId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单指派客服姓名<br>(distributeUserName)
+                </template>
+                {{ props.row.distributeUserName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单指派客服角色名<br>(distributeUserRole)
+                </template>
+                {{ props.row.distributeUserRole }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单指派客服账号<br>(distributeUserLogname)
+                </template>
+                {{ props.row.distributeUserLogname }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  更新人类型<br>(updatorType)
+                </template>
+                {{ getJobUpdaterType(props.row.updatorType) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单更新人ID<br>(updatorId)
+                </template>
+                {{ props.row.updatorId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单更新人姓名<br>(updatorName)
+                </template>
+                {{ props.row.updatorName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单跟踪人ID<br>(jobFollowerIds)
+                </template>
+                {{ props.row.jobFollowerIds }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单跟踪人姓名<br>(jobFollowerNames)
+                </template>
+                {{ props.row.jobFollowerNames }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
                   工单优先级<br>(priority)
                 </template>
-                {{ getJobPriority(props.row.priority) }}
+                {{ getJobType(props.row.priority) }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
@@ -138,267 +442,403 @@
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
+                  工单回复邮箱<br>(replyEmail)
+                </template>
+                {{ props.row.replyEmail }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单回复电话<br>(replyPhone)
+                </template>
+                {{ props.row.replyPhone }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
                   工单备注<br>(jobMemo)
                 </template>
                 {{ props.row.jobMemo }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单更新人类型。—1：客服 0：访客<br>(jobUpdaterType)
+                  工单附件信息，JSON字符串<br>(attachments)
                 </template>
-                {{ props.row.jobUpdaterType }}
+                {{ props.row.attachments }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单更新人ID<br>(jobUpdaterId)
-                </template>
-                {{ props.row.jobUpdaterId }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  工单更新人姓名<br>(jobUpdaterName)
-                </template>
-                {{ props.row.jobUpdaterName }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  请求者ID。访客vipId或客服ID<br>(jobRequesterUserId)
-                </template>
-                {{ props.row.requesterUserId }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  请求者类型<br>(jobRequesterUserType)
-                </template>
-                {{ getJobRequesterUserType(props.row.requesterUserType) }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  请求者姓名<br>(jobRequesterUserName)
-                </template>
-                {{ props.row.requesterUserName }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  工单指派分组ID<br>(jobDepartmentId)
-                </template>
-                {{ props.row.departmentId }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  工单指派分组名称<br>(jobDepartmentName)
-                </template>
-                {{ props.row.departmentName }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  工单指派客服ID<br>(jobDistributeUserId)
-                </template>
-                {{ props.row.jobDistributeUserId }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  工单指派客服姓名<br>(jobDistributeUserName)
-                </template>
-                {{ props.row.jobDistributeUserName }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  工单指派客服角色<br>(jobDistributeUserRole)
-                </template>
-                {{ props.row.jobDistributeUserRole }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  工单指派客服登录名<br>(jobDistributeUserLogName)
-                </template>
-                {{ props.row.jobDistributeUserLogName }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  工单跟踪者ID列表<br>(jobFollowerIds)
-                </template>
-                {{ props.row.jobFollowerIds }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  工单跟踪者名称列表<br>(jobFollowerNames)
-                </template>
-                {{ props.row.jobFollowerNames }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  回复邮箱地址<br>(replyEmail)
-                </template>
-                {{ props.row.replyEmail }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  回复邮箱地址<br>(replyPhone)
-                </template>
-                {{ props.row.replyPhone }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  工单回复类型<br>(jobReplyType)
-                </template>
-                {{ getJobReplyType(props.row.jobReplyType) }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  工单回复内容<br>(jobReplyContent)
-                </template>
-                {{ props.row.jobReplyContent }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  用户评价时间。时间戳<br>(jobEvaluateDatetime)
-                </template>
-                {{ props.row.jobEvaluateDatetime }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  满意度<br>(jobMainItem)
-                </template>
-                {{ getJobMainItem(props.row.jobMainItem) }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  评价备注内容<br>(jobComment)
-                </template>
-                {{ props.row.jobComment }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  评价子项。String数组<br>(jobSubItems)
-                </template>
-                {{ props.row.jobSubItems }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  工单链接<br>(jobLink)
-                </template>
-                {{ props.row.jobLink }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  工单自定义字段1<br>(t1)
+                  工单自定义字段<br>(t1)
                 </template>
                 {{ props.row.t1 }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单自定义字段2<br>(t2)
+                  工单自定义字段<br>(t2)
                 </template>
                 {{ props.row.t2 }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单自定义字段3<br>(t3)
+                  工单自定义字段<br>(t3)
                 </template>
                 {{ props.row.t3 }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单自定义字段4<br>(t4)
+                  工单自定义字段<br>(t4)
                 </template>
                 {{ props.row.t4 }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单自定义字段5<br>(t5)
+                  工单自定义字段<br>(t5)
                 </template>
                 {{ props.row.t5 }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单自定义字段6<br>(t6)
+                  工单自定义字段<br>(t6)
                 </template>
                 {{ props.row.t6 }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单自定义字段7<br>(t7)
+                  工单自定义字段<br>(t7)
                 </template>
                 {{ props.row.t7 }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单自定义字段8<br>(t8)
+                  工单自定义字段<br>(t8)
                 </template>
                 {{ props.row.t8 }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单自定义字段9<br>(t9)
+                  工单自定义字段<br>(t9)
                 </template>
                 {{ props.row.t9 }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单自定义字段10<br>(t10)
+                  工单自定义字段<br>(t10)
                 </template>
                 {{ props.row.t10 }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单自定义字段11<br>(t11)
+                  工单自定义字段<br>(t11)
                 </template>
                 {{ props.row.t11 }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单自定义字段12<br>(t12)
+                  工单自定义字段<br>(t12)
                 </template>
                 {{ props.row.t12 }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单自定义字段13<br>(t13)
+                  工单自定义字段<br>(t13)
                 </template>
                 {{ props.row.t13 }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单自定义字段14<br>(t14)
+                  工单自定义字段<br>(t14)
                 </template>
                 {{ props.row.t14 }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单自定义字段15<br>(t15)
+                  工单自定义字段<br>(t15)
                 </template>
                 {{ props.row.t15 }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单自定义字段16<br>(t16)
+                  工单自定义字段<br>(t16)
                 </template>
                 {{ props.row.t16 }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单自定义字段17<br>(t17)
+                  工单自定义字段<br>(t17)
                 </template>
                 {{ props.row.t17 }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单自定义字段18<br>(t18)
+                  工单自定义字段<br>(t18)
                 </template>
                 {{ props.row.t18 }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单自定义字段19<br>(t19)
+                  工单自定义字段<br>(t19)
                 </template>
                 {{ props.row.t19 }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单自定义字段20<br>(t20)
+                  工单自定义字段<br>(t20)
                 </template>
-                {{ props.row.t20  }}
+                {{ props.row.t20 }}
+              </el-descriptions-item>
+            </el-descriptions>
+            <el-descriptions size="medium" title="客户数据（crmData）" class="margin-top" :column="3" border>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM字段-客户ID<br>(crmId)
+                </template>
+                {{ props.row.crmId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM字段-客户姓名<br>(name)
+                </template>
+                {{ props.row.name }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM字段-客户类别<br>(category)
+                </template>
+                {{ props.row.category }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM字段-客户昵称<br>(nickName)
+                </template>
+                {{ props.row.nickName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM字段-客户性别<br>(gender)
+                </template>
+                {{ getGender(props.row.gender) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM字段-客户年龄<br>(age)
+                </template>
+                {{ props.row.age }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM字段-客户生日<br>(birthday)
+                </template>
+                {{ props.row.birthday }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM字段-客户婚姻状况<br>(maritalStatus)
+                </template>
+                {{ getMaritalStatus(props.row.maritalStatus) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM字段-客户电话<br>(phone)
+                </template>
+                {{ props.row.phone }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM字段-客户qq<br>(qq)
+                </template>
+                {{ props.row.qq }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM字段-客户微信<br>(wechat)
+                </template>
+                {{ props.row.wechat }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM字段-客户邮箱<br>(email)
+                </template>
+                {{ props.row.email }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM字段-客户所在国家<br>(nation)
+                </template>
+                {{ props.row.nation }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM字段-客户所在省份<br>(province)
+                </template>
+                {{ props.row.province }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM字段-客户所在城市<br>(city)
+                </template>
+                {{ props.row.city }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM字段-客户地址<br>(address)
+                </template>
+                {{ props.row.address }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM字段-客户头像地址<br>(photo)
+                </template>
+                {{ props.row.photo }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM字段-备注<br>(memo)
+                </template>
+                {{ props.row.memo }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c1)
+                </template>
+                {{ props.row.c1 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c2)
+                </template>
+                {{ props.row.c2 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c3)
+                </template>
+                {{ props.row.c3 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c4)
+                </template>
+                {{ props.row.c4 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c5)
+                </template>
+                {{ props.row.c5 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c6)
+                </template>
+                {{ props.row.c6 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c7)
+                </template>
+                {{ props.row.c7 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c8)
+                </template>
+                {{ props.row.c8 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c9)
+                </template>
+                {{ props.row.c9 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c10)
+                </template>
+                {{ props.row.c10 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c11)
+                </template>
+                {{ props.row.c11 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c12)
+                </template>
+                {{ props.row.c12 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c13)
+                </template>
+                {{ props.row.c13 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c14)
+                </template>
+                {{ props.row.c14 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c15)
+                </template>
+                {{ props.row.c15 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c16)
+                </template>
+                {{ props.row.c16 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c17)
+                </template>
+                {{ props.row.c17 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c18)
+                </template>
+                {{ props.row.c18 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c19)
+                </template>
+                {{ props.row.c19 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  CRM自定义字段<br>(c20)
+                </template>
+                {{ props.row.c20 }}
+              </el-descriptions-item>
+            </el-descriptions>
+            <el-descriptions size="medium" title="工单满意度数据（evaluate）" class="margin-top" :column="3" border>
+              <el-descriptions-item>
+                <template slot="label">
+                  用户评价时间。时间戳格式<br>(evaluateDatetime)
+                </template>
+                {{ props.row.evaluateDatetime }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  评价满意度<br>(mainItem)
+                </template>
+                {{ getJobMainItem(props.row.mainItem) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客评价备注内容<br>(comment)
+                </template>
+                {{ props.row.comment }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  评价子项<br>(subItems)
+                </template>
+                {{ props.row.subItems }}
               </el-descriptions-item>
             </el-descriptions>
           </template>
@@ -533,7 +973,7 @@ export default class DataList extends Vue {
     switch (val) {
       case -1:
         return "客服";
-      case 0:
+      case 1:
         return "访客";
     }
   }
@@ -550,6 +990,29 @@ export default class DataList extends Vue {
         return "满意";
       case 5:
         return "非常满意";
+    }
+  }
+  // 工单指派分组
+  private getJobDepartmentId(val: Number) {
+    switch (val) {
+      case 0:
+        return "全部部门";
+    }
+  }
+  // 工单指派客服id
+  private getJobDistributeUserId(val: Number) {
+    switch (val) {
+      case 0:
+        return "由客服创建时，没有指定处理人；由访客创建时，工单自动分配为“手动分配”，即没有指定处理人";
+    }
+  }
+  // 工单更新人类型
+  private getJobUpdaterType(val: Number) {
+    switch (val) {
+      case -1:
+        return "客服";
+      case 0:
+        return "访客";
     }
   }
   // 访客身份类型 todo:公共
@@ -569,7 +1032,7 @@ export default class DataList extends Vue {
         return "邮箱渠道";
     }
   }
-  // 客户端没接 todo:公共
+  // 客户端没媒介 todo:公共
   private getVisitorMedia(val: Number) {
     switch (val) {
       case 1:

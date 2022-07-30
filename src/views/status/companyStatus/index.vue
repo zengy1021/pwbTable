@@ -74,7 +74,7 @@
             </template>
         </el-table-column>
         <el-table-column width="120" prop="companyId" label="公司ID"> </el-table-column>
-        <el-table-column width="200" prop="companyStatus" label="登陆状态，1：在线 2：离线"> </el-table-column>
+        <el-table-column width="200" prop="companyStatus" label="登陆状态" :formatter="setCompanyStatus"> </el-table-column>
           <el-table-column prop="updateTime" label="状态变更时间">
         </el-table-column>
       </el-table>
@@ -134,6 +134,18 @@ export default class DataList extends Vue {
     pageNum:1,
     pageSize:20,
     total:0
+  }
+  // 公司状态
+  private setCompanyStatus(row: any, column: any) {
+    return this.getCompanyStatus(row.companyStatus);
+  }
+  private getCompanyStatus(val: Number) {
+    switch (val) {
+      case 1:
+        return "在线";
+      case 2:
+        return "离线";
+    }
   }
   private created() {
     this.requestData()
