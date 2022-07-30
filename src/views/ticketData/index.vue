@@ -257,44 +257,6 @@
                 {{ props.row.lastChatStaffName }}
               </el-descriptions-item>
             </el-descriptions>
-            <el-descriptions size="medium" title="路由数据（routeData）" class="margin-top" :column="3" border>
-              <el-descriptions-item>
-                <template slot="label">
-                  接入对话的路由ID<br>(routeId)
-                </template>
-                {{ getRouteId(props.row.routeId) }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  路由名称<br>(routeName)
-                </template>
-                {{ props.row.routeName }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  路由所使用的样式ID<br>(routeStyleId)
-                </template>
-                {{ props.row.routeStyleId }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  路由所使用样式的名称<br>(styleName)
-                </template>
-                {{ props.row.styleName }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  本次分配对话的接待组ID<br>(chatDepartmentId)
-                </template>
-                {{ props.row.chatDepartmentId }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  本地分配对话的接待组名称<br>(chatDepartmentName)
-                </template>
-                {{ props.row.chatDepartmentName }}
-              </el-descriptions-item>
-            </el-descriptions>
             <el-descriptions size="medium" title="工单数据（jobData）" class="margin-top" :column="3" border>
               <el-descriptions-item>
                 <template slot="label">
@@ -585,6 +547,32 @@
                 {{ props.row.t20 }}
               </el-descriptions-item>
             </el-descriptions>
+            <el-descriptions size="medium" title="工单满意度数据（evaluate）" class="margin-top" :column="3" border>
+              <el-descriptions-item>
+                <template slot="label">
+                  用户评价时间。时间戳格式<br>(evaluateDatetime)
+                </template>
+                {{ props.row.evaluateDatetime }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  评价满意度<br>(mainItem)
+                </template>
+                {{ getJobMainItem(props.row.mainItem) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客评价备注内容<br>(comment)
+                </template>
+                {{ props.row.comment }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  评价子项<br>(subItems)
+                </template>
+                {{ props.row.subItems }}
+              </el-descriptions-item>
+            </el-descriptions>
             <el-descriptions size="medium" title="客户数据（crmData）" class="margin-top" :column="3" border>
               <el-descriptions-item>
                 <template slot="label">
@@ -815,30 +803,42 @@
                 {{ props.row.c20 }}
               </el-descriptions-item>
             </el-descriptions>
-            <el-descriptions size="medium" title="工单满意度数据（evaluate）" class="margin-top" :column="3" border>
+            <el-descriptions size="medium" title="路由数据（routeData）" class="margin-top" :column="3" border>
               <el-descriptions-item>
                 <template slot="label">
-                  用户评价时间。时间戳格式<br>(evaluateDatetime)
+                  接入对话的路由ID<br>(routeId)
                 </template>
-                {{ props.row.evaluateDatetime }}
+                {{ getRouteId(props.row.routeId) }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  评价满意度<br>(mainItem)
+                  路由名称<br>(routeName)
                 </template>
-                {{ getJobMainItem(props.row.mainItem) }}
+                {{ props.row.routeName }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  访客评价备注内容<br>(comment)
+                  路由所使用的样式ID<br>(routeStyleId)
                 </template>
-                {{ props.row.comment }}
+                {{ props.row.routeStyleId }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  评价子项<br>(subItems)
+                  路由所使用样式的名称<br>(styleName)
                 </template>
-                {{ props.row.subItems }}
+                {{ props.row.styleName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  本次分配对话的接待组ID<br>(chatDepartmentId)
+                </template>
+                {{ props.row.chatDepartmentId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  本地分配对话的接待组名称<br>(chatDepartmentName)
+                </template>
+                {{ props.row.chatDepartmentName }}
               </el-descriptions-item>
             </el-descriptions>
           </template>

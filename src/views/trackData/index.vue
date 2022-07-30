@@ -190,6 +190,126 @@
                 </template>
                 {{ props.row.memo }}
               </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c1)
+                </template>
+                {{ props.row.c1 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c2)
+                </template>
+                {{ props.row.c2 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c3)
+                </template>
+                {{ props.row.c3 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c4)
+                </template>
+                {{ props.row.c4 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c5)
+                </template>
+                {{ props.row.c5 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c6)
+                </template>
+                {{ props.row.c6 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c7)
+                </template>
+                {{ props.row.c7 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c8)
+                </template>
+                {{ props.row.c8 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c9)
+                </template>
+                {{ props.row.c9 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c10)
+                </template>
+                {{ props.row.c10 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c11)
+                </template>
+                {{ props.row.c11 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c12)
+                </template>
+                {{ props.row.c12 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c13)
+                </template>
+                {{ props.row.c13 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c14)
+                </template>
+                {{ props.row.c14 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c15)
+                </template>
+                {{ props.row.c15 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c16)
+                </template>
+                {{ props.row.c16 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c17)
+                </template>
+                {{ props.row.c17 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c18)
+                </template>
+                {{ props.row.c18 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c19)
+                </template>
+                {{ props.row.c19 }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  会员自定义字段<br>(c20)
+                </template>
+                {{ props.row.c20 }}
+              </el-descriptions-item>
             </el-descriptions>
             <el-descriptions size="medium" title="访客数据（visitorData）" class="margin-top" :column="3" border>
               <el-descriptions-item>
