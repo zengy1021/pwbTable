@@ -69,194 +69,6 @@
                 {{ getJobAttribute(props.row.jobAttribute) }}
               </el-descriptions-item>
             </el-descriptions>
-            <el-descriptions size="medium" title="访客数据（visitorData）" class="margin-top" :column="3" border>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客进入网站的时间<br>(visitorEnterTime)
-                </template>
-                {{ props.row.visitorEnterTime }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客端的媒介<br>(visitorMedia)
-                </template>
-                {{ getVisitorMedia(props.row.visitorMedia) }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客类型<br>(visitorType)
-                </template>
-                {{ getVisitorType(props.row.visitorType) }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  自定义渠道的渠道ID<br>(mediaId)
-                </template>
-                {{ props.row.mediaId }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客ID<br>(visitorId)
-                </template>
-                {{ props.row.visitorId }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客的姓名<br>(visitorName)
-                </template>
-                {{ props.row.visitorName }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客的头像地址<br>(visitorPhoto)
-                </template>
-                {{ props.row.visitorPhoto }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客的来访次数<br>(visitTimes)
-                </template>
-                {{ props.row.visitTimes }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客的浏览器语言<br>(visitorLan)
-                </template>
-                {{ props.row.visitorLan }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客的来源IP<br>(visitorIp)
-                </template>
-                {{ props.row.visitorIp }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客的来源国家<br>(visitorCountry)
-                </template>
-                {{ props.row.visitorCountry }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客的来源省份<br>(visitorProvince)
-                </template>
-                {{ props.row.visitorProvince }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客的来源城市<br>(visitorCity)
-                </template>
-                {{ props.row.visitorCity }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客的浏览器名称<br>(browserName)
-                </template>
-                {{ props.row.browserName }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客的浏览器版本号<br>(browserVersion)
-                </template>
-                {{ props.row.browserVersion }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客电脑的分辨率<br>(screenResolution)
-                </template>
-                {{ props.row.screenResolution }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客电脑的操作系统<br>(osName)
-                </template>
-                {{ props.row.osName }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客电脑的操作系统版本<br>(osVersion)
-                </template>
-                {{ props.row.osVersion }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客来源的搜索引擎<br>(se)
-                </template>
-                {{ props.row.se }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客来源的关键词<br>(keyword)
-                </template>
-                {{ props.row.keyword }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  推广词<br>(biddingWord)
-                </template>
-                {{ props.row.biddingWord }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  关键字类型<br>(keywordType)
-                </template>
-                {{ getKeywordType(props.row.keywordType) }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客进入网站的来源页<br>(referPage)
-                </template>
-                {{ props.row.referPage }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  进入网站的时间<br>(firstTime)
-                </template>
-                {{ props.row.firstTime }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客落地页面的URL<br>(firstPage)
-                </template>
-                {{ props.row.firstPage }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客落地页面的标题<br>(firstPageTitle)
-                </template>
-                {{ props.row.firstPageTitle }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客落地页面的别名<br>(firstPageAlias)
-                </template>
-                {{ props.row.firstPageAlias }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  上次对话的时间<br>(lastChatTime)
-                </template>
-                {{ props.row.lastChatTime }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  上次对话的客服ID.0：首次对话<br>(lastChatStaffId)
-                </template>
-                {{ props.row.lastChatStaffId }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  上次对话的客服账号<br>(lastChatStaffLogname)
-                </template>
-                {{ props.row.lastChatStaffLogname }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  上次对话的客服姓名<br>(lastChatStaffName)
-                </template>
-                {{ props.row.lastChatStaffName }}
-              </el-descriptions-item>
-            </el-descriptions>
             <el-descriptions size="medium" title="工单数据（jobData）" class="margin-top" :column="3" border>
               <el-descriptions-item>
                 <template slot="label">
@@ -571,6 +383,194 @@
                   评价子项<br>(subItems)
                 </template>
                 {{ props.row.subItems }}
+              </el-descriptions-item>
+            </el-descriptions>
+            <el-descriptions size="medium" title="访客数据（visitorData）" class="margin-top" :column="3" border>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客进入网站的时间<br>(visitorEnterTime)
+                </template>
+                {{ props.row.visitorEnterTime }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客端的媒介<br>(visitorMedia)
+                </template>
+                {{ getVisitorMedia(props.row.visitorMedia) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客类型<br>(visitorType)
+                </template>
+                {{ getVisitorType(props.row.visitorType) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  自定义渠道的渠道ID<br>(mediaId)
+                </template>
+                {{ props.row.mediaId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客ID<br>(visitorId)
+                </template>
+                {{ props.row.visitorId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的姓名<br>(visitorName)
+                </template>
+                {{ props.row.visitorName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的头像地址<br>(visitorPhoto)
+                </template>
+                {{ props.row.visitorPhoto }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的来访次数<br>(visitTimes)
+                </template>
+                {{ props.row.visitTimes }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的浏览器语言<br>(visitorLan)
+                </template>
+                {{ props.row.visitorLan }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的来源IP<br>(visitorIp)
+                </template>
+                {{ props.row.visitorIp }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的来源国家<br>(visitorCountry)
+                </template>
+                {{ props.row.visitorCountry }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的来源省份<br>(visitorProvince)
+                </template>
+                {{ props.row.visitorProvince }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的来源城市<br>(visitorCity)
+                </template>
+                {{ props.row.visitorCity }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的浏览器名称<br>(browserName)
+                </template>
+                {{ props.row.browserName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客的浏览器版本号<br>(browserVersion)
+                </template>
+                {{ props.row.browserVersion }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客电脑的分辨率<br>(screenResolution)
+                </template>
+                {{ props.row.screenResolution }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客电脑的操作系统<br>(osName)
+                </template>
+                {{ props.row.osName }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客电脑的操作系统版本<br>(osVersion)
+                </template>
+                {{ props.row.osVersion }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客来源的搜索引擎<br>(se)
+                </template>
+                {{ props.row.se }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客来源的关键词<br>(keyword)
+                </template>
+                {{ props.row.keyword }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  推广词<br>(biddingWord)
+                </template>
+                {{ props.row.biddingWord }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  关键字类型<br>(keywordType)
+                </template>
+                {{ getKeywordType(props.row.keywordType) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客进入网站的来源页<br>(referPage)
+                </template>
+                {{ props.row.referPage }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  进入网站的时间<br>(firstTime)
+                </template>
+                {{ props.row.firstTime }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客落地页面的URL<br>(firstPage)
+                </template>
+                {{ props.row.firstPage }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客落地页面的标题<br>(firstPageTitle)
+                </template>
+                {{ props.row.firstPageTitle }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  访客落地页面的别名<br>(firstPageAlias)
+                </template>
+                {{ props.row.firstPageAlias }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  上次对话的时间<br>(lastChatTime)
+                </template>
+                {{ props.row.lastChatTime }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  上次对话的客服ID.0：首次对话<br>(lastChatStaffId)
+                </template>
+                {{ props.row.lastChatStaffId }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  上次对话的客服账号<br>(lastChatStaffLogname)
+                </template>
+                {{ props.row.lastChatStaffLogname }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  上次对话的客服姓名<br>(lastChatStaffName)
+                </template>
+                {{ props.row.lastChatStaffName }}
               </el-descriptions-item>
             </el-descriptions>
             <el-descriptions size="medium" title="客户数据（crmData）" class="margin-top" :column="3" border>
