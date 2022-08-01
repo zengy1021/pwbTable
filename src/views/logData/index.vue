@@ -172,7 +172,14 @@ export default class DataList extends Vue {
   }
 
   private async del() {
-    await api.delDataList();
+    interface ApiLog {
+      companyId:String
+    }
+    // todo： 此处需要改成真实的companyId
+    const param: ApiLog = {
+      companyId: ""
+    }
+    await api.delDataList(param);
     this.search()
   }
 

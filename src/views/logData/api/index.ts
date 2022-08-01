@@ -19,8 +19,8 @@ export default {
     return request.get(`/extension/api/list/${pageNum}/${pageSize}`,{})(pathParams)
   },
   // 清空日志
-  delDataList(){
-    return request.delete('/extension/api', {})(null)
+  delDataList(val: any){
+    return request.delete('/extension/api', {})(val)
   }
   // getDataList: request.get(flag + '/echatserver/reqinfo/list/{pageNum}/{pageSize}', {})
 } 
