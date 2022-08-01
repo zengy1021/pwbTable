@@ -38,13 +38,13 @@ let requestFlag = false
 const http = (url: string, method: string, options: any = {}) => {
   const baseUrl = ''
   return (data: any, paramsSerializer: any = null) => {
-    const params = data
+    let params = data
     // 数据处理
-    const headers = options.headers || {
+    let headers = options.headers || {
       contentType: 'application/json'
     }
     // const ignoreMessage = options.ignoreMessage
-    const { contentType } = headers
+    let { contentType } = headers
     if (contentType === 'application/x-www-form-urlencoded') {
       // data = qs.stringify(data)
     }
@@ -53,9 +53,9 @@ const http = (url: string, method: string, options: any = {}) => {
       // params = qs.stringify(data)
     }
 
-    // headers = Object.assign({
-    //   'Accept-Language': getLocale()
-    // }, headers)
+    headers = Object.assign({
+      'companyId': '531521'
+    }, headers)
     return new Promise((resolve, reject) => {
       const newOption: any = {
         url: baseUrl + url,

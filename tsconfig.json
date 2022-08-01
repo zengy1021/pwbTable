@@ -38,7 +38,7 @@
     "tests/**/*.tsx",
     "**/*.ts",
      "**/*.tsx"
-  ],
+, "src/store/actions.ss", "src/store/state.js"  ],
   "exclude": [
     "node_modules"
   ],

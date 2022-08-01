@@ -1,7 +1,17 @@
 <template>
   <div>
     <div class="headerInfo">
-      <div class="title"></div>
+      <div class="title">
+        <span style="color:#fff;font-size:16px;font-weight:700">companyId：</span>
+          <el-select v-model="value" placeholder="请选择">
+          <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+      </div>
       <div class="userInfo">
         <!-- <i class="userSvg"></i> -->
         <i class="icon iconfont icon-touxiang" style="fontsize: 18px"></i>
@@ -12,9 +22,16 @@
   </div>
 </template>
 <script>
+
 export default {
   data() {
-    return {}
+    return {
+      value:'531521',
+      options:[{
+        label:'公司Id1',
+        value:'531521'
+      }]
+    }
   },
   methods: {}
 }
