@@ -98,6 +98,11 @@ export default {
           path: '/ticketData',
           icon: 'el-icon-s-order'
         },
+        {
+          title: '客户数据',
+          path: '/crmData',
+          icon: 'el-icon-s-order'
+        },
         // {
         //   title: '消息测试',
         //   path: '/messageList',

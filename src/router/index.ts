@@ -73,6 +73,11 @@ const routes: RouteConfig[] = [
     name: 'ticketData',
     component: () => import(/* webpackChunkName: "about" */ '@/views/ticketData/index.vue'),
   },
+  { // 工单数据
+    path: '/crmData',
+    name: 'crmData',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/crmData/index.vue'),
+  },
   { // 数据展示
     path: '/messageList',
     name: 'MessageList',
