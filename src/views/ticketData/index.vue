@@ -234,12 +234,6 @@
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  工单附件信息，JSON字符串<br>(attachments)
-                </template>
-                {{ props.row.attachments }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
                   工单自定义字段<br>(t1)
                 </template>
                 {{ props.row.t1 }}
@@ -357,6 +351,14 @@
                   工单自定义字段<br>(t20)
                 </template>
                 {{ props.row.t20 }}
+              </el-descriptions-item>
+            </el-descriptions>
+            <el-descriptions size="medium" title="工单附件（attachments）" class="margin-top" :column="1" border>
+              <el-descriptions-item>
+                <template slot="label">
+                  工单附件信息，JSON字符串<br>(attachments)
+                </template>
+                {{ props.row.attachments }}
               </el-descriptions-item>
             </el-descriptions>
             <el-descriptions size="medium" title="工单满意度数据（evaluate）" class="margin-top" :column="3" border>
@@ -854,13 +856,63 @@
           <template slot-scope="scope">
             <el-popover
                 placement="right"
-                width="600"
+                width="1000"
                 trigger="click">
               <el-table :data="contentList">
                 <el-table-column width="170" property="createTime" label="工单回复时间"></el-table-column>
-                <el-table-column width="100" property="jobAttribute" label="工单属性" :formatter="setJobAttribute"></el-table-column>
-                <el-table-column width="150" property="status" label="变更后的工单状态" :formatter="setJobStatus"></el-table-column>
                 <el-table-column width="100" property="replyType" label="回复类型" :formatter="setJobReplyType"></el-table-column>
+                <el-table-column align="center" label="工单回复数据变化">
+                  <el-table-column align="center" width="200" label="工单回复内容">
+                    <template slot-scope="scope">
+                      <div v-html="scope.row.replyContent"></div>
+                    </template>
+                  </el-table-column>
+                  <el-table-column width="170" property="replyEmail" label="工单回复邮箱"></el-table-column>
+                  <el-table-column width="170" property="replyPhone" label="工单回复电话"></el-table-column>
+                </el-table-column>
+                <el-table-column align="center" label="工单属性数据变化">
+                  <el-table-column width="150" property="status" label="变更后的工单状态" :formatter="setJobStatus"></el-table-column>
+                  <el-table-column width="170" property="status" label="工单状态" :formatter="setJobStatus"></el-table-column>
+                  <el-table-column width="170" property="priority" label="工单优先级" :formatter="setJobPriority"></el-table-column>
+                  <el-table-column width="170" property="jobType" label="工单类型" :formatter="setJobType"></el-table-column>
+                </el-table-column>
+                <el-table-column align="center" label="工单主题变化">
+                  <el-table-column width="170" property="topicId" label="工单主题ID"></el-table-column>
+                  <el-table-column width="170" property="topicName" label="工单主题名称"></el-table-column>
+                </el-table-column>
+                <el-table-column align="center" label="工单指派信息变化">
+                  <el-table-column width="170" property="distributeStaffId" label="工单指派客服ID"></el-table-column>
+                  <el-table-column width="170" property="distributeStaffName" label="工单指派客服姓名"></el-table-column>
+                  <el-table-column width="170" property="distributeStaffRole" label="工单指派客服角色名"></el-table-column>
+                  <el-table-column width="170" property="distributeStaffLogname" label="工单指派客服账号"></el-table-column>
+                </el-table-column>
+                <el-table-column align="center" label="工单更新人数据">
+                  <el-table-column width="170" property="updaterType" label="更新人类型" :formatter="setJobUpdaterType"></el-table-column>
+                  <el-table-column width="170" property="updaterId" label="客服ID或访客ID"></el-table-column>
+                  <el-table-column width="170" property="updaterName" label="客服姓名或访客姓名"></el-table-column>
+                </el-table-column>
+                <el-table-column align="center" label="自定义字段">
+                  <el-table-column width="170" property="t1" label="工单自定义字段(t1)"></el-table-column>
+                  <el-table-column width="170" property="t2" label="工单自定义字段(t2)"></el-table-column>
+                  <el-table-column width="170" property="t3" label="工单自定义字段(t3)"></el-table-column>
+                  <el-table-column width="170" property="t4" label="工单自定义字段(t4)"></el-table-column>
+                  <el-table-column width="170" property="t5" label="工单自定义字段(t5)"></el-table-column>
+                  <el-table-column width="170" property="t6" label="工单自定义字段(t6)"></el-table-column>
+                  <el-table-column width="170" property="t7" label="工单自定义字段(t7)"></el-table-column>
+                  <el-table-column width="170" property="t8" label="工单自定义字段(t8)"></el-table-column>
+                  <el-table-column width="170" property="t9" label="工单自定义字段(t9)"></el-table-column>
+                  <el-table-column width="170" property="t10" label="工单自定义字段(t10)"></el-table-column>
+                  <el-table-column width="170" property="t11" label="工单自定义字段(t11)"></el-table-column>
+                  <el-table-column width="170" property="t12" label="工单自定义字段(t12)"></el-table-column>
+                  <el-table-column width="170" property="t13" label="工单自定义字段(t13)"></el-table-column>
+                  <el-table-column width="170" property="t14" label="工单自定义字段(t14)"></el-table-column>
+                  <el-table-column width="170" property="t15" label="工单自定义字段(t15)"></el-table-column>
+                  <el-table-column width="170" property="t16" label="工单自定义字段(t16)"></el-table-column>
+                  <el-table-column width="170" property="t17" label="工单自定义字段(t17)"></el-table-column>
+                  <el-table-column width="170" property="t18" label="工单自定义字段(t18)"></el-table-column>
+                  <el-table-column width="170" property="t19" label="工单自定义字段(t19)"></el-table-column>
+                  <el-table-column width="170" property="t20" label="工单自定义字段(t20)"></el-table-column>
+                </el-table-column>
               </el-table>
               <el-button slot="reference" @click="getTicketContent(list[scope.$index])">查看</el-button>
             </el-popover>
@@ -943,6 +995,9 @@ export default class DataList extends Vue {
     }
   }
   // 工单类型
+  private setJobPriority(row: any, column: any) {
+    return this.getJobReplyType(row.priority);
+  }
   private getJobPriority(val: Number) {
     switch (val) {
       case 1:
@@ -956,6 +1011,9 @@ export default class DataList extends Vue {
     }
   }
   // 工单优先级
+  private setJobType(row: any, column: any) {
+    return this.getJobReplyType(row.jobType);
+  }
   private getJobType(val: Number) {
     switch (val) {
       case 1:
@@ -1007,6 +1065,9 @@ export default class DataList extends Vue {
     }
   }
   // 工单更新人类型
+  private setJobUpdaterType(row: any, column: any) {
+    return this.getJobReplyType(row.updaterType);
+  }
   private getJobUpdaterType(val: Number) {
     switch (val) {
       case -1:

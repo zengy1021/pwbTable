@@ -854,12 +854,12 @@
             <el-popover placement="right" width="850" trigger="click">
               <el-table :data="pageList">
                 <el-table-column width="170" property="transferTime" label="转接时间"></el-table-column>
-                <el-table-column label="发起转接的客服">
+                <el-table-column align="center" label="发起转接的客服">
                   <el-table-column align="center" width="170" property="fromStaffId" label="客服ID"></el-table-column>
                   <el-table-column align="center" width="170" property="fromStaffLogname" label="客服账号"></el-table-column>
                   <el-table-column align="center" width="170" property="fromStaffName" label="客服姓名"></el-table-column>
                 </el-table-column>
-                <el-table-column label="接受转接的客服">
+                <el-table-column align="center" label="接受转接的客服">
                   <el-table-column align="center" width="170" property="toStaffId" label="客服ID"></el-table-column>
                   <el-table-column align="center" width="170" property="toStaffLogname" label="客服账号"></el-table-column>
                   <el-table-column align="center" width="170" property="toStaffName" label="客服姓名"></el-table-column>
