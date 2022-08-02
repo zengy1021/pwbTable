@@ -777,6 +777,7 @@ export default class DataList extends Vue {
       this.pageInfo.total = res.data.total
     }
   }
+  // 根据浏览记录id 请求浏览轨迹数据
   private async getTrackPage(val: any) {
     interface Params {
       trackRecordId:Number
@@ -787,6 +788,7 @@ export default class DataList extends Vue {
     const res: any = await api.trackPageList(params);
     this.pageList = res.data;
   }
+
   private search() {
     // console.log(this.searchObj);
 

@@ -8,7 +8,7 @@
     <div class="table_content">
       <el-table ref="table" :data="list" row-key="id" :expand-row-keys="expends"  height="calc(100% - 10px)" highlight-current-row stripe>
         <el-table-column type="expand">
-            <template slot="header">
+          <template slot="header">
               <el-checkbox :checked="expandStatus" @change="changeExpend"></el-checkbox>
               <!-- <el-button @click="changeExpend">展开/收起</el-button> -->
             </template>
@@ -76,13 +76,7 @@
               </el-descriptions-item>
             </el-descriptions>
             <el-descriptions size="medium" title="对话数据（chatData）" class="margin-top" :column="3" border>
-              <el-descriptions-item>
-                <template slot="label">
-                  对话页面标题<br>(chatPageTitle)
-                </template>
-                {{ props.row.chatPageTitle }}
-              </el-descriptions-item>
-              <el-descriptions-item>
+              <el-descriptions-item >
                 <template slot="label">
                   访客的对话次数<br>(chatTimes)
                 </template>
@@ -210,21 +204,9 @@
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  客服ID<br>(staffId)
+                  对话页面标题<br>(chatPageTitle)
                 </template>
-                {{ getStaffId(props.row.staffId) }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  客服账号<br>(staffLogname)
-                </template>
-                {{ props.row.staffLogname }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  客服姓名<br>(staffName)
-                </template>
-                {{ props.row.staffName }}
+                {{ props.row.chatPageTitle }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
@@ -233,13 +215,7 @@
                 {{ props.row.chatPage }}
               </el-descriptions-item>
             </el-descriptions>
-            <el-descriptions size="medium" title="评价以及评估数据" class="margin-top" :column="3" border>
-              <el-descriptions-item>
-                <template slot="label">
-                  是否邀评<br>(activelyinviteEvaluating)
-                </template>
-                {{ getChatActivelyinviteEvaluating(props.row.activelyinviteEvaluating) }}
-              </el-descriptions-item>
+            <el-descriptions size="medium" title="对话满意度评价数据" class="margin-top" :column="3" border>
               <el-descriptions-item>
                 <template slot="label">
                   满意度评价<br>(chatScore)
@@ -278,6 +254,14 @@
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
+                  是否邀评<br>(activelyinviteEvaluating)
+                </template>
+                {{ getChatActivelyinviteEvaluating(props.row.activelyinviteEvaluating) }}
+              </el-descriptions-item>
+            </el-descriptions>
+            <el-descriptions size="medium" title="对话主题评估数据" class="margin-top" :column="3" border>
+              <el-descriptions-item>
+                <template slot="label">
                   对话评估主题<br>(chatSubject)
                 </template>
                 {{ props.row.chatSubject }}
@@ -290,6 +274,24 @@
               </el-descriptions-item>
             </el-descriptions>
             <el-descriptions size="medium" title="留言数据" class="margin-top" :column="3" border>
+              <el-descriptions-item>
+                <template slot="label">
+                  客服ID<br>(staffId)
+                </template>
+                {{ getStaffId(props.row.staffId) }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  客服账号<br>(staffLogname)
+                </template>
+                {{ props.row.staffLogname }}
+              </el-descriptions-item>
+              <el-descriptions-item>
+                <template slot="label">
+                  客服姓名<br>(staffName)
+                </template>
+                {{ props.row.staffName }}
+              </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
                   所有者ID<br>(ownerId)
@@ -823,7 +825,50 @@
         <el-table-column width="140" prop="chatEvent" label="对话事件类型" :formatter="setChatEvent"> </el-table-column>
         <el-table-column width="200" prop="chatRequestTime" label="对话请求时间"> </el-table-column>
         <el-table-column width="200" prop="chatEndTime" label="对话结束时间"></el-table-column>
-        <el-table-column prop="chatRecordType" label="记录类型" :formatter="setChatRecordType"> </el-table-column>
+        <el-table-column width="200" prop="chatRecordType" label="记录类型" :formatter="setChatRecordType"> </el-table-column>
+        <el-table-column fixed="right" label="客服Kpi数据">
+          <template slot-scope="scope">
+            <el-popover placement="right" width="850" trigger="click">
+              <el-table :data="pageList">
+                <el-table-column align="center" width="100" property="staffId" label="客服ID"></el-table-column>
+                <el-table-column align="center" width="170" property="staffLogname" label="客服账号"></el-table-column>
+                <el-table-column align="center" width="100" property="staffName" label="客服姓名"></el-table-column>
+                <el-table-column align="center" width="120" label="首次响应时长">
+                  <template slot-scope="scope"> {{ scope.row.firstAnswerTime+' 秒' }} </template>
+                </el-table-column>
+                <el-table-column align="center" width="120" label="平均响应时长">
+                  <template slot-scope="scope"> {{ scope.row.avgAnswerTime+' 秒' }} </template>
+                </el-table-column>
+                <el-table-column align="center" width="170" property="visitorSendMsg" label="访客发送消息条数"></el-table-column>
+                <el-table-column align="center" width="170" property="staffSendMsg" label="客服发送消息条数"></el-table-column>
+                <el-table-column align="center" width="100" label="总通话时长"><
+                  <template slot-scope="scope"> {{ scope.row.duration+' 秒' }} </template>
+                </el-table-column>
+              </el-table>
+              <el-button slot="reference" @click="getStaffKpis(list[scope.$index])" :disabled="isTransfer(list[scope.$index])">查看</el-button>
+            </el-popover>
+          </template>
+        </el-table-column>
+        <el-table-column width="150" fixed="right" label="转接记录">
+          <template slot-scope="scope">
+            <el-popover placement="right" width="850" trigger="click">
+              <el-table :data="pageList">
+                <el-table-column width="170" property="transferTime" label="转接时间"></el-table-column>
+                <el-table-column label="发起转接的客服">
+                  <el-table-column align="center" width="170" property="fromStaffId" label="客服ID"></el-table-column>
+                  <el-table-column align="center" width="170" property="fromStaffLogname" label="客服账号"></el-table-column>
+                  <el-table-column align="center" width="170" property="fromStaffName" label="客服姓名"></el-table-column>
+                </el-table-column>
+                <el-table-column label="接受转接的客服">
+                  <el-table-column align="center" width="170" property="toStaffId" label="客服ID"></el-table-column>
+                  <el-table-column align="center" width="170" property="toStaffLogname" label="客服账号"></el-table-column>
+                  <el-table-column align="center" width="170" property="toStaffName" label="客服姓名"></el-table-column>
+                </el-table-column>
+              </el-table>
+              <el-button slot="reference" @click="getTransfers(list[scope.$index])" :disabled="isTransfer(list[scope.$index])">查看</el-button>
+            </el-popover>
+          </template>
+        </el-table-column>
       </el-table>
     </div>
     <div class="page_info">
@@ -847,6 +892,7 @@ import dayJs from 'dayjs'
 })
 export default class DataList extends Vue {
   private list: any = []
+  private pageList: any =[]
   private expandStatus:Boolean = false
   private searchObj:any = {}
   private pickerOptions:any = {
@@ -1142,6 +1188,7 @@ export default class DataList extends Vue {
   private created() {
     this.requestData()
   }
+
   private async requestData() {
     interface Params {
       pageNum:Number,
@@ -1165,6 +1212,7 @@ export default class DataList extends Vue {
       this.pageInfo.total = res.data.total
     }
   }
+
   private search() {
     // console.log(this.searchObj);
     
@@ -1173,6 +1221,34 @@ export default class DataList extends Vue {
     // this.pageInfo.total = 0
     this.requestData()
 
+  }
+  // 根据对话记录ID 查询对话转接记录
+  private async getTransfers(val: any) {
+    interface Params {
+      chatRecordId:Number
+    }
+    const params: Params = {
+      chatRecordId:val.chatRecordId
+    }
+    const res: any = await api.getTransferList(params);
+    this.pageList = res.data;
+  }
+
+  // 判断对话是否有转接记录
+  private isTransfer(val: any) {
+    return val.isTransfer == 0 ? true : false;
+  }
+
+  // 根据对话记录ID 查询对话客服kpi记录
+  private async getStaffKpis(val: any) {
+    interface Params {
+      chatRecordId:Number
+    }
+    const params: Params = {
+      chatRecordId:val.chatRecordId
+    }
+    const res: any = await api.getStaffKpiList(params);
+    this.pageList = res.data;
   }
 
   private async del() {
