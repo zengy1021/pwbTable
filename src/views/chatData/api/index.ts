@@ -18,6 +18,14 @@ export default {
     }
     return request.get(`/extension/chat/list/${pageNum}/${pageSize}`,{})(pathParams)
   },
+  // 转接记录
+  getTransferList(param: any) {
+    return request.get('/extension/chat/transfer', {})(param)
+  },
+  // 客服对话kpi数据
+  getStaffKpiList(param: any) {
+    return request.get('/extension/chat/staffkpi', {})(param)
+  },
   // 清空日志
   delDataList(){
     return request.delete('/extension/chat', {})(null)
