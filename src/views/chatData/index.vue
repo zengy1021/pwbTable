@@ -144,9 +144,9 @@
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  访客等待时长<br>(chatWaiteTime)
+                  访客等待时长<br>(chatWaitTime)
                 </template>
-                {{ (props.row.chatWaiteTime = props.row.chatWaiteTime || 0)/1000 + " 秒" }}
+                {{ (props.row.chatWaitTime = props.row.chatWaitTime || 0)/1000 + " 秒" }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
