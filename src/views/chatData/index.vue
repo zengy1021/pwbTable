@@ -144,15 +144,15 @@
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  访客等待时长。单位：毫秒<br>(chatWaiteTime)
+                  访客等待时长<br>(chatWaiteTime)
                 </template>
-                {{ props.row.chatWaiteTime }}
+                {{ (props.row.chatWaiteTime = props.row.chatWaiteTime || 0)/1000 + " 秒" }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
                   本次分配对话的分组ID<br>(chatDepartmentId)
                 </template>
-                {{ props.row.chatDepartmentId }}
+                {{ getChatDepartmentId(props.row.chatDepartmentId) }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
@@ -174,21 +174,21 @@
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  通话时长。单位：毫秒<br>(chatTotalTime)
+                  通话时长<br>(chatTotalTime)
                 </template>
-                {{ props.row.chatTotalTime }}
+                {{ (props.row.chatTotalTime = props.row.chatTotalTime || 0)/1000 + " 秒" }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  首次响应时长。单位：毫秒<br>(firstAnswerTime)
+                  首次响应时长<br>(firstAnswerTime)
                 </template>
-                {{ props.row.firstAnswerTime }}
+                {{ (props.row.firstAnswerTime = props.row.firstAnswerTime || 0)/1000 + " 秒" }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
-                  平均响应时长。单位：毫秒<br>(avgAnswerTime)
+                  平均响应时长<br>(avgAnswerTime)
                 </template>
-                {{ props.row.avgAnswerTime }}
+                {{ (props.row.avgAnswerTime = props.row.avgAnswerTime || 0)/1000 + " 秒" }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
@@ -810,7 +810,7 @@
                 <template slot="label">
                   本次分配对话的接待组ID<br>(routeChatDepartmentId)
                 </template>
-                {{ props.row.routeChatDepartmentId }}
+                {{ getChatDepartmentId(props.row.routeChatDepartmentId) }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
@@ -944,6 +944,8 @@ export default class DataList extends Vue {
         return "留言";
       case 4:
         return "推送";
+      default:
+        return val;
     }
   }
   // 对话事件类型
@@ -986,6 +988,8 @@ export default class DataList extends Vue {
         return "微信指定路由接入";
       case 26:
         return "邮箱渠道发送留言接入";
+      default:
+        return val;
     }
   }
   // 对话状态
@@ -1003,6 +1007,8 @@ export default class DataList extends Vue {
         return "机器人对话开始";
       case 6:
         return "机器人对话结束";
+      default:
+        return val;
     }
   }
   // 是否存在转接
@@ -1012,6 +1018,8 @@ export default class DataList extends Vue {
         return "无转接";
       case 1:
         return "有转接";
+      default:
+        return val;
     }
   }
   // 对话类型
@@ -1025,6 +1033,8 @@ export default class DataList extends Vue {
         return "离线消息";
       case 5:
         return "机器人对话";
+      default:
+        return val;
     }
   }
   // 对话类型
@@ -1040,6 +1050,8 @@ export default class DataList extends Vue {
         return "满意";
       case 5:
         return "非常满意";
+      default:
+        return val;
     }
   }
   // 对话类型
@@ -1071,6 +1083,8 @@ export default class DataList extends Vue {
         return "客服主动对话后留言/机器人对话结束";
       case 19:
         return "机器人超时结束";
+      default:
+        return val;
     }
   }
   // 对话类型
@@ -1080,6 +1094,8 @@ export default class DataList extends Vue {
         return "没有邀评";
       case 1:
         return "有邀评";
+      default:
+        return val;
     }
   }
   // 对话分组id
@@ -1087,6 +1103,8 @@ export default class DataList extends Vue {
     switch (val) {
       case 0:
         return "全部人员可接";
+      default:
+        return val;
     }
   }
   // 对话类型
@@ -1094,6 +1112,8 @@ export default class DataList extends Vue {
     switch (val) {
       case -1:
         return "系统自动分配";
+      default:
+        return val;
     }
   }
   // 性别 todo:公共
@@ -1137,6 +1157,8 @@ export default class DataList extends Vue {
         return "自定义渠道";
       case 11:
         return "邮箱渠道";
+      default:
+        return val;
     }
   }
   // 访客身份类型 todo:公共
@@ -1154,6 +1176,8 @@ export default class DataList extends Vue {
         return "自定义渠道";
       case 8:
         return "邮箱渠道";
+      default:
+        return val;
     }
   }
   // 关键词类型 todo:公共
@@ -1165,6 +1189,8 @@ export default class DataList extends Vue {
         return "自然优化";
       case 2:
         return "推广";
+      default:
+        return val;
     }
   }
   // 接入对话的路由ID todo:公共

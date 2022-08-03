@@ -154,6 +154,8 @@ export default class DataList extends Vue {
         return "隐身";
       case 5:
         return "退出";
+      default:
+        return val;
     }
   }
   private created() {

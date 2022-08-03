@@ -147,6 +147,8 @@ export default class DataList extends Vue {
         return "在线";
       case 2:
         return "离线";
+      default:
+        return val;
     }
   }
   private created() {

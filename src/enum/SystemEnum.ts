@@ -14,6 +14,8 @@ export default {
         return "内部工单";
       case 2:
         return "外部工单";
+      default:
+        return val;
     }
   },
   // 工单状态
@@ -34,6 +36,8 @@ export default {
         return "已解决";
       case 6:
         return "已关闭";
+      default:
+        return val;
     }
   },
   // 回复类型
@@ -48,6 +52,8 @@ export default {
         return "外部回复";
       case 3:
         return "内部回复和外部回复";
+      default:
+        return val;
     }
   },
   // 工单类型
@@ -61,6 +67,8 @@ export default {
         return "高";
       case 4:
         return "紧急";
+      default:
+        return val;
     }
   },
   // 工单优先级
@@ -74,6 +82,8 @@ export default {
         return "故障";
       case 4:
         return "任务";
+      default:
+        return val;
     }
   },
   // 请求者
@@ -83,6 +93,8 @@ export default {
         return "客服";
       case 0:
         return "访客";
+      default:
+        return val;
     }
   },
   // 满意度评价等级
@@ -98,6 +110,8 @@ export default {
         return "满意";
       case 5:
         return "非常满意";
+      default:
+        return val;
     }
   },
   // 访客身份类型 todo:公共
@@ -115,6 +129,8 @@ export default {
         return "自定义渠道";
       case 8:
         return "邮箱渠道";
+      default:
+        return val;
     }
   },
   // 客户端没接 todo:公共
@@ -132,6 +148,8 @@ export default {
         return "自定义渠道";
       case 11:
         return "邮箱渠道";
+      default:
+        return val;
     }
   },
   // 关键词类型 todo:公共
@@ -143,6 +161,8 @@ export default {
         return "自然优化";
       case 2:
         return "推广";
+      default:
+        return val;
     }
   },
   // 接入对话的路由ID todo:公共

@@ -558,7 +558,7 @@
                 <template slot="label">
                   本次分配对话的接待组ID<br>(chatDepartmentId)
                 </template>
-                {{ props.row.chatDepartmentId }}
+                {{ getChatDepartmentId(props.row.chatDepartmentId) }}
               </el-descriptions-item>
               <el-descriptions-item>
                 <template slot="label">
@@ -656,6 +656,8 @@ export default class DataList extends Vue {
         return "在线";
       case 2:
         return "离线";
+      default:
+        return val;
     }
   }
   // 上次对话的客服
@@ -663,6 +665,8 @@ export default class DataList extends Vue {
     switch (val) {
       case 0:
         return "首次对话";
+      default:
+        return val;
     }
   }
   // 接入对话的路由ID todo:公共
@@ -695,6 +699,8 @@ export default class DataList extends Vue {
         return "自定义渠道";
       case 8:
         return "邮箱渠道";
+      default:
+        return val;
     }
   }
   // 关键词类型 todo:公共
@@ -706,6 +712,8 @@ export default class DataList extends Vue {
         return "自然优化";
       case 2:
         return "推广";
+      default:
+        return val;
     }
   }
   // 客户端没媒介 todo:公共
@@ -723,6 +731,17 @@ export default class DataList extends Vue {
         return "自定义渠道";
       case 11:
         return "邮箱渠道";
+      default:
+        return val;
+    }
+  }
+  // 分配对话的接待组id
+  private getChatDepartmentId(val: Number) {
+    switch (val) {
+      case 0:
+        return "全部人员可接待";
+      default:
+        return val;
     }
   }
   // 性别 todo:公共
