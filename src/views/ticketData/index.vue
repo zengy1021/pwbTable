@@ -1042,6 +1042,8 @@ export default class DataList extends Vue {
         return "客服";
       case 1:
         return "访客";
+      case 8:
+        return "邮箱渠道访客";
       default:
         return val;
     }

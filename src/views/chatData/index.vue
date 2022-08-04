@@ -781,7 +781,7 @@
                 {{ props.row.firstPage }}
               </el-descriptions-item>
             </el-descriptions>
-            <el-descriptions size="medium" title="路由数据（routeData）" class="margin-top" :column="3" border>
+            <el-descriptions size="medium" title="路由数据（routeData）" class="margin-top" :column="2" border>
               <el-descriptions-item>
                 <template slot="label">
                   接入对话的路由ID<br>(routeId)
