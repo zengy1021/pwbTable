@@ -845,13 +845,13 @@
             </el-descriptions>
           </template>
         </el-table-column>
-        <el-table-column width="120" prop="companyId" label="companyId"> </el-table-column>
-        <el-table-column width="120" prop="jobId" label="jobId"> </el-table-column>
-        <el-table-column width="160" prop="title" label="工单标题"> </el-table-column>
-        <el-table-column width="100" prop="jobAttribute" label="工单属性" :formatter="setJobAttribute"></el-table-column>
-        <el-table-column width="160" prop="requesterUserId" label="工单请求人"> </el-table-column>
-        <el-table-column width="160" prop="visitorName" label="访客"></el-table-column>
-        <el-table-column width="260" prop="createTime" label="创建时间"></el-table-column>
+        <el-table-column min-width="120" prop="companyId" label="companyId"> </el-table-column>
+        <el-table-column min-width="120" prop="jobId" label="jobId"> </el-table-column>
+        <el-table-column min-width="160" prop="title" label="工单标题"> </el-table-column>
+        <el-table-column min-width="100" prop="jobAttribute" label="工单属性" :formatter="setJobAttribute"></el-table-column>
+        <el-table-column min-width="160" prop="requesterUserId" label="工单请求人"> </el-table-column>
+        <el-table-column min-width="160" prop="visitorName" label="访客"></el-table-column>
+        <el-table-column min-width="260" prop="createTime" label="创建时间"></el-table-column>
         <el-table-column fixed="right" label="工单回复记录">
           <template slot-scope="scope">
             <el-popover

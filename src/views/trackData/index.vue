@@ -569,13 +569,17 @@
             </el-descriptions>
           </template>
         </el-table-column>
-        <el-table-column width="120" prop="companyId" label="companyId"> </el-table-column>
-        <el-table-column width="120" prop="trackRecordId" label="trackRecordId"> </el-table-column>
-        <el-table-column width="160" prop="visitorEnterTime" label="访客进入时间"> </el-table-column>
-        <el-table-column width="160" prop="visitorOutTime" label="访客离开时间"> </el-table-column>
-        <el-table-column width="160" prop="visitorName" label="访客"></el-table-column>
-        <el-table-column width="160" prop="createDataType" label="创建事件"></el-table-column>
-        <el-table-column width="160" prop="updateDataType" label="更新事件"></el-table-column>
+        <el-table-column min-width="120" prop="companyId" label="companyId"> </el-table-column>
+        <el-table-column min-width="120" prop="trackRecordId" label="trackRecordId"> </el-table-column>
+        <el-table-column min-width="120" prop="visitorMedia" label="终端" :formatter="setVisitorMedia"> </el-table-column>
+        <el-table-column min-width="120" prop="visitorName" label="姓名"></el-table-column>
+        <el-table-column min-width="200" label="位置">
+          <template slot-scope="scope"> {{ (scope.row.visitorCountry = scope.row.visitorCountry || '') + (scope.row.visitorProvince = scope.row.visitorProvince || '') + (scope.row.visitorCity = scope.row.visitorCity || '') }} </template>
+        </el-table-column>
+        <el-table-column min-width="160" prop="visitorEnterTime" label="访客进入时间"> </el-table-column>
+        <el-table-column min-width="160" prop="visitorOutTime" label="访客离开时间"> </el-table-column>
+        <el-table-column min-width="300" prop="referPage" label="来源页"> </el-table-column>
+        <el-table-column min-width="650" prop="firstPage" label="落地页"> </el-table-column>
         <el-table-column fixed="right" label="浏览轨迹">
           <template slot-scope="scope">
             <el-popover placement="right" width="850" trigger="click">
@@ -717,6 +721,9 @@ export default class DataList extends Vue {
     }
   }
   // 客户端没媒介 todo:公共
+  private setVisitorMedia(row: any, column: any) {
+    return this.getVisitorMedia(row.visitorMedia);
+  }
   private getVisitorMedia(val: Number) {
     switch (val) {
       case 1:

@@ -821,11 +821,16 @@
             </el-descriptions>
           </template>
         </el-table-column>
-        <el-table-column width="120" prop="chatRecordId" label="对话ID"> </el-table-column>
-        <el-table-column width="140" prop="chatEvent" label="对话事件类型" :formatter="setChatEvent"> </el-table-column>
-        <el-table-column width="200" prop="chatRequestTime" label="对话请求时间"> </el-table-column>
-        <el-table-column width="200" prop="chatEndTime" label="对话结束时间"></el-table-column>
-        <el-table-column width="200" prop="chatRecordType" label="记录类型" :formatter="setChatRecordType"> </el-table-column>
+        <el-table-column min-width="120" prop="chatRecordId" label="对话ID"> </el-table-column>
+        <el-table-column min-width="140" prop="chatEvent" label="对话事件类型" :formatter="setChatEvent"> </el-table-column>
+        <el-table-column min-width="120" prop="visitorMedia" label="终端" :formatter="setVisitorMedia"> </el-table-column>
+        <el-table-column min-width="120" prop="visitorName" label="姓名"></el-table-column>
+        <el-table-column min-width="200" label="位置">
+          <template slot-scope="scope"> {{ (scope.row.visitorCountry = scope.row.visitorCountry || '') + (scope.row.visitorProvince = scope.row.visitorProvince || '') + (scope.row.visitorCity = scope.row.visitorCity || '') }} </template>
+        </el-table-column>
+        <el-table-column min-width="200" prop="chatRequestTime" label="对话请求时间"> </el-table-column>
+        <el-table-column min-width="200" prop="chatEndTime" label="对话结束时间"></el-table-column>
+        <el-table-column min-width="200" prop="chatRecordType" label="记录类型" :formatter="setChatRecordType"> </el-table-column>
         <el-table-column fixed="right" label="客服Kpi数据">
           <template slot-scope="scope">
             <el-popover placement="right" width="850" trigger="click">
@@ -849,7 +854,7 @@
             </el-popover>
           </template>
         </el-table-column>
-        <el-table-column width="150" fixed="right" label="转接记录">
+        <el-table-column fixed="right" label="转接记录">
           <template slot-scope="scope">
             <el-popover placement="right" width="850" trigger="click">
               <el-table :data="pageList">
@@ -1141,6 +1146,9 @@ export default class DataList extends Vue {
       default:
         return val;
     }
+  }
+  private setVisitorMedia(row: any, column: any) {
+    return this.getVisitorMedia(row.visitorMedia);
   }
   // 客户端没接 todo:公共
   private getVisitorMedia(val: Number) {

@@ -381,9 +381,18 @@
             </el-descriptions>
           </template>
         </el-table-column>
-        <el-table-column width="120" prop="companyId" label="companyId"> </el-table-column>
-        <el-table-column width="200" prop="id" label="crmId"> </el-table-column>
-        <el-table-column width="160" prop="name" label="姓名"> </el-table-column>
+        <el-table-column min-width="120" prop="companyId" label="companyId"> </el-table-column>
+        <el-table-column min-width="200" prop="id" label="crmId"> </el-table-column>
+        <el-table-column min-width="160" prop="name" label="姓名"> </el-table-column>
+        <el-table-column min-width="160" label="性别">
+          <template slot-scope="scope"> {{ getGender(scope.row.gender) }} </template>
+        </el-table-column>
+        <el-table-column min-width="160" prop="age" label="年龄"> </el-table-column>
+        <el-table-column min-width="160" prop="phone" label="电话"> </el-table-column>
+        <el-table-column min-width="160" prop="email" label="邮箱"> </el-table-column>
+        <el-table-column min-width="200" label="位置">
+          <template slot-scope="scope"> {{ (scope.row.nation = scope.row.nation || '') + (scope.row.province = scope.row.province || '') + (scope.row.city = scope.row.city || '') + (scope.row.address = scope.row.address || '') }} </template>
+        </el-table-column>
         <el-table-column prop="createTime" label="创建时间"></el-table-column>
       </el-table>
     </div>
