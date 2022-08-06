@@ -109,6 +109,11 @@ export default {
         //   icon: 'el-icon-toilet-paper'
         // },
         {
+          title: '加解密工具',
+          path: '/AESCoding',
+          icon: 'el-icon-s-platform'
+        },
+        {
           title: '一洽配置',
           path: '/echatConfig',
           icon: 'el-icon-s-platform'

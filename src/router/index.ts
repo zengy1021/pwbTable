@@ -88,6 +88,11 @@ const routes: RouteConfig[] = [
     name: 'EchatConfig',
     component: () => import(/* webpackChunkName: "about" */ '@/views/EchatConfig/index.vue'),
   },
+  { // 加解密工具
+    path: '/AESCoding',
+    name: 'AESCoding',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/AESCode/index.vue'),
+  },
   { // 微信配置
     path: '/wechatConfig',
     name: 'WechatConfig',
