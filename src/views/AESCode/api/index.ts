@@ -17,27 +17,27 @@ export default {
         endDate:params.endDate
       }
     }
-    return request.get(flag + `/echatserver/reqinfo/list/${pageNum}/${pageSize}`,{})(pathParams?pathParams:data)
+    return request.get(flag + `/extension/reqinfo/list/${pageNum}/${pageSize}`,{})(pathParams?pathParams:data)
   },
   // 一洽配置-查询所有数据
   getEchatConfigDataList(){
-    return request.get(`/echatserver/companyconfig/list/1/1000`,{})(null)
+    return request.get(`/extension/companyconfig/list/1/1000`,{})(null)
   },
   //一洽配置-根据id查看详情
   getEchatConfigDataByCompId(compId:string){
-    return request.get(flag + `/echatserver/system/config/echat/${compId}`,{})(compId)
+    return request.get(flag + `/extension/system/config/echat/${compId}`,{})(compId)
   },
   //一洽配置-新增公司id
   addEchatConfigDataByCompId(val: any){
-    return request.post(flag + `/echatserver/system/config/echat/compid`,{})(val)
+    return request.post(flag + `/extension/system/config/echat/compid`,{})(val)
   },
   //一洽配置-更新数据
   updateEchatConfigDataByCompId(val: any){
-    return request.put(`/echatserver/companyconfig`,{})(val)
+    return request.put(`/extension/companyconfig`,{})(val)
   },
   //一洽配置-更新数据
   deleteEchatConfigDataByCompId(val: any){
-    return request.delete(flag + `/echatserver/system/config/echat`,{})(val)
+    return request.delete(flag + `/extension/system/config/echat`,{})(val)
   },
-  // getDataList: request.get(flag + '/echatserver/reqinfo/list/{pageNum}/{pageSize}', {})
+  // getDataList: request.get(flag + '/extension/reqinfo/list/{pageNum}/{pageSize}', {})
 } 
