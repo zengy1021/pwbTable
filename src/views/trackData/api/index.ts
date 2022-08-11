@@ -16,15 +16,15 @@ export default {
         endDate: params.endDate
       }
     }
-    return request.get(`/extension/track/list/${pageNum}/${pageSize}`, {})(pathParams)
+    return request.get(`/eApi/track/list/${pageNum}/${pageSize}`, {})(pathParams)
   },
   // 浏览轨迹
   trackPageList(param: any) {
-    return request.get('/extension/track/page', {})(param)
+    return request.get('/eApi/track/page', {})(param)
   },
   // 清空日志
   delDataList() {
-    return request.delete('/extension/track', {})(null)
+    return request.delete('/eApi/track', {})(null)
   }
   // getDataList: request.get(flag + '/echatserver/reqinfo/list/{pageNum}/{pageSize}', {})
 }

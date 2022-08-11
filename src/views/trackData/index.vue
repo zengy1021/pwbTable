@@ -588,7 +588,7 @@
                 <el-table-column width="170" property="pageTitle" label="访问页标题"></el-table-column>
                 <el-table-column width="500" property="pageUrl" label="访问页路径"></el-table-column>
               </el-table>
-              <el-button slot="reference" @click="getTrackPage(list[scope.$index])">查看</el-button>
+              <el-button slot="reference" @click="getTrackPage(list[scope.$index])" :disabled="isEnd(list[scope.$index])">查看</el-button>
             </el-popover>
           </template>
         </el-table-column>
@@ -813,6 +813,11 @@ export default class DataList extends Vue {
     }
     const res: any = await api.trackPageList(params);
     this.pageList = res.data;
+  }
+
+  //判断是否有浏览轨迹
+  private isEnd(val: any) {
+    return val.visitorOutTime != null ? false : true;
   }
 
   private search() {
