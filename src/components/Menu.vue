@@ -32,6 +32,11 @@ export default {
           path: '/home',
           icon: 'el-icon-s-home'
         },
+        {
+          title: '公司配置',
+          path: '/echatConfig',
+          icon: 'el-icon-s-platform'
+        },
         // {
         //   title: 'pwb数据表格',
         //   path: '/adminList',
@@ -108,19 +113,14 @@ export default {
         //   path: '/messageList',
         //   icon: 'el-icon-toilet-paper'
         // },
+        // {
+        //   title: '微信配置',
+        //   path: '/wechatConfig',
+        //   icon: 'el-icon-s-platform'
+        // },
         {
           title: '加解密工具',
           path: '/AESCoding',
-          icon: 'el-icon-s-platform'
-        },
-        {
-          title: '一洽配置',
-          path: '/echatConfig',
-          icon: 'el-icon-s-platform'
-        },
-        {
-          title: '微信配置',
-          path: '/wechatConfig',
           icon: 'el-icon-s-platform'
         },
         // {

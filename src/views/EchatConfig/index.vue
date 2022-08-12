@@ -185,9 +185,9 @@ export default class DataList extends Vue {
       inputPattern: /^[A-Za-z0-9]+$]?/,
       inputErrorMessage: '输入格式只支持数字、英文字母'
     }).then(async (val: any) => {
-      let compId : string = val.value;
+      let companyId : string = val.value;
       let echatConfig = new EchatConfig();
-      echatConfig.setCompId(compId);
+      echatConfig.setCompId(companyId);
       const result: any = await api.addEchatConfigDataByCompId(echatConfig);
       if (result.code == 200) {
         this.$message({
@@ -197,7 +197,7 @@ export default class DataList extends Vue {
         // 刷新公司id列表
         this.requestData();
         // 刷新公司配置
-        this.form.companyId = compId;
+        this.form.companyId = companyId;
         this.form.appid = '';
         this.form.companyName = '';
         this.form.aeskey = '';
@@ -255,10 +255,10 @@ export default class DataList extends Vue {
 
 class EchatConfig {
   // 公司id
-  private compId: string = '';
+  private companyId: string = '';
 
-  setCompId(compId: string): void {
-    this.compId = compId;
+  setCompId(companyId: string): void {
+    this.companyId = companyId;
   }
 
 }

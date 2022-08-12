@@ -6,5 +6,5 @@ const flag = process.env.NODE_ENV !== 'development' ? '/eApi' : '/eApi'
 // }
 export default {
   // 获取数据
-  getCompanyList: request.get(flag + `/companyconfig/infolist`, {})
+  getCompanyList: request.get(`/extension/companyconfig/infolist`, {})
 }
