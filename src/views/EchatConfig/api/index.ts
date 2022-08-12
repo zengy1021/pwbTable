@@ -35,9 +35,9 @@ export default {
   updateEchatConfigDataByCompId(val: any){
     return request.put(`/extension/companyconfig`,{})(val)
   },
-  //一洽配置-更新数据
+  //一洽配置-删除数据
   deleteEchatConfigDataByCompId(val: any){
-    return request.delete(flag + `/echatserver/system/config/echat`,{})(val)
+    return request.delete(flag + `/extension/companyconfig`,{})(val)
   },
   // getDataList: request.get(flag + '/echatserver/reqinfo/list/{pageNum}/{pageSize}', {})
 } 

@@ -218,17 +218,17 @@ export default class DataList extends Vue {
    */
   private async del() {
     // 校验删除信息
-    if (this.form.compId == undefined || this.form.compId == '') {
+    if (this.form.companyId == undefined || this.form.companyId == '') {
       this.$message({
         type:'error',
-        message:'compId不存在'
+        message:'companyId不存在'
       });
       return;
     }
 
-    const compId: string = this.form.compId;
+    const companyId: string = this.form.companyId;
     // 弹框确认是否执行删除操作
-    this.$confirm('此操作将删除账号'+ compId +'公司的所有配置', '提示',{
+    this.$confirm('此操作将删除账号'+ companyId +'公司的所有配置', '提示',{
       confirmButtonText: '删除',
       cancelButtonText: '取消',
       type: 'warning'
