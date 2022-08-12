@@ -29,7 +29,7 @@ export default {
   },
   //一洽配置-新增公司id
   addEchatConfigDataByCompId(val: any){
-    return request.post(flag + `/echatserver/system/config/echat/compid`,{})(val)
+    return request.post(`/extension/companyconfig`,{})(val)
   },
   //一洽配置-更新数据
   updateEchatConfigDataByCompId(val: any){
