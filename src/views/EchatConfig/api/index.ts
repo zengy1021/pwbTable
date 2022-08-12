@@ -37,7 +37,7 @@ export default {
   },
   //一洽配置-删除数据
   deleteEchatConfigDataByCompId(val: any){
-    return request.delete(flag + `/extension/companyconfig`,{})(val)
+    return request.delete(`/extension/companyconfig`,{})(val)
   },
   // getDataList: request.get(flag + '/echatserver/reqinfo/list/{pageNum}/{pageSize}', {})
 } 
