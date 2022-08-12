@@ -62,8 +62,8 @@
           <el-form-item label="appid" prop="appid">
             <el-input v-model="form.appid" clearable></el-input>
           </el-form-item>
-          <el-form-item label="aesKey" prop="aesKey">
-            <el-input v-model="form.aesKey" clearable></el-input>
+          <el-form-item label="aeskey" prop="aeskey">
+            <el-input v-model="form.aeskey" clearable></el-input>
           </el-form-item>
           <el-form-item label="token" prop="token">
             <el-input v-model="form.token" clearable></el-input>
@@ -99,7 +99,7 @@ export default class DataList extends Vue {
     companyId: '',
     companyName: '',
     appid: '',
-    aesKey: '',
+    aeskey: '',
     token: ''
   }
 
@@ -110,7 +110,7 @@ export default class DataList extends Vue {
     companyName: [
       { required: true, message: '公司名称不能为空', trigger:'blur'}
     ],
-    aesKey: [
+    aeskey: [
       { required: true, message: 'aesKey不能为空', trigger:'blur'}
     ],
     token: [
@@ -140,7 +140,7 @@ export default class DataList extends Vue {
         this.form.companyId = this.data[i].companyId;
         this.form.appid = this.data[i].appid;
         this.form.companyName = this.data[i].companyName;
-        this.form.aesKey = this.data[i].aesKey;
+        this.form.aeskey = this.data[i].aeskey;
         this.form.token = this.data[i].token;
       }
     }
@@ -200,7 +200,7 @@ export default class DataList extends Vue {
         this.form.companyId = compId;
         this.form.appid = '';
         this.form.companyName = '';
-        this.form.aesKey = '';
+        this.form.aeskey = '';
         this.form.token = '';
       }else if (result.code == 400){
         // todo: 公司id已存在
@@ -247,7 +247,7 @@ export default class DataList extends Vue {
       this.form.companyId = '';
       this.form.appid = '';
       this.form.companyName = '';
-      this.form.aesKey = '';
+      this.form.aeskey = '';
       this.form.token = '';
     });
   }
