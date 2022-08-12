@@ -1,12 +1,11 @@
 // 基础的ajax 封装
 import axios from 'axios'
 import qs from 'qs'
-// import store from '@/store.js'
+import store from '@/store'
 import { Message } from 'element-ui'
 // import {
 //   proxyKey
 // } from '@/const'
-
 const codeMessage = {
   400: '客户端请求错误',
   401: '未认证',
@@ -54,7 +53,7 @@ const http = (url: string, method: string, options: any = {}) => {
     }
 
     headers = Object.assign({
-      'companyId': '531521'
+      'companyId': localStorage.companyId || '531521'
     }, headers)
     return new Promise((resolve, reject) => {
       const newOption: any = {

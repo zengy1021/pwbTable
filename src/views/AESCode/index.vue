@@ -1,7 +1,7 @@
 <template>
   <div class="admin_list">
-    <el-row :gutter="60" style="height: 100%">
-      <el-col :span="8" style="height: 100%">
+    <el-row style="height: 100%">
+      <el-col :span="8" style="height: 100%" class="leftBg">
         <el-form
             ref="configForm"
             :model="form"
@@ -11,7 +11,7 @@
             label-suffix="："
             size="medium"
         >
-          <div style="font-size: 36px" >明文</div>
+          <div style="font-size: 36px" class="main_title" >明文</div>
           <el-form-item label="公司名称" prop="companyName">
             <el-input type="textarea" :rows="8" v-model="form.companyName" clearable></el-input>
           </el-form-item>
@@ -24,7 +24,7 @@
           <el-form-item label="token" prop="token">
             <el-input v-model="form.token" clearable></el-input>
           </el-form-item>
-          <div style="font-size: 24px" >会员数据(metaData)</div>
+          <div style="font-size: 24px" class="main_title">会员数据(metaData)</div>
           <el-form-item label="会员的唯一值" prop="uid">
             <el-input v-model="metaData.uid" clearable></el-input>
           </el-form-item>
@@ -144,8 +144,8 @@
           </el-form-item>
         </el-form>
       </el-col>
-      <el-col :span="15" style="height: 100%">
-        <div style="font-size: 36px" >密文</div>
+      <el-col :offset="1" :span="15" style="height: 100%" class="rightBg">
+        <div style="font-size: 36px" class="main_title">密文</div>
         <template>
           <div class="demo-collapse" :data="form">
             <el-card class="box-card">
@@ -478,6 +478,24 @@ class EchatConfig {
 }
 
 .box-card {
-  mih-width: 480px;
+  min-width: 480px;
+}
+.leftBg{
+  background: #fff;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  overflow-y: auto;
+}
+.rightBg{
+  // background: #fff;
+  // padding: 0 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  overflow-y: auto;
+}
+.main_title{
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 </style>

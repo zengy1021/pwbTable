@@ -3,12 +3,13 @@
     <div class="headerInfo">
       <div class="title">
         <span style="color:#fff;font-size:16px;font-weight:700">companyId：</span>
-          <el-select v-model="value" placeholder="请选择">
+          <el-select v-model="value" placeholder="请选择" @change="changeCompanyId">
           <el-option
               v-for="item in options"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value">
+              :key="item.id"
+              :label="item.name"
+              :value="item.id"
+            >
             </el-option>
           </el-select>
       </div>
@@ -22,18 +23,29 @@
   </div>
 </template>
 <script>
+import api from './index'
 
 export default {
+  created(){
+    api.getCompanyList().then(res=>{
+      // console.log(res);
+      this.options = res.data || []
+      this.value = this.options[0].id || ''
+      this.$store.dispatch('updateCompanyId',this.value)
+    })
+  },
   data() {
     return {
-      value:'531521',
-      options:[{
-        label:'公司Id1',
-        value:'531521'
-      }]
+      value:'',
+      options:[]
     }
   },
-  methods: {}
+  methods: {
+    changeCompanyId(id){
+      console.log(id);
+       this.$store.dispatch('updateCompanyId',id)
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

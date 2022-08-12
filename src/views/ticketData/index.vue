@@ -13,7 +13,8 @@
             <!-- <el-button @click="changeExpend">展开/收起</el-button> -->
           </template>
           <template slot-scope="props">
-            <el-descriptions size="medium" title="基本字段（ticketRecord）" class="margin-top" :column="3" border>
+            <div style="padding:0 15px">
+            <el-descriptions size="medium" title="基本字段（ticketRecord）" :column="3" border>
               <el-descriptions-item>
                 <template slot="label">
                   唯一ID<br>(id)
@@ -69,7 +70,7 @@
                 {{ getJobAttribute(props.row.jobAttribute) }}
               </el-descriptions-item>
             </el-descriptions>
-            <el-descriptions size="medium" title="工单数据（jobData）" class="margin-top" :column="3" border>
+            <el-descriptions size="medium" title="工单数据（jobData）" class="mt20" :column="3" border>
               <el-descriptions-item>
                 <template slot="label">
                   工单标题<br>(title)
@@ -353,7 +354,7 @@
                 {{ props.row.t20 }}
               </el-descriptions-item>
             </el-descriptions>
-            <el-descriptions size="medium" title="工单附件（attachments）" class="margin-top" :column="1" border>
+            <el-descriptions size="medium" title="工单附件（attachments）" class="mt20" :column="1" border>
               <el-descriptions-item>
                 <template slot="label">
                   工单附件信息，JSON字符串<br>(attachments)
@@ -361,7 +362,7 @@
                 {{ props.row.attachments }}
               </el-descriptions-item>
             </el-descriptions>
-            <el-descriptions size="medium" title="工单满意度数据（evaluate）" class="margin-top" :column="3" border>
+            <el-descriptions size="medium" title="工单满意度数据（evaluate）" class="mt20" :column="3" border>
               <el-descriptions-item>
                 <template slot="label">
                   用户评价时间。时间戳格式<br>(evaluateDatetime)
@@ -387,7 +388,7 @@
                 {{ props.row.subItems }}
               </el-descriptions-item>
             </el-descriptions>
-            <el-descriptions size="medium" title="访客数据（visitorData）" class="margin-top" :column="3" border>
+            <el-descriptions size="medium" title="访客数据（visitorData）" class="mt20" :column="3" border>
               <el-descriptions-item>
                 <template slot="label">
                   访客进入网站的时间<br>(visitorEnterTime)
@@ -575,7 +576,7 @@
                 {{ props.row.lastChatStaffName }}
               </el-descriptions-item>
             </el-descriptions>
-            <el-descriptions size="medium" title="客户数据（crmData）" class="margin-top" :column="3" border>
+            <el-descriptions size="medium" title="客户数据（crmData）" class="mt20" :column="3" border>
               <el-descriptions-item>
                 <template slot="label">
                   CRM字段-客户ID<br>(crmId)
@@ -805,7 +806,7 @@
                 {{ props.row.c20 }}
               </el-descriptions-item>
             </el-descriptions>
-            <el-descriptions size="medium" title="路由数据（routeData）" class="margin-top" :column="3" border>
+            <el-descriptions size="medium" title="路由数据（routeData）" class="mt20" :column="3" border>
               <el-descriptions-item>
                 <template slot="label">
                   接入对话的路由ID<br>(routeId)
@@ -843,6 +844,7 @@
                 {{ props.row.chatDepartmentName }}
               </el-descriptions-item>
             </el-descriptions>
+             </div>
           </template>
         </el-table-column>
         <el-table-column min-width="120" prop="companyId" label="companyId"> </el-table-column>
@@ -1306,6 +1308,9 @@ export default class DataList extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.mt20{
+  margin-top: 20px;
+}
 .admin_list {
   padding: 20px 0;
   height: 100%;

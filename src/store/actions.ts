@@ -5,5 +5,8 @@ const actions = {
   //   actionsAdds({commit},n){
   //    commit("mutationsAddCounts",n)
   //  }
+  updateCompanyId(context:any,data:string){
+    context.commit("UPDATACOMPANYID",data)
+  }
 }
 export default actions

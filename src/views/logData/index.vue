@@ -6,7 +6,7 @@
 
     </div>
     <div class="table_content">
-      <el-table ref="table" :data="list" row-key="id" :expand-row-keys="expends"  height="calc(100% - 10px)" highlight-current-row stripe>
+      <el-table ref="table" :data="list" row-key="msgId" :expand-row-keys="expends"  height="calc(100% - 10px)" highlight-current-row stripe>
         <el-table-column type="expand">
             <template slot="header">
               <el-checkbox :checked="expandStatus" @change="changeExpend"></el-checkbox>
@@ -195,6 +195,7 @@ export default class DataList extends Vue {
     }else{
       this.expends = this.list.map((item:any)=>item.id)
     }
+    
     // this.$refs.table.toggleRowExpansion()
   }
   private refresh() {

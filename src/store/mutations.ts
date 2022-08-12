@@ -15,5 +15,9 @@ const mutations = {
             
     //     localStorage.setItem('user_loginAccount',loginAccount); // 保存公司名称 
     // },
+    UPDATACOMPANYID:(state:any,companyId:string) =>{
+        state.companyId = companyId
+        localStorage.setItem('companyId',companyId); // 保存
+    }
 }
 export default mutations

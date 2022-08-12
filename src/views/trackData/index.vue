@@ -13,561 +13,563 @@
             <!-- <el-button @click="changeExpend">展开/收起</el-button> -->
           </template>
           <template slot-scope="props">
-            <el-descriptions size="medium" title="基本字段（ticketRecord）" class="margin-top" :column="3" border>
-              <el-descriptions-item>
-                <template slot="label">
-                  唯一ID<br>(id)
-                </template>
-                {{ props.row.id }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  公司ID<br>(companyId)
-                </template>
-                {{ props.row.companyId }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  创建时间<br>(createTime)
-                </template>
-                {{ props.row.createTime }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  创建触发事件<br>(createDataType)
-                </template>
-                {{ props.row.createDataType }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  更新时间<br>(updateTime)
-                </template>
-                {{ props.row.updateTime }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  更新触发事件<br>(updateDataType)
-                </template>
-                {{ props.row.updateDataType }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  开发者自定义扩展数据<br>(myData)
-                </template>
-                {{ props.row.myData }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客本次会话ID<br>(trackRecordId)
-                </template>
-                {{ props.row.trackRecordId }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客进入时的路由状态<br>(enterRouteStatus)
-                </template>
-                {{ getRouteStatus(props.row.enterRouteStatus) }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客退出时的路由状态<br>(outRouteStatus)
-                </template>
-                {{ getRouteStatus(props.row.outRouteStatus) }}
-              </el-descriptions-item>
-            </el-descriptions>
-            <el-descriptions size="medium" title="会员数据（metaData）" class="margin-top" :column="3" border>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员唯一值<br>(uid)
-                </template>
-                {{ props.row.uid }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员级别<br>(grade)
-                </template>
-                {{ props.row.grade }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员类别<br>(category)
-                </template>
-                {{ props.row.category }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员姓名<br>(name)
-                </template>
-                {{ props.row.name }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员昵称<br>(nickName)
-                </template>
-                {{ props.row.nickName }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员性别<br>(gender)
-                </template>
-                {{ getGender(props.row.gender) }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员年龄<br>(age)
-                </template>
-                {{ props.row.age }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员生日<br>(birthday)
-                </template>
-                {{ props.row.birthday }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员婚姻状况<br>(maritalStatus)
-                </template>
-                {{ getMaritalStatus(props.row.maritalStatus) }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员联系电话<br>(phone)
-                </template>
-                {{ props.row.phone }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员QQ<br>(qq)
-                </template>
-                {{ props.row.qq }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员微信<br>(wechat)
-                </template>
-                {{ props.row.wechat }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员邮箱<br>(email)
-                </template>
-                {{ props.row.email }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员国家<br>(nation)
-                </template>
-                {{ props.row.nation }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员省份<br>(province)
-                </template>
-                {{ props.row.province }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员城市<br>(city)
-                </template>
-                {{ props.row.city }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员地址<br>(address)
-                </template>
-                {{ props.row.address }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员头像地址<br>(photo)
-                </template>
-                {{ props.row.photo }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员备注信息<br>(memo)
-                </template>
-                {{ props.row.memo }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c1)
-                </template>
-                {{ props.row.c1 }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c2)
-                </template>
-                {{ props.row.c2 }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c3)
-                </template>
-                {{ props.row.c3 }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c4)
-                </template>
-                {{ props.row.c4 }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c5)
-                </template>
-                {{ props.row.c5 }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c6)
-                </template>
-                {{ props.row.c6 }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c7)
-                </template>
-                {{ props.row.c7 }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c8)
-                </template>
-                {{ props.row.c8 }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c9)
-                </template>
-                {{ props.row.c9 }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c10)
-                </template>
-                {{ props.row.c10 }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c11)
-                </template>
-                {{ props.row.c11 }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c12)
-                </template>
-                {{ props.row.c12 }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c13)
-                </template>
-                {{ props.row.c13 }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c14)
-                </template>
-                {{ props.row.c14 }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c15)
-                </template>
-                {{ props.row.c15 }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c16)
-                </template>
-                {{ props.row.c16 }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c17)
-                </template>
-                {{ props.row.c17 }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c18)
-                </template>
-                {{ props.row.c18 }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c19)
-                </template>
-                {{ props.row.c19 }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  会员自定义字段<br>(c20)
-                </template>
-                {{ props.row.c20 }}
-              </el-descriptions-item>
-            </el-descriptions>
-            <el-descriptions size="medium" title="访客数据（visitorData）" class="margin-top" :column="3" border>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客进入网站的时间<br>(visitorEnterTime)
-                </template>
-                {{ props.row.visitorEnterTime }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客端的媒介<br>(visitorMedia)
-                </template>
-                {{ getVisitorMedia(props.row.visitorMedia) }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客类型<br>(visitorType)
-                </template>
-                {{ getVisitorType(props.row.visitorType) }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  自定义渠道的渠道ID<br>(mediaId)
-                </template>
-                {{ props.row.mediaId }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客ID<br>(visitorId)
-                </template>
-                {{ props.row.visitorId }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客的姓名<br>(visitorName)
-                </template>
-                {{ props.row.visitorName }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客的头像地址<br>(visitorPhoto)
-                </template>
-                {{ props.row.visitorPhoto }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  当前访客此次是第几次来访<br>(visitTimes)
-                </template>
-                {{ props.row.visitTimes }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客的浏览器语言<br>(visitorLan)
-                </template>
-                {{ props.row.visitorLan }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客的来源IP<br>(visitorIp)
-                </template>
-                {{ props.row.visitorIp }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客的来源国家<br>(visitorCountry)
-                </template>
-                {{ props.row.visitorCountry }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客的来源省份<br>(visitorProvince)
-                </template>
-                {{ props.row.visitorProvince }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客的来源城市<br>(visitorCity)
-                </template>
-                {{ props.row.visitorCity }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客的浏览器名称<br>(browserName)
-                </template>
-                {{ props.row.browserName }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客的浏览器版本号<br>(browserVersion)
-                </template>
-                {{ props.row.browserVersion }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客电脑的分辨率<br>(screenResolution)
-                </template>
-                {{ props.row.screenResolution }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客电脑的操作系统<br>(osName)
-                </template>
-                {{ props.row.osName }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客电脑的操作系统版本<br>(osVersion)
-                </template>
-                {{ props.row.osVersion }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客来源的搜索引擎<br>(se)
-                </template>
-                {{ props.row.se }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客来源的关键词<br>(keyword)
-                </template>
-                {{ props.row.keyword }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  推广词<br>(biddingWord)
-                </template>
-                {{ props.row.biddingWord }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  关键字类型<br>(keywordType)
-                </template>
-                {{ getKeywordType(props.row.keywordType) }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客进入网站的来源页<br>(referPage)
-                </template>
-                {{ props.row.referPage }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  进入网站的时间<br>(firstTime)
-                </template>
-                {{ props.row.firstTime }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客落地页面的URL<br>(firstPage)
-                </template>
-                {{ props.row.firstPage }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客落地页面的标题<br>(firstPageTitle)
-                </template>
-                {{ props.row.firstPageTitle }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客落地页面的别名<br>(firstPageAlias)
-                </template>
-                {{ props.row.firstPageAlias }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  上次对话的时间<br>(lastChatTime)
-                </template>
-                {{ props.row.lastChatTime }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  上次对话的客服ID<br>(lastChatStaffId)
-                </template>
-                {{ getLastChatStaffId(props.row.lastChatStaffId) }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  上次对话的客服账号<br>(lastChatStaffLogname)
-                </template>
-                {{ props.row.lastChatStaffLogname }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  上次对话的客服姓名<br>(lastChatStaffName)
-                </template>
-                {{ props.row.lastChatStaffName }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客本次会话浏览总页面数量<br>(visitPageCount)
-                </template>
-                {{ props.row.visitPageCount }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客本次会话浏览总时长<br>(visitTotalTime)
-                </template>
-                {{ props.row.visitTotalTime }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客本次会话产生的人工对话记录ID、机器人对话记录ID、留言对话记录ID<br>(chatRecordId)
-                </template>
-                {{ props.row.chatRecordId }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客本次会话点击对话，弹出信息收集框，放弃的记录ID<br>(giveupRecordId)
-                </template>
-                {{ props.row.giveupRecordId }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  访客离开时间<br>(visitorOutTime)
-                </template>
-                {{ props.row.visitorOutTime }}
-              </el-descriptions-item>
-            </el-descriptions>
-            <el-descriptions size="medium" title="路由数据（routeData）" class="margin-top" :column="3" border>
-              <el-descriptions-item>
-                <template slot="label">
-                  接入对话的路由ID<br>(routeId)
-                </template>
-                {{ getRouteId(props.row.routeId) }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  路由名称<br>(routeName)
-                </template>
-                {{ props.row.routeName }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  路由所使用的样式ID<br>(styleId)
-                </template>
-                {{ props.row.styleId }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  路由所使用样式的名称<br>(styleName)
-                </template>
-                {{ props.row.styleName }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  本次分配对话的接待组ID<br>(chatDepartmentId)
-                </template>
-                {{ getChatDepartmentId(props.row.chatDepartmentId) }}
-              </el-descriptions-item>
-              <el-descriptions-item>
-                <template slot="label">
-                  本地分配对话的接待组名称<br>(chatDepartmentName)
-                </template>
-                {{ props.row.chatDepartmentName }}
-              </el-descriptions-item>
-            </el-descriptions>
-          </template>
+            <div style="padding:0 15px">
+              <el-descriptions size="medium" title="基本字段（ticketRecord）" :column="3" border>
+                <el-descriptions-item>
+                  <template slot="label">
+                    唯一ID<br>(id)
+                  </template>
+                  {{ props.row.id }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    公司ID<br>(companyId)
+                  </template>
+                  {{ props.row.companyId }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    创建时间<br>(createTime)
+                  </template>
+                  {{ props.row.createTime }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    创建触发事件<br>(createDataType)
+                  </template>
+                  {{ props.row.createDataType }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    更新时间<br>(updateTime)
+                  </template>
+                  {{ props.row.updateTime }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    更新触发事件<br>(updateDataType)
+                  </template>
+                  {{ props.row.updateDataType }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    开发者自定义扩展数据<br>(myData)
+                  </template>
+                  {{ props.row.myData }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客本次会话ID<br>(trackRecordId)
+                  </template>
+                  {{ props.row.trackRecordId }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客进入时的路由状态<br>(enterRouteStatus)
+                  </template>
+                  {{ getRouteStatus(props.row.enterRouteStatus) }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客退出时的路由状态<br>(outRouteStatus)
+                  </template>
+                  {{ getRouteStatus(props.row.outRouteStatus) }}
+                </el-descriptions-item>
+              </el-descriptions>
+              <el-descriptions size="medium" title="会员数据（metaData）" class="mt20" :column="3" border>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员唯一值<br>(uid)
+                  </template>
+                  {{ props.row.uid }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员级别<br>(grade)
+                  </template>
+                  {{ props.row.grade }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员类别<br>(category)
+                  </template>
+                  {{ props.row.category }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员姓名<br>(name)
+                  </template>
+                  {{ props.row.name }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员昵称<br>(nickName)
+                  </template>
+                  {{ props.row.nickName }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员性别<br>(gender)
+                  </template>
+                  {{ getGender(props.row.gender) }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员年龄<br>(age)
+                  </template>
+                  {{ props.row.age }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员生日<br>(birthday)
+                  </template>
+                  {{ props.row.birthday }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员婚姻状况<br>(maritalStatus)
+                  </template>
+                  {{ getMaritalStatus(props.row.maritalStatus) }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员联系电话<br>(phone)
+                  </template>
+                  {{ props.row.phone }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员QQ<br>(qq)
+                  </template>
+                  {{ props.row.qq }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员微信<br>(wechat)
+                  </template>
+                  {{ props.row.wechat }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员邮箱<br>(email)
+                  </template>
+                  {{ props.row.email }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员国家<br>(nation)
+                  </template>
+                  {{ props.row.nation }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员省份<br>(province)
+                  </template>
+                  {{ props.row.province }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员城市<br>(city)
+                  </template>
+                  {{ props.row.city }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员地址<br>(address)
+                  </template>
+                  {{ props.row.address }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员头像地址<br>(photo)
+                  </template>
+                  {{ props.row.photo }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员备注信息<br>(memo)
+                  </template>
+                  {{ props.row.memo }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c1)
+                  </template>
+                  {{ props.row.c1 }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c2)
+                  </template>
+                  {{ props.row.c2 }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c3)
+                  </template>
+                  {{ props.row.c3 }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c4)
+                  </template>
+                  {{ props.row.c4 }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c5)
+                  </template>
+                  {{ props.row.c5 }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c6)
+                  </template>
+                  {{ props.row.c6 }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c7)
+                  </template>
+                  {{ props.row.c7 }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c8)
+                  </template>
+                  {{ props.row.c8 }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c9)
+                  </template>
+                  {{ props.row.c9 }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c10)
+                  </template>
+                  {{ props.row.c10 }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c11)
+                  </template>
+                  {{ props.row.c11 }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c12)
+                  </template>
+                  {{ props.row.c12 }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c13)
+                  </template>
+                  {{ props.row.c13 }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c14)
+                  </template>
+                  {{ props.row.c14 }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c15)
+                  </template>
+                  {{ props.row.c15 }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c16)
+                  </template>
+                  {{ props.row.c16 }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c17)
+                  </template>
+                  {{ props.row.c17 }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c18)
+                  </template>
+                  {{ props.row.c18 }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c19)
+                  </template>
+                  {{ props.row.c19 }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    会员自定义字段<br>(c20)
+                  </template>
+                  {{ props.row.c20 }}
+                </el-descriptions-item>
+              </el-descriptions>
+              <el-descriptions size="medium" title="访客数据（visitorData）" class="mt20" :column="3" border>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客进入网站的时间<br>(visitorEnterTime)
+                  </template>
+                  {{ props.row.visitorEnterTime }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客端的媒介<br>(visitorMedia)
+                  </template>
+                  {{ getVisitorMedia(props.row.visitorMedia) }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客类型<br>(visitorType)
+                  </template>
+                  {{ getVisitorType(props.row.visitorType) }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    自定义渠道的渠道ID<br>(mediaId)
+                  </template>
+                  {{ props.row.mediaId }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客ID<br>(visitorId)
+                  </template>
+                  {{ props.row.visitorId }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客的姓名<br>(visitorName)
+                  </template>
+                  {{ props.row.visitorName }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客的头像地址<br>(visitorPhoto)
+                  </template>
+                  {{ props.row.visitorPhoto }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    当前访客此次是第几次来访<br>(visitTimes)
+                  </template>
+                  {{ props.row.visitTimes }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客的浏览器语言<br>(visitorLan)
+                  </template>
+                  {{ props.row.visitorLan }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客的来源IP<br>(visitorIp)
+                  </template>
+                  {{ props.row.visitorIp }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客的来源国家<br>(visitorCountry)
+                  </template>
+                  {{ props.row.visitorCountry }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客的来源省份<br>(visitorProvince)
+                  </template>
+                  {{ props.row.visitorProvince }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客的来源城市<br>(visitorCity)
+                  </template>
+                  {{ props.row.visitorCity }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客的浏览器名称<br>(browserName)
+                  </template>
+                  {{ props.row.browserName }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客的浏览器版本号<br>(browserVersion)
+                  </template>
+                  {{ props.row.browserVersion }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客电脑的分辨率<br>(screenResolution)
+                  </template>
+                  {{ props.row.screenResolution }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客电脑的操作系统<br>(osName)
+                  </template>
+                  {{ props.row.osName }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客电脑的操作系统版本<br>(osVersion)
+                  </template>
+                  {{ props.row.osVersion }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客来源的搜索引擎<br>(se)
+                  </template>
+                  {{ props.row.se }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客来源的关键词<br>(keyword)
+                  </template>
+                  {{ props.row.keyword }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    推广词<br>(biddingWord)
+                  </template>
+                  {{ props.row.biddingWord }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    关键字类型<br>(keywordType)
+                  </template>
+                  {{ getKeywordType(props.row.keywordType) }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客进入网站的来源页<br>(referPage)
+                  </template>
+                  {{ props.row.referPage }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    进入网站的时间<br>(firstTime)
+                  </template>
+                  {{ props.row.firstTime }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客落地页面的URL<br>(firstPage)
+                  </template>
+                  {{ props.row.firstPage }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客落地页面的标题<br>(firstPageTitle)
+                  </template>
+                  {{ props.row.firstPageTitle }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客落地页面的别名<br>(firstPageAlias)
+                  </template>
+                  {{ props.row.firstPageAlias }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    上次对话的时间<br>(lastChatTime)
+                  </template>
+                  {{ props.row.lastChatTime }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    上次对话的客服ID<br>(lastChatStaffId)
+                  </template>
+                  {{ getLastChatStaffId(props.row.lastChatStaffId) }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    上次对话的客服账号<br>(lastChatStaffLogname)
+                  </template>
+                  {{ props.row.lastChatStaffLogname }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    上次对话的客服姓名<br>(lastChatStaffName)
+                  </template>
+                  {{ props.row.lastChatStaffName }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客本次会话浏览总页面数量<br>(visitPageCount)
+                  </template>
+                  {{ props.row.visitPageCount }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客本次会话浏览总时长<br>(visitTotalTime)
+                  </template>
+                  {{ props.row.visitTotalTime }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客本次会话产生的人工对话记录ID、机器人对话记录ID、留言对话记录ID<br>(chatRecordId)
+                  </template>
+                  {{ props.row.chatRecordId }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客本次会话点击对话，弹出信息收集框，放弃的记录ID<br>(giveupRecordId)
+                  </template>
+                  {{ props.row.giveupRecordId }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    访客离开时间<br>(visitorOutTime)
+                  </template>
+                  {{ props.row.visitorOutTime }}
+                </el-descriptions-item>
+              </el-descriptions>
+              <el-descriptions size="medium" title="路由数据（routeData）" class="mt20" :column="3" border>
+                <el-descriptions-item>
+                  <template slot="label">
+                    接入对话的路由ID<br>(routeId)
+                  </template>
+                  {{ getRouteId(props.row.routeId) }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    路由名称<br>(routeName)
+                  </template>
+                  {{ props.row.routeName }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    路由所使用的样式ID<br>(styleId)
+                  </template>
+                  {{ props.row.styleId }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    路由所使用样式的名称<br>(styleName)
+                  </template>
+                  {{ props.row.styleName }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    本次分配对话的接待组ID<br>(chatDepartmentId)
+                  </template>
+                  {{ getChatDepartmentId(props.row.chatDepartmentId) }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                  <template slot="label">
+                    本地分配对话的接待组名称<br>(chatDepartmentName)
+                  </template>
+                  {{ props.row.chatDepartmentName }}
+                </el-descriptions-item>
+              </el-descriptions>
+            </div>
+            </template>
         </el-table-column>
         <el-table-column min-width="120" prop="companyId" label="companyId"> </el-table-column>
         <el-table-column min-width="120" prop="trackRecordId" label="trackRecordId"> </el-table-column>
@@ -857,6 +859,9 @@ export default class DataList extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.mt20{
+  margin-top: 20px;
+}
 .admin_list {
   padding: 20px 0;
   height: 100%;
