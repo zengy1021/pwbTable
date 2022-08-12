@@ -9,7 +9,7 @@ import Layout from '@/components/Layout.vue'
 export default Vue.extend({
   components: {
     Layout
-  }
+  },
 })
 </script>
 <style lang="scss">

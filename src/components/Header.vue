@@ -28,7 +28,6 @@ import api from './index'
 export default {
   created(){
     api.getCompanyList().then(res=>{
-      // console.log(res);
       this.options = res.data || []
       this.value = this.options[0].id || ''
       this.$store.dispatch('updateCompanyId',this.value)
@@ -42,7 +41,6 @@ export default {
   },
   methods: {
     changeCompanyId(id){
-      console.log(id);
        this.$store.dispatch('updateCompanyId',id)
     }
   }

@@ -9,7 +9,7 @@
           <Header class="header"></Header>
         </el-header>
         <el-main class="mainInfo">
-          <router-view />
+          <router-view  v-if="isActiving"/>
         </el-main>
       </el-container>
     </el-container>
@@ -26,8 +26,23 @@ export default {
     Header
     // Footer
   },
-  data() {
-    return {}
+   data(){
+    return {
+      isActiving:true // 刷新当前路由标识
+    }
+  },
+    watch:{
+      '$store.state.companyId':{
+            handler(val){
+                if(val){
+                  this.isActiving = false
+                  this.$nextTick(()=>{
+                    this.isActiving = true
+                  })
+                }
+            },
+            immediate:false
+        }
   }
 }
 </script>
