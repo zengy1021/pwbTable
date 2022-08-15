@@ -33,7 +33,7 @@ export default class Test extends Vue {
   .test{
     width: 100%;
     height: 100vh;
-    background: url(./img/testImg.png) center center no-repeat;
+    background: url(./img/testImg.png) center top no-repeat;
     background-size: 100%;
   }
 </style>
