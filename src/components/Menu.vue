@@ -134,6 +134,11 @@ export default {
         //   path: '/randomSize',
         //   icon: 'el-icon-s-promotion'
         // }
+        {
+          title: '演示页面',
+          path: '/ticketTest',
+          icon: 'el-icon-s-platform'
+        },
       ],
       logoImg: 'https://demo.echatsoft.com/mg/images/rainbowred.gif'
     }

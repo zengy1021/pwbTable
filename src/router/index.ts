@@ -108,6 +108,17 @@ const routes: RouteConfig[] = [
     name: 'TsTestPage',
     component: () => import(/* webpackChunkName: "about" */ '@/views/TsTestPage/index.vue'),
   },
+  { // 接口演示页面
+    path: '/ticketTest',
+    name: 'TicketTest',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/TicketTest/index.vue'),
+  },
+  { // 接口演示页面
+    path: '/test',
+    name: 'Test',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/Test/index.vue'),
+  },
+
 ];
 
 const router = new VueRouter({

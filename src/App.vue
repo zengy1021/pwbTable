@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <Layout />
+    <router-view  v-if="isTest" ></router-view>
+    <Layout v-else />
   </div>
 </template>
 <script lang="ts">
@@ -10,6 +11,12 @@ export default Vue.extend({
   components: {
     Layout
   },
+  computed:{
+    isTest(){
+      let flag = this.$route.name=='Test' || false
+      return flag
+    }
+  }
 })
 </script>
 <style lang="scss">
