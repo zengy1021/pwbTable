@@ -16,7 +16,7 @@ export default class Test extends Vue {
   let res:any =await api.testRequest()
    if(res.code==200){
     this.$message({
-        message: JSON.parse(res.data),
+        message: "创建成功",
         type: 'success'
       });
     }else{
