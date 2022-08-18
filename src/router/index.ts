@@ -4,6 +4,10 @@ Vue.use(VueRouter);
 
 const routes: RouteConfig[] = [
   {
+    path: '/',
+    redirect: '/home'
+  },
+  {
     path: '/home',
     name: 'Home',
     component: () => import(/* webpackChunkName: "about" */ '@/views/Home/index.vue'),
@@ -117,6 +121,21 @@ const routes: RouteConfig[] = [
     path: '/test',
     name: 'Test',
     component: () => import(/* webpackChunkName: "about" */ '@/views/Test/index.vue'),
+  },
+  { // 
+    path: '/zyEchat',
+    name: 'ZyEchat',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/zyEchat/index.vue'),
+  },
+  { // 
+    path: '/AEchat1',
+    name: 'AEchat1',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/zyEchat/index1.vue'),
+  },
+  { // 
+    path: '/BEchat2',
+    name: 'BEchat2',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/zyEchat/index2.vue'),
   },
 
 ];

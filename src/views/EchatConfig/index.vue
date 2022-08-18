@@ -3,6 +3,7 @@
     <el-row :gutter="60" style="height: 100%">
       <el-col :span="10" style="height: 100%">
         <div class="table_content">
+          <div class="form_title">公司列表</div>
           <el-table
               ref="singleTable"
               :data="data"
@@ -12,17 +13,18 @@
               style="width: 100%">
             <el-table-column
                 type="index"
-                width="100">
+                align="center"
+                width="60">
             </el-table-column>
             <el-table-column
                 prop="companyId"
                 label="公司ID"
-                width="250">
+               >
             </el-table-column>
             <el-table-column
                 prop="companyName"
                 label="公司名称"
-                width="250">
+                >
             </el-table-column>
           </el-table>
         </div>
@@ -154,7 +156,8 @@ export default class DataList extends Vue {
     // 获取表单对象
     const form = this.form;
     // 表单校验
-    this.$refs.configForm.validate(async (valid: boolean) => {
+    const Element:any = this.$refs.configForm
+    Element.validate(async (valid: boolean) => {
       if (valid) {
         // 调用更新接口
         const result: any = await api.updateEchatConfigDataByCompId(form);
@@ -218,7 +221,7 @@ export default class DataList extends Vue {
    */
   private async del() {
     // 校验删除信息
-    if (this.form.companyId == undefined || this.form.companyId == '') {
+    if (!this.form.companyId) {
       this.$message({
         type:'error',
         message:'companyId不存在'
@@ -282,7 +285,7 @@ class EchatConfig {
   }
   .table_content {
     height: calc(100% - 90px);
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     .el-table {
       padding: 0;

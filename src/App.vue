@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view  v-if="isTest" ></router-view>
+    <router-view v-if="isTest"></router-view>
     <Layout v-else />
   </div>
 </template>
@@ -9,14 +9,15 @@ import Vue from 'vue'
 import Layout from '@/components/Layout.vue'
 export default Vue.extend({
   components: {
-    Layout
+    Layout,
   },
-  computed:{
-    isTest(){
-      let flag = this.$route.name=='Test' || false
+  computed: {
+    isTest() {
+      const list = ['Test', 'ZyEchat', 'AEchat1', 'BEchat2']
+      let flag = list.includes(this.$route.name || '') || false
       return flag
-    }
-  }
+    },
+  },
 })
 </script>
 <style lang="scss">
