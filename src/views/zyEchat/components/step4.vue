@@ -4,6 +4,7 @@
     <div class="remark"></div>
     <el-carousel style="margin-top:100px"
                  type="card"
+                 trigger="click"
                  :autoplay="false"
                  height="300px">
       <el-carousel-item v-for="item in srcList"

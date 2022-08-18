@@ -5,6 +5,7 @@
     <el-carousel style="margin-top:100px"
                  type="card"
                  :autoplay="false"
+                 trigger="click"
                  height="300px">
       <el-carousel-item v-for="item in srcList"
                         :key="item">

@@ -4,6 +4,7 @@
     <div class="remark">对话自动分配、留言自动分配、工单自动分配</div>
     <el-carousel style="margin-top:100px"
                  type="card"
+                 trigger="click"
                  :autoplay="false"
                  height="300px">
       <el-carousel-item v-for="item in srcList"
