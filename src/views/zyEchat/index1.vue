@@ -10,6 +10,9 @@
     </div>
     <div class="rules_box">
       <div class="tab_btn">
+        <el-button :type="currentTab=='5'?'success':'primary'"
+                   @click="changeTab('5')">业务架构</el-button>
+        <i class="line el-icon-right"></i>
         <el-button :type="currentTab=='1'?'success':'primary'"
                    @click="changeTab('1')">渠道接入</el-button>
         <i class="line el-icon-right"></i>
@@ -28,6 +31,7 @@
         <Step2 v-if="currentTab=='2'" />
         <Step3 v-if="currentTab=='3'" />
         <Step4 v-if="currentTab=='4'" />
+        <Step5 v-if="currentTab=='5'" />
       </div>
     </div>
   </div>
@@ -39,16 +43,18 @@ import Step1 from './components/step1.vue'
 import Step2 from './components/step2.vue'
 import Step3 from './components/step3.vue'
 import Step4 from './components/step4.vue'
+import Step5 from './components/step5.vue'
 @Component({
   components: {
     Step1,
     Step2,
     Step3,
     Step4,
+    Step5,
   },
 })
 export default class Test extends Vue {
-  private currentTab: string = '1'
+  private currentTab: string = '5'
   private changeTab(tab: string) {
     this.currentTab = tab
   }

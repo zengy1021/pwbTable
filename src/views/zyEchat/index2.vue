@@ -9,30 +9,40 @@
       </el-button>
     </div>
     <div class="rules_box">
-      <el-button type="success">渠道接入</el-button>
+      <div class="tab_btn">
+        <el-button :type="currentTab=='1'?'success':'primary'"
+                   @click="changeTab('1')">数据可视化页面</el-button>
+        <!-- <i class="line el-icon-minus"></i>
+        <el-button :type="currentTab=='2'?'success':'primary'"
+                   @click="changeTab('2')">自定义iframe业务页面-自定义样式</el-button> -->
+      </div>
+      <div class="tab_content">
+        <!-- <components :is="getCurrentComp"></components> -->
+        <Step1 v-if="currentTab=='1'" />
+        <Step2 v-if="currentTab=='2'" />
+      </div>
     </div>
+
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-
+import Step1 from './components/step6.vue'
+import Step2 from './components/step7.vue'
 @Component({
-  components: {},
+  components: {
+    Step1,
+    Step2,
+  },
 })
 export default class Test extends Vue {
+  private currentTab: string = '1'
+  private changeTab(tab: string) {
+    this.currentTab = tab
+  }
   private back() {
     this.$router.replace('zyEchat')
-  }
-  private go(type: number) {
-    switch (type) {
-      case 1:
-        this.$router.push('Echat1')
-        break
-      case 2:
-        this.$router.push('Echat2')
-        break
-    }
   }
 }
 </script>
@@ -67,5 +77,22 @@ export default class Test extends Vue {
 .rules_box {
   padding: 20px;
   box-sizing: border-box;
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+  .tab_btn {
+    margin-left: 120px;
+    height: 40px;
+  }
+  .tab_content {
+    flex: 1 1 0%;
+    padding: 20px;
+    box-sizing: border-box;
+    background: transparent;
+  }
+}
+.line {
+  margin: 0 20px;
+  // font-size: 20px;
 }
 </style>
