@@ -16,8 +16,19 @@
         <div class="remark"
              style="margin-top:20px;"
              v-else>{{'提供整体数据分析页面，抽取关键数据字段展示、汇总。详细统计进入具体类型数据分析页面查看'}}</div>
-
+        <el-button v-if="index==1">
+          <el-image style="width: 50px; height: 20px"
+                    :src="afterImg"
+                    fit="contain"
+                    :preview-src-list="[afterImg]">
+          </el-image>
+        </el-button>
+        <el-button v-if="index==1"
+                   @click="openMap">
+          地图功能页面
+        </el-button>
       </div>
+
     </div>
 
   </div>
@@ -34,6 +45,10 @@ export default class Step extends Vue {
     require('../img/6/bb.jpg'),
     require('../img/6/dsjksh.jpg'),
   ]
+  private afterImg: string = require('../img/6/3dmap.jpg')
+  private openMap() {
+    window.open('http://sz.safewaychina.cn:23208/h5/ext/advanced/#/map')
+  }
 }
 </script>
 

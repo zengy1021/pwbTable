@@ -24,6 +24,10 @@
         <i class="line el-icon-right"></i>
         <el-button :type="currentTab=='4'?'success':'primary'"
                    @click="changeTab('4')">进入服务</el-button>
+
+        <el-button :type="currentTab=='6'?'success':'primary'"
+                   style="float:right"
+                   @click="changeTab('6')">数据收集</el-button>
       </div>
       <div class="tab_content">
         <!-- <components :is="getCurrentComp"></components> -->
@@ -32,6 +36,7 @@
         <Step3 v-if="currentTab=='3'" />
         <Step4 v-if="currentTab=='4'" />
         <Step5 v-if="currentTab=='5'" />
+        <Step6 v-if="currentTab=='6'" />
       </div>
     </div>
   </div>
@@ -44,6 +49,7 @@ import Step2 from './components/step2.vue'
 import Step3 from './components/step3.vue'
 import Step4 from './components/step4.vue'
 import Step5 from './components/step5.vue'
+import Step6 from './components/step8.vue'
 @Component({
   components: {
     Step1,
@@ -51,6 +57,7 @@ import Step5 from './components/step5.vue'
     Step3,
     Step4,
     Step5,
+    Step6,
   },
 })
 export default class Test extends Vue {
