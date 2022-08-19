@@ -2,7 +2,7 @@ import request from '@/assets/api/request'
 import qs from 'qs'
 import { data } from 'browserslist';
 const flag = process.env.NODE_ENV !== 'development' ? '/api' : '/api'
-const flag2 = process.env.NODE_ENV !== 'development' ? '/eApi' : '/eApi'
+const flag2 = process.env.NODE_ENV !== 'development' ? '/extension' : '/eApi'
 let paramsSerializer = function (p: any) {
   return qs.stringify(p, { arrayFormat: 'repeat' })
 }
