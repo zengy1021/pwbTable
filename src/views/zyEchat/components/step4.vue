@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="remark">经过不同的路由筛选以及ACD智能分配规则，客服可以开始服务访客，访客留言或者发布工单</div>
-    <div class="remark"></div>
+
     <el-carousel style="margin-top:100px"
                  type="card"
                  trigger="click"
@@ -16,6 +16,10 @@
         </el-image>
       </el-carousel-item>
     </el-carousel>
+    <div class="remark">智能机器人————</div>
+    <div class="remark">对话</div>
+    <div class="remark">留言</div>
+    <div class="remark">表单、工单</div>
   </div>
 </template>
 
