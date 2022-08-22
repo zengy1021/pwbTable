@@ -16,28 +16,27 @@
             <el-input type="textarea" :rows="8" v-model="form.plainText" clearable></el-input>
           </el-form-item>
         </el-form>
-        <div style="width: 600px" class="btn-warp">
+        <div style="display: flex;justify-content: space-between" class="btn-warp">
           <el-button @click="save" type="success">加密</el-button>
           <el-button @click="del" type="danger">清空</el-button>
         </div>
-<!--        <el-form-->
-<!--            ref="configForm"-->
-<!--            :model="decodeForm"-->
-<!--            :rules="rules"-->
-<!--            label-width="160px"-->
-<!--            label-position="right"-->
-<!--            label-suffix="："-->
-<!--            size="medium"-->
-<!--        >-->
-<!--          <div style="font-size: 36px" class="main_title" >密文</div>-->
-<!--          <el-form-item label="json" prop="plainText">-->
-<!--            <el-input type="textarea" :rows="8" v-model="decodeForm.plainText" clearable></el-input>-->
-<!--          </el-form-item>-->
-<!--        </el-form>-->
-<!--        <div style="width: 600px" class="btn-warp">-->
-<!--          <el-button @click="save" type="success">加密</el-button>-->
-<!--          <el-button @click="del" type="danger">清空</el-button>-->
-<!--        </div>-->
+        <el-form
+            ref="configForm"
+            :model="decodeForm"
+            label-width="160px"
+            label-position="right"
+            label-suffix="："
+            size="medium"
+            disabled
+        >
+          <div style="font-size: 36px" class="main_title" >Access_toekn</div>
+          <el-form-item label="" prop="plainText">
+            <el-input type="textarea" :rows="8" v-model="decodeForm.plainText" clearable></el-input>
+          </el-form-item>
+        </el-form>
+        <div style="width: 600px" class="btn-warp">
+          <el-button @click="getAccessToken" type="success">获取AccessToken</el-button>
+        </div>
       </el-col>
       <el-col :offset="1" :span="15" style="height: 100%" class="rightBg">
         <div style="font-size: 36px" class="main_title">密文</div>
@@ -70,11 +69,16 @@ export default class DataList extends Vue {
   private list: any = []
   private form: any = {
     encrypt: '',
+    plainText:'{\n' +
+        '   "hello":"hello"' +
+        '\n}'
+  }
+  private encryptForm: any = {
+    encrypt: '',
     plainText:''
   }
   private decodeForm: any = {
-    encrypt: '',
-    plainText:''
+    plainText: ''
   }
   private metaData: any = {
     uid: '',
@@ -160,6 +164,15 @@ export default class DataList extends Vue {
   private async save() {
     const result: any = await api.getDecode(this.form.plainText);
     this.form.encrypt = result.data;
+  }
+
+  /**
+   * 获取Access_token
+   * @private
+   */
+  private async getAccessToken() {
+    const result: any = await api.getAccessToken();
+    this.decodeForm.plainText = result.data;
   }
 
   /**

@@ -8,5 +8,8 @@ let paramsSerializer = function (p: any) {
 export default {
   getDecode(param: any) {
     return request.post('/extension/api/encodeJson', {})(param);
+  },
+  getAccessToken() {
+    return request.get('/extension/api/getAccessToken', {})(null);
   }
 } 
