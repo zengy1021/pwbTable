@@ -37,6 +37,24 @@
         <div style="width: 600px" class="btn-warp">
           <el-button @click="getAccessToken" type="success">获取AccessToken</el-button>
         </div>
+        <el-form
+            ref="configForm"
+            :model="encryptForm"
+            :rules="rules"
+            label-width="160px"
+            label-position="right"
+            label-suffix="："
+            size="medium"
+        >
+          <div style="font-size: 36px" class="main_title" >密文</div>
+          <el-form-item label="code" prop="encrypt">
+            <el-input type="textarea" :rows="8" v-model="encryptForm.encrypt" clearable></el-input>
+          </el-form-item>
+        </el-form>
+        <div style="display: flex;justify-content: space-between" class="btn-warp">
+          <el-button @click="decode" type="success">解密</el-button>
+          <el-button @click="encryptDel" type="danger">清空</el-button>
+        </div>
       </el-col>
       <el-col :offset="1" :span="15" style="height: 100%" class="rightBg">
         <div style="font-size: 36px" class="main_title">密文</div>
@@ -49,6 +67,20 @@
                 </div>
               </template>
               <div  style="white-space: pre-wrap;" >{{ form.encrypt }}</div>
+            </el-card>
+          </div>
+        </template>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div style="font-size: 36px" class="main_title">明文</div>
+        <template>
+          <div class="demo-collapse" :data="encryptForm">
+            <el-card class="box-card">
+              <template #header>
+                <div class="card-header">
+                  <span>json</span>
+                </div>
+              </template>
+              <div  style="white-space: pre-wrap;" >{{ encryptForm.plainText }}</div>
             </el-card>
           </div>
         </template>
@@ -129,6 +161,7 @@ export default class DataList extends Vue {
   }
   private created() {
     this.requestData()
+
   }
   private async requestData() {
     const res: any = await api.getEchatConfigDataList()
@@ -162,8 +195,17 @@ export default class DataList extends Vue {
    * @private
    */
   private async save() {
-    const result: any = await api.getDecode(this.form.plainText);
+    const result: any = await api.getEncode({code:this.form.plainText});
     this.form.encrypt = result.data;
+  }
+
+  /**
+   * 解密
+   * @private
+   */
+  private async decode() {
+    const result: any = await api.getDecode({code:this.encryptForm.encrypt});
+    this.encryptForm.plainText = result.data;
   }
 
   /**
@@ -221,6 +263,16 @@ export default class DataList extends Vue {
       // 刷新公司配置
       this.form.encrypt = '';
       this.form.plainText = '';
+  }
+
+  /**
+   * 刷新加密工具
+   * @private
+   */
+  private async encryptDel() {
+    // 刷新公司配置
+    this.encryptForm.encrypt = '';
+    this.encryptForm.plainText = '';
   }
 }
 

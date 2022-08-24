@@ -6,8 +6,11 @@ let paramsSerializer = function (p: any) {
   return qs.stringify(p, { arrayFormat: 'repeat' })
 }
 export default {
-  getDecode(param: any) {
+  getEncode(param: any) {
     return request.post('/extension/api/encodeJson', {})(param);
+  },
+  getDecode(param: any) {
+    return request.post('/extension/api/decodeJson', {})(param);
   },
   getAccessToken() {
     return request.get('/extension/api/getAccessToken', {})(null);

@@ -18,7 +18,7 @@ const codeMessage = {
   503: '服务器暂时过载或维护',
   504: '网关超时'
 }
-
+import qs from "qs"
 
 // const locales = {
 //   en: 'en-US',
@@ -49,7 +49,7 @@ const http = (url: string, method: string, options: any = {}) => {
     }
     if (contentType === 'application/json') {
       // debugger
-      // params = qs.stringify(data)
+      // params = qs.stringify(data)/*
     }
 
     headers = Object.assign({

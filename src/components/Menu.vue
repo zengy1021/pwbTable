@@ -139,11 +139,11 @@ export default {
           path: '/ticketTest',
           icon: 'el-icon-s-platform'
         },
-         {
-          title: '个人理解',
-          path: '/zyEchat',
-          icon: 'el-icon-s-platform'
-        },
+        //  {
+        //   title: '个人理解',
+        //   path: '/zyEchat',
+        //   icon: 'el-icon-s-platform'
+        // },
       ],
       logoImg: 'https://demo.echatsoft.com/mg/images/rainbowred.gif'
     }
