@@ -27,7 +27,7 @@
           <el-form-item label="token" prop="token">
             <el-input v-model="form.token" clearable></el-input>
           </el-form-item>
-          <el-form-item label="aeskey" prop="aesKey">sh
+          <el-form-item label="aeskey" prop="aesKey">
             <el-input v-model="form.aesKey" clearable></el-input>
           </el-form-item>
           <div><br/></div>
