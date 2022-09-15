@@ -20,10 +20,10 @@
           <el-form-item label="企业微信企业ID" prop="receiveId">
             <el-input v-model="form.receiveId" clearable></el-input>
           </el-form-item>
+          <div class="form_title_mid_warn">注：此处secret为客户联系管理页的secret</div>
           <el-form-item label="企业微信Secret" prop="secret">
             <el-input v-model="form.secret" clearable></el-input>
           </el-form-item>
-          <div class="form_title_mid_warn">注：此处secret为客户联系管理页的secret</div>
           <el-form-item label="token" prop="token">
             <el-input v-model="form.token" clearable></el-input>
           </el-form-item>
