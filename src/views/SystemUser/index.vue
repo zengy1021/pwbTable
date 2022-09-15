@@ -135,7 +135,7 @@ export default class DataList extends Vue {
     this.requestData()
   }
   private async requestData() {
-    const res: any = await api.getEchatConfigDataList()
+    const res: any = await api.getUserList()
     if (res.code === 200) {
       this.data = res.data.list;
     }

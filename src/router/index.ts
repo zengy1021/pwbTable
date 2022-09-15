@@ -92,6 +92,25 @@ const routes: RouteConfig[] = [
     name: 'EchatConfig',
     component: () => import(/* webpackChunkName: "about" */ '@/views/EchatConfig/index.vue'),
   },
+  { // 一洽配置
+    path: '/systemUser',
+    name: 'systemUser',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/SystemUser/index.vue'),
+  },
+
+  //  =========业务应用===========
+  { // vika-weixin公司配置
+    path: '/vikaConfig',
+    name: 'vikaConfig',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/VikaWeixin/Config/index.vue'),
+  },
+  { // vika-weixin用户
+    path: '/vikaUser',
+    name: 'vikaUser',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/VikaWeixin/User/index.vue'),
+  },
+
+  //  =========工具===========
   { // 加解密工具
     path: '/AESCoding',
     name: 'AESCoding',

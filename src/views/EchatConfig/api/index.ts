@@ -1,8 +1,7 @@
 import request from '@/assets/api/request'
 import qs from 'qs'
 import { data } from 'browserslist';
-const flag = process.env.NODE_ENV !== 'development' ? '/api' : '/api'
-const flag2 = process.env.NODE_ENV !== 'development' ? '/extension' : '/eApi'
+const flag = process.env.NODE_ENV !== 'development' ? '/extension' : '/eApi'
 let paramsSerializer = function (p: any) {
   return qs.stringify(p, { arrayFormat: 'repeat' })
 }
@@ -22,7 +21,7 @@ export default {
   },
   // 一洽配置-查询所有数据
   getEchatConfigDataList() {
-    return request.get(flag2 + `/companyconfig/list/1/1000`, {})(null)
+    return request.get(flag + `/systemCompany/list/1/1000`, {})(null)
   },
   //一洽配置-根据id查看详情
   getEchatConfigDataByCompId(compId: string) {
@@ -30,15 +29,15 @@ export default {
   },
   //一洽配置-新增公司id
   addEchatConfigDataByCompId(val: any) {
-    return request.post(`/extension/companyconfig`, {})(val)
+    return request.post(flag + `/systemCompany`, {})(val)
   },
   //一洽配置-更新数据
   updateEchatConfigDataByCompId(val: any) {
-    return request.put(`/extension/companyconfig`, {})(val)
+    return request.put(flag + `/systemCompany`, {})(val)
   },
   //一洽配置-删除数据
   deleteEchatConfigDataByCompId(val: any) {
-    return request.delete(`/extension/companyconfig`, {})(val)
+    return request.delete(flag + `/systemCompany`, {})(val)
   },
   // getDataList: request.get(flag + '/echatserver/reqinfo/list/{pageNum}/{pageSize}', {})
 } 

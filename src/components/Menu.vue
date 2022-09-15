@@ -38,6 +38,11 @@ export default {
           icon: 'el-icon-s-platform'
         },
         // {
+        //   title: '用户配置',
+        //   path: '/systemUser',
+        //   icon: 'el-icon-s-platform'
+        // },
+        // {
         //   title: 'pwb数据表格',
         //   path: '/adminList',
         //   icon: 'el-icon-smoking'
@@ -137,6 +142,16 @@ export default {
         {
           title: '演示页面',
           path: '/ticketTest',
+          icon: 'el-icon-s-platform'
+        },
+        {
+          title: '企微同步维格表配置',
+          path: '/vikaConfig',
+          icon: 'el-icon-s-platform'
+        },
+        {
+          title: '企微客户同步',
+          path: '/vikaUser',
           icon: 'el-icon-s-platform'
         },
         //  {

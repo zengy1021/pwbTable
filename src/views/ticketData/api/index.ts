@@ -1,6 +1,6 @@
 import request from '@/assets/api/request'
 import qs from 'qs'
-const flag = process.env.NODE_ENV !== 'development' ? '/api' : '/api'
+const flag = process.env.NODE_ENV !== 'development' ? '/extension' : '/eApi'
 let paramsSerializer = function (p: any) {
   return qs.stringify(p, { arrayFormat: 'repeat' })
 }
@@ -16,15 +16,15 @@ export default {
         endDate: params.endDate
       }
     }
-    return request.get(`/extension/ticket/list/${pageNum}/${pageSize}`, {})(pathParams)
+    return request.get(flag + `/ticket/list/${pageNum}/${pageSize}`, {})(pathParams)
   },
   // 工单回复内容
   ticketContentList(param: any) {
-    return request.get('/extension/ticket/ticketcontent', {})(param)
+    return request.get(flag + '/ticket/ticketcontent', {})(param)
   },
   // 清空日志
   delDataList() {
-    return request.delete('/extension/ticket', {})(null)
+    return request.delete(flag + '/ticket', {})(null)
   }
   // getDataList: request.get(flag + '/echatserver/reqinfo/list/{pageNum}/{pageSize}', {})
 }
