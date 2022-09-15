@@ -6,6 +6,11 @@
     </div>
     <div class="table_content">
       <el-table ref="table" :data="list" row-key="id" :expand-row-keys="expends"  height="calc(100% - 10px)" highlight-current-row stripe>
+        <el-table-column min-width="60" label="维格表头像">
+          <template slot-scope="scope">
+            <el-avatar style="width: 50px; height: 50px" :src="list[scope.$index].vikaAvatar" :fit="contain" />
+          </template>
+        </el-table-column>
         <el-table-column min-width="120" prop="weixinUserId" label="企微ID"> </el-table-column>
         <el-table-column min-width="120" prop="weixinUserName" label="企微名称"> </el-table-column>
         <el-table-column min-width="160" prop="vikaUserName" label="维格表名称"> </el-table-column>
@@ -85,6 +90,10 @@ export default class DataList extends Vue {
         message: res.msg
       });
     }
+  }
+
+  private getVikaAvatar(vla: any) {
+    return vla.vikaAvatar;
   }
 
 
