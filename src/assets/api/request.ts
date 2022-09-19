@@ -74,8 +74,9 @@ const http = (url: string, method: string, options: any = {}) => {
             requestFlag = false
             resolve(res)
           } else {
-            Message.warning(res.message)
-            return Promise.reject(res.message)
+            resolve(res)
+            // Message.warning(res.message)
+            // return Promise.reject(res.message)
           }
         })
         .catch(

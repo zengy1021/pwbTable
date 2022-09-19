@@ -32,6 +32,9 @@
           </el-form-item>
           <div><br/></div>
           <div class="form_title">维格表配置</div>
+          <el-form-item label="「员工管理」地址" prop="vikaUserTableUrl">
+            <el-input v-model="form.vikaUserTableUrl" clearable></el-input>
+          </el-form-item>
           <el-form-item label="ApiToken" prop="vikaToken">
             <el-input v-model="form.vikaToken" clearable></el-input>
           </el-form-item>
@@ -73,6 +76,7 @@ export default class DataList extends Vue {
     token: '',
     vikaToken: '',
     vikaUserTable: '',
+    vikaUserTableUrl: '',
     vikaExternalTable: '',
     companyId: '',
   }
@@ -92,6 +96,9 @@ export default class DataList extends Vue {
     ],
     vikaToken: [
       {required: true, message: 'ApiToken不能为空', trigger: 'blur'}
+    ],
+    vikaUserTableUrl: [
+      {required: true, message: '维格表「员工管理」地址不能为空', trigger: 'blur'}
     ],
     vikaUserTable: [
       {required: true, message: '「员工管理」表ID不能为空', trigger: 'blur'}

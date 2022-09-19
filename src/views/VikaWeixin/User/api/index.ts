@@ -11,6 +11,12 @@ export default {
     return request.get(flag + '/weixin/users/rel', {})(null)
   },
 
+  // 刷新员工数据
+  getUserRelsFlash() {
+    return request.get( flag + '/weixin/users/rel/flash', {})(null)
+  } ,
+
+
   syncUserRel(){
     return request.get(flag + '/weixin/sync/users', {})(null)
   },
@@ -19,4 +25,11 @@ export default {
   syncDataByWeixinUserId(param: any) {
     return request.get(flag + `/weixin/syncData/${param}`, {})(param)
   },
+
+  // 企微-vika表配置
+  getWeixinCompanyInfo() {
+    return request.get(flag + `/weixin/companyInfo`, {})(null)
+  },
+
+
 }

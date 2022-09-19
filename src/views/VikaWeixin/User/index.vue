@@ -2,16 +2,19 @@
   <div class="admin_list">
     <div class="search_box">
       <div class="form_title">维格表已匹配企微成员列表</div>
-      <el-button @click="syncUserRel">同步维格表成员</el-button>
+      <el-button @click="syncUserRel">同步 - 企微对外员工</el-button>
+      <el-button @click="bindingVika">绑定 - 维格表成员账号</el-button>
+      <el-button @click="userRelsFlash" style="float: right">刷新</el-button>
     </div>
     <div class="table_content">
-      <el-table ref="table" :data="list" row-key="id" :expand-row-keys="expends"  height="calc(100% - 10px)" highlight-current-row stripe>
+      <el-table v-loading = "isPending" ref="table" :data="list" row-key="id" :expand-row-keys="expends"  height="calc(100% - 10px)" highlight-current-row stripe>
         <el-table-column min-width="60" label="维格表头像">
           <template slot-scope="scope">
             <el-avatar style="width: 50px; height: 50px" :src="list[scope.$index].vikaAvatar" :fit="contain" />
           </template>
         </el-table-column>
         <el-table-column min-width="120" prop="weixinUserId" label="企微ID"> </el-table-column>
+        <el-table-column min-width="120" prop="valExternalUserCount" label="有效客户数量"> </el-table-column>
         <el-table-column min-width="120" prop="weixinUserName" label="企微名称"> </el-table-column>
         <el-table-column min-width="160" prop="vikaUserName" label="维格表名称"> </el-table-column>
         <el-table-column fixed="right" label="操作">
@@ -32,10 +35,22 @@ import dayJs from 'dayjs'
   components: {}
 })
 export default class DataList extends Vue {
+  private isPending: boolean = false
   private list: any = []
   private contentList: any = []
   private expandStatus:Boolean = false
   private searchObj:any = {}
+  private info: any = {
+    secret: '',
+    receiveId: '',
+    aesKey: '',
+    token: '',
+    vikaToken: '',
+    vikaUserTable: '',
+    vikaUserTableUrl: '',
+    vikaExternalTable: '',
+    companyId: '',
+  }
 
 
   private expends:Array<String> = []
@@ -49,33 +64,73 @@ export default class DataList extends Vue {
     this.requestData()
   }
 
+  // 获取数据
   private async requestData() {
+    this.isPending = true;
     const res: any = await api.getUserRels()
-    console.log(res)
     if (res.code === 200) {
       this.list = res.data || []
+    }else {
+      this.$alert(res.msg, 'error', {
+        confirmButtonText: '关闭'
+      });
+    }
+    const resUrl: any = await api.getWeixinCompanyInfo()
+    if (resUrl.code === 200) {
+      console.log(resUrl.data)
+      this.info = resUrl.data;
+    }else {
+      this.$alert(res.msg, 'error', {
+        confirmButtonText: '关闭'
+      });
+    }
+     this.isPending = false
+  }
+
+  // 刷新数据
+  private async userRelsFlash() {
+    this.isPending = true;
+    const res: any = await api.getUserRelsFlash()
+    if (res.code === 200) {
+      this.list = res.data || []
+    }else {
+      this.$alert(res.msg, 'error', {
+        confirmButtonText: '关闭'
+      });
+    }
+    this.isPending = false;
+  }
+
+  private bindingVika() {
+    console.log(this.info.vikaUserTableUrl)
+    if (this.info.vikaUserTableUrl != null){
+      window.open(this.info.vikaUserTableUrl);
+    }else {
+      this.$alert('您未配置维格表地址，请在「企微同步维格表配置」中配置', 'error', {
+        confirmButtonText: '关闭'
+      });
     }
   }
 
   private async syncUserRel() {
+    this.isPending = true;
     const res: any = await api.syncUserRel()
     if (res.code === 200) {
       this.$message({
         type:'success',
         message:'同步成功'
       });
-      this.requestData();
     } else {
-      this.$message({
-        type:'error',
-        message: res.msg
+      this.$alert(res.msg, 'error', {
+        confirmButtonText: '关闭'
       });
     }
+    this.isPending = false;
   }
 
   private async getSyncUserExternalUser(val: any ) {
+    this.isPending = true;
     let weixinUserId: string;
-    console.log(val);
     weixinUserId = val.weixinUserId;
     const res: any = await api.syncDataByWeixinUserId(weixinUserId);
     if (res.code == 200) {
@@ -85,11 +140,11 @@ export default class DataList extends Vue {
       });
       this.requestData();
     } else {
-      this.$message({
-        type: 'error',
-        message: res.msg
+      this.$alert(res.msg, 'error', {
+        confirmButtonText: '关闭'
       });
     }
+    this.isPending = false;
   }
 
   private getVikaAvatar(vla: any) {

@@ -179,7 +179,6 @@ export default class DataList extends Vue {
    */
   private async handleCurrentChangeCompId(val: any) {
     const res: any = await api.getWechatConfigDataByCompId(val.compId);
-    console.log(res.data);
     if (res.code == 200) {
       this.wechatData = res.data;
       this.gbCompId = val.compId;
@@ -249,7 +248,6 @@ export default class DataList extends Vue {
     this.$refs.configForm.validate(async (valid: boolean) => {
       if (valid) {
         // 调用更新接口
-        console.log("=========="+form);
         const result: any = await api.updateWechatConfigDataByCompId(form);
         if (result.code == 200) {
           this.$message({
