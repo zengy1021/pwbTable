@@ -27,11 +27,11 @@ export default {
   data() {
     return {
       menuList: [
-        {
-          title: '首页',
-          path: '/home',
-          icon: 'el-icon-s-home'
-        },
+        // {
+        //   title: '首页',
+        //   path: '/home',
+        //   icon: 'el-icon-s-home'
+        // },
         {
           title: '公司配置',
           path: '/echatConfig',
@@ -68,51 +68,51 @@ export default {
         //   path: '/dataList',
         //   icon: 'el-icon-s-order'
         // },
-        {
-          title: '数据日志',
-          path: '/logData',
-          icon: 'el-icon-s-order'
-        },
-        {
-          title: '公司状态',
-          path: '/companyStatus',
-          icon: 'el-icon-s-order'
-        },
-        {
-          title: '路由状态',
-          path: '/routeStatus',
-          icon: 'el-icon-s-order'
-        },
-        {
-          title: '接待组状态',
-          path: '/skillStatus',
-          icon: 'el-icon-s-order'
-        },
-        {
-          title: '客服状态',
-          path: '/staffStatus',
-          icon: 'el-icon-s-order'
-        },
-        {
-          title: '对话数据',
-          path: '/chatData',
-          icon: 'el-icon-s-order'
-        },
-        {
-          title: '浏览数据',
-          path: '/trackData',
-          icon: 'el-icon-s-order'
-        },
-        {
-          title: '工单数据',
-          path: '/ticketData',
-          icon: 'el-icon-s-order'
-        },
-        {
-          title: '客户数据',
-          path: '/crmData',
-          icon: 'el-icon-s-order'
-        },
+        // {
+        //   title: '数据日志',
+        //   path: '/logData',
+        //   icon: 'el-icon-s-order'
+        // },
+        // {
+        //   title: '公司状态',
+        //   path: '/companyStatus',
+        //   icon: 'el-icon-s-order'
+        // },
+        // {
+        //   title: '路由状态',
+        //   path: '/routeStatus',
+        //   icon: 'el-icon-s-order'
+        // },
+        // {
+        //   title: '接待组状态',
+        //   path: '/skillStatus',
+        //   icon: 'el-icon-s-order'
+        // },
+        // {
+        //   title: '客服状态',
+        //   path: '/staffStatus',
+        //   icon: 'el-icon-s-order'
+        // },
+        // {
+        //   title: '对话数据',
+        //   path: '/chatData',
+        //   icon: 'el-icon-s-order'
+        // },
+        // {
+        //   title: '浏览数据',
+        //   path: '/trackData',
+        //   icon: 'el-icon-s-order'
+        // },
+        // {
+        //   title: '工单数据',
+        //   path: '/ticketData',
+        //   icon: 'el-icon-s-order'
+        // },
+        // {
+        //   title: '客户数据',
+        //   path: '/crmData',
+        //   icon: 'el-icon-s-order'
+        // },
         // {
         //   title: '消息测试',
         //   path: '/messageList',
@@ -123,11 +123,11 @@ export default {
         //   path: '/wechatConfig',
         //   icon: 'el-icon-s-platform'
         // },
-        {
-          title: '加解密工具',
-          path: '/AESCoding',
-          icon: 'el-icon-s-platform'
-        },
+        // {
+        //   title: '加解密工具',
+        //   path: '/AESCoding',
+        //   icon: 'el-icon-s-platform'
+        // },
         // {
         //   title: '工具',
         //   path: '/tools',
@@ -139,11 +139,11 @@ export default {
         //   path: '/randomSize',
         //   icon: 'el-icon-s-promotion'
         // }
-        {
-          title: '演示页面',
-          path: '/ticketTest',
-          icon: 'el-icon-s-platform'
-        },
+        // {
+        //   title: '演示页面',
+        //   path: '/ticketTest',
+        //   icon: 'el-icon-s-platform'
+        // },
         {
           title: '企微同步维格表配置',
           path: '/vikaConfig',

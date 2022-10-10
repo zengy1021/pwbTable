@@ -3,46 +3,63 @@
     <el-row :gutter="60" style="height: 100%">
       <el-col :span="20" style="height: 100%">
         <el-form
-          ref="configForm"
-          :model="form"
-          :rules="rules"
+          ref="weixinForm"
+          :model="weixinForm"
+          :rules="weixinRules"
           label-width="160px"
           label-position="right"
           label-suffix="："
           size="medium"
         >
           <div class="form_title">企业微信配置</div>
-<!--          <el-form-item label="企业ID" prop="companyName">-->
-<!--            <el-input v-model="form.receiveId" clearable></el-input>-->
-<!--          </el-form-item>-->
-          <div class="form_title_mid">客户与上下游-客户联系-API-接收事件服务器配置</div>
-          <div class="form_title_mid">接收事件服务器地址：https://apps.echatsoft.com:9443/bizvika/weixin?urlFrom=external&companyId={{form.companyId}}</div>
-          <el-form-item label="企业微信企业ID" prop="receiveId">
-            <el-input v-model="form.receiveId" clearable></el-input>
+          <div class="form_title_mid">1、企微打开后台管理页面</div>
+          <div class="form_title_mid">2、我的企业-企业信息</div>
+          <el-form-item label="企业ID" prop="receiveId">
+            <el-input v-model="weixinForm.receiveId" clearable></el-input>
           </el-form-item>
-          <div class="form_title_mid_warn">注：此处secret为客户联系管理页的secret</div>
-          <el-form-item label="企业微信Secret" prop="secret">
-            <el-input v-model="form.secret" clearable></el-input>
+          <div class="form_title_mid">2、客户与上下游-客户联系-客户-API</div>
+          <el-form-item label="Secret" prop="secret">
+            <el-input v-model="weixinForm.secret" clearable></el-input>
           </el-form-item>
-          <el-form-item label="token" prop="token">
-            <el-input v-model="form.token" clearable></el-input>
+          <div class="form_title_mid">3、接收事件服务器-编辑</div>
+          <div class="form_title_mid">接收事件服务器地址：https://apps.echatsoft.com:9443/bizvika/weixin?urlFrom=external&companyId={{weixinForm.companyId}}<span class="form_title_mid_warn"> (复制地址，粘贴至URL输入框)</span></div>
+          <el-form-item label="Token" prop="token">
+            <el-input v-model="weixinForm.token" clearable></el-input>
+            <div class="form_title_mid_warn">Token输入框点击随机获取生成，并复制到此输入框（保证一致）</div>
           </el-form-item>
-          <el-form-item label="aeskey" prop="aesKey">
-            <el-input v-model="form.aesKey" clearable></el-input>
+          <el-form-item label="EncodingAESKey" prop="aesKey">
+            <el-input v-model="weixinForm.aesKey" clearable></el-input>
+            <div class="form_title_mid_warn">EncodingAESKey输入框点击随机获取生成，并复制到此输入框（保证一致）</div>
           </el-form-item>
+          <div class="form_title_mid_warn">完成填写后，先点击此处保存，再保存企微-设置接收事件服务器</div>
+          <div class="btn-warp">
+            <el-button @click="save('weixin')" type="success">保存</el-button>
+          </div>
+        </el-form>
           <div><br/></div>
+        <el-form
+            ref="vikaForm"
+            :model="vikaForm"
+            :rules="vikaRules"
+            label-width="160px"
+            label-position="right"
+            label-suffix="："
+            size="medium"
+        >
           <div class="form_title">维格表配置</div>
-          <el-form-item label="「员工管理」地址" prop="vikaUserTableUrl">
-            <el-input v-model="form.vikaUserTableUrl" clearable></el-input>
-          </el-form-item>
           <el-form-item label="ApiToken" prop="vikaToken">
-            <el-input v-model="form.vikaToken" clearable></el-input>
+            <el-input v-model="vikaForm.vikaToken" clearable></el-input>
+          </el-form-item>
+          <el-form-item label="「员工管理」地址" prop="vikaUserTableUrl">
+            <el-input v-model="vikaForm.vikaUserTableUrl" clearable></el-input>
           </el-form-item>
           <el-form-item label="「员工管理」表ID" prop="vikaUserTable">
-            <el-input v-model="form.vikaUserTable" clearable></el-input>
+            <el-input v-model="vikaForm.vikaUserTable" clearable></el-input>
+            <div class="form_title_mid_warn">打开该表时，浏览器url中以"dst"开始的即为该表ID</div>
           </el-form-item>
           <el-form-item label="「客户管理」表ID" prop="vikaExternalTable">
-            <el-input v-model="form.vikaExternalTable" clearable></el-input>
+            <el-input v-model="vikaForm.vikaExternalTable" clearable></el-input>
+            <div class="form_title_mid_warn">打开该表时，浏览器url中以"dst"开始的即为该表ID</div>
           </el-form-item>
 <!--          <el-form-item label="mediaId" prop="mediaId">-->
 <!--            <el-input v-model="form.mediaId" clearable></el-input>-->
@@ -51,7 +68,7 @@
 <!--            <el-input v-model="form.mediaUrl" clearable></el-input>-->
 <!--          </el-form-item>-->
           <div class="btn-warp">
-            <el-button @click="save" type="success">保存</el-button>
+            <el-button @click="save('vika')" type="success">保存</el-button>
           </div>
         </el-form>
       </el-col>
@@ -69,19 +86,21 @@ import dayJs from 'dayjs'
 export default class DataList extends Vue {
   private data: any = []
   private list: any = []
-  private form: any = {
+  private weixinForm: any = {
     secret: '',
     receiveId: '',
     aesKey: '',
     token: '',
+    companyId: ''
+  }
+  private vikaForm: any = {
     vikaToken: '',
     vikaUserTable: '',
     vikaUserTableUrl: '',
-    vikaExternalTable: '',
-    companyId: '',
+    vikaExternalTable: ''
   }
 
-  private rules: any = {
+  private weixinRules: any = {
     secret: [
       {required: true, message: 'secret不能为空', trigger: 'blur'}
     ],
@@ -93,7 +112,10 @@ export default class DataList extends Vue {
     ],
     token: [
       {required: true, message: 'token不能为空', trigger: 'blur'}
-    ],
+    ]
+  }
+
+  private vikaRules: any = {
     vikaToken: [
       {required: true, message: 'ApiToken不能为空', trigger: 'blur'}
     ],
@@ -115,41 +137,36 @@ export default class DataList extends Vue {
   private async requestData() {
     const res: any = await api.getWeixinCompanyInfo()
     if (res.code === 200) {
-      this.form = res.data;
+      this.weixinForm.secret = res.data.secret;
+      this.weixinForm.receiveId = res.data.receiveId;
+      this.weixinForm.aesKey = res.data.aesKey;
+      this.weixinForm.token = res.data.token;
+      this.weixinForm.companyId = res.data.companyId;
+      this.vikaForm.vikaToken = res.data.vikaToken;
+      this.vikaForm.vikaUserTable = res.data.vikaUserTable;
+      this.vikaForm.vikaUserTableUrl = res.data.vikaUserTableUrl;
+      this.vikaForm.vikaExternalTable = res.data.vikaExternalTable;
     }
   }
 
-
-  /**
-   * 根据点击选中的公司id 查询详情
-   * @param val
-   * @private
-   */
-  private async handleCurrentChange(val: any) {
-    // 遍历公司信息数组，根据companyId知道到数据
-    for (let i = 0; i < this.data.length; i++) {
-      if (this.data[i].companyId == val.companyId) {
-        this.form.companyId = this.data[i].companyId;
-        this.form.appid = this.data[i].appid;
-        this.form.companyName = this.data[i].companyName;
-        this.form.aeskey = this.data[i].aeskey;
-        this.form.token = this.data[i].token;
-        this.form.serverNode = this.data[i].serverNode;
-        this.form.serverUrl = this.data[i].serverUrl;
-        this.form.visitorUrl = this.data[i].visitorUrl;
-      }
-    }
-  }
 
   /**
    * 更新操作
    * @private
    */
-  private save() {
-    // 获取表单对象
-    const form = this.form;
+  private async save(type:string) {
+    let form : any = {};
     // 表单校验
-    const Element: any = this.$refs.configForm
+    let Element: any = {};
+    if (type == 'weixin') {
+      // 获取表单对象
+      form = this.weixinForm;
+      Element = this.$refs.weixinForm
+    } else if (type == 'vika') {
+      // 获取表单对象
+      form = this.vikaForm;
+      Element = this.$refs.vikaForm
+    }
     Element.validate(async (valid: boolean) => {
       if (valid) {
         // 调用更新接口
@@ -218,14 +235,12 @@ export default class DataList extends Vue {
   color: #333;
 }
 .form_title_mid {
-  height: 60px;
   font-size: 20px;
   font-weight: 700;
   color: #333;
 }
 .form_title_mid_warn{
-  height: 60px;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 700;
   color: #ad0707;
 }
