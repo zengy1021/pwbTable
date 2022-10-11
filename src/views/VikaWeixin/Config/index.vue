@@ -11,27 +11,52 @@
           label-suffix="："
           size="medium"
         >
-          <div class="form_title">企业微信配置</div>
-          <div class="form_title_mid">1、企微打开后台管理页面</div>
-          <div class="form_title_mid">2、我的企业-企业信息</div>
-          <el-form-item label="企业ID" prop="receiveId">
+          <div class="form_title" style="height: 50px">企业微信配置</div>
+          <div class="form_title_mid">进入企微后台管理页面，按照以下顺序完成信息录入</div>
+          <div style="height: 20px"/>
+          <el-form-item label="企业ID" prop="receiveId" style="height: 20px">
             <el-input v-model="weixinForm.receiveId" clearable></el-input>
           </el-form-item>
-          <div class="form_title_mid">2、客户与上下游-客户联系-客户-API</div>
-          <el-form-item label="Secret" prop="secret">
+          <div style="margin-left: 160px">
+            <div class="form_title_mid_notice">我的企业 > 企业信息</div>
+            <el-image
+                style="height: 100px"
+                :src = "'https://apps.echatsoft.com:9443/image/vika/vika-receviedId.png'"
+                :preview-src-list = "['https://apps.echatsoft.com:9443/image/vika/vika-receviedId.png']"></el-image>
+          </div>
+          <div style="height: 20px"/>
+          <el-form-item label="Secret" prop="secret" style="height: 20px">
             <el-input v-model="weixinForm.secret" clearable></el-input>
           </el-form-item>
-          <div class="form_title_mid">3、接收事件服务器-编辑</div>
-          <div class="form_title_mid">接收事件服务器地址：https://apps.echatsoft.com:9443/bizvika/weixin?urlFrom=external&companyId={{weixinForm.companyId}}<span class="form_title_mid_warn"> (复制地址，粘贴至URL输入框)</span></div>
+          <div style="margin-left: 160px">
+            <div class="form_title_mid_notice">客户与上下游 > 客户联系 > 客户 > API</div>
+            <el-image
+                style="height: 100px"
+                :src = "'https://apps.echatsoft.com:9443/image/vika/vika-external.png'"
+                :preview-src-list = "['https://apps.echatsoft.com:9443/image/vika/vika-external.png']"></el-image>
+          </div>
+          <div style="height: 20px"/>
+          <div class="form_title_mid" style="margin-left: 110px">URL：  https://apps.echatsoft.com:9443/bizvika/weixin?urlFrom=external&companyId={{weixinForm.companyId}}</div>
+          <div style="height: 50px">
+            <span class="form_title_mid_warn" style="margin-left: 160px"> (复制地址，粘贴至URL输入框)</span>
+          </div>
           <el-form-item label="Token" prop="token">
             <el-input v-model="weixinForm.token" clearable></el-input>
             <div class="form_title_mid_warn">Token输入框点击随机获取生成，并复制到此输入框（保证一致）</div>
           </el-form-item>
-          <el-form-item label="EncodingAESKey" prop="aesKey">
+          <el-form-item label="EncodingAESKey" prop="aesKey" style="height: 20px">
             <el-input v-model="weixinForm.aesKey" clearable></el-input>
-            <div class="form_title_mid_warn">EncodingAESKey输入框点击随机获取生成，并复制到此输入框（保证一致）</div>
           </el-form-item>
-          <div class="form_title_mid_warn">完成填写后，先点击此处保存，再保存企微-设置接收事件服务器</div>
+          <div style="margin-left: 160px">
+            <div class="form_title_mid_warn">EncodingAESKey输入框点击随机获取生成，并复制到此输入框（保证一致）</div>
+            <div class="form_title_mid_notice">客户与上下游 > 客户联系 > 客户 > API > 接收事件服务器 > 编辑 </div>
+            <el-image
+                style="height: 100px"
+                :src = "'https://apps.echatsoft.com:9443/image/vika/vika-serverapi.png'"
+                :preview-src-list = "['https://apps.echatsoft.com:9443/image/vika/vika-serverapi.png']"></el-image>
+          </div>
+          <div class="form_title_mid_warn" style="margin-left: 160px">完成填写后，先点击此处保存，再保存企微-设置接收事件服务器</div>
+          <div style="height: 20px"/>
           <div class="btn-warp">
             <el-button @click="save('weixin')" type="success">保存</el-button>
           </div>
@@ -46,27 +71,37 @@
             label-suffix="："
             size="medium"
         >
-          <div class="form_title">维格表配置</div>
-          <el-form-item label="ApiToken" prop="vikaToken">
+          <div class="form_title" style="height: 50px">维格表配置</div>
+          <div class="form_title_mid">登陆维格表页面，按照以下顺序完成信息录入</div>
+          <div style="height: 20px"/>
+          <el-form-item label="ApiToken" prop="vikaToken" style="height: 20px">
             <el-input v-model="vikaForm.vikaToken" clearable></el-input>
           </el-form-item>
+          <div style="margin-left: 160px">
+            <div class="form_title_mid_notice">左下角个人头像 > 个人设置 > 开发者配置 </div>
+            <el-image
+                style="height: 100px"
+                :src = "'https://apps.echatsoft.com:9443/image/vika/vika-apiToken.png'"
+                :preview-src-list = "['https://apps.echatsoft.com:9443/image/vika/vika-apiToken.png']"></el-image>
+          </div>
+          <div style="height: 20px"/>
           <el-form-item label="「员工管理」地址" prop="vikaUserTableUrl">
             <el-input v-model="vikaForm.vikaUserTableUrl" clearable></el-input>
           </el-form-item>
           <el-form-item label="「员工管理」表ID" prop="vikaUserTable">
             <el-input v-model="vikaForm.vikaUserTable" clearable></el-input>
-            <div class="form_title_mid_warn">打开该表时，浏览器url中以"dst"开始的即为该表ID</div>
           </el-form-item>
           <el-form-item label="「客户管理」表ID" prop="vikaExternalTable">
             <el-input v-model="vikaForm.vikaExternalTable" clearable></el-input>
-            <div class="form_title_mid_warn">打开该表时，浏览器url中以"dst"开始的即为该表ID</div>
           </el-form-item>
-<!--          <el-form-item label="mediaId" prop="mediaId">-->
-<!--            <el-input v-model="form.mediaId" clearable></el-input>-->
-<!--          </el-form-item>-->
-<!--          <el-form-item label="mediaUrl" prop="mediaUrl">-->
-<!--            <el-input v-model="form.mediaUrl" clearable></el-input>-->
-<!--          </el-form-item>-->
+          <div style="margin-left: 160px">
+            <div class="form_title_mid_notice">打开任意一张维格表，在<span class="form_title_mid_warn">URL</span>地址栏中找到以<span class="form_title_mid_warn">dst</span>开头的一段字符串，这便是这张维格表的<span class="form_title_mid_warn">表ID</span>了。</div>
+            <el-image
+                style="height: 100px"
+                :src = "'https://vika.cn/developers/assets/images/datasheetid-65000287dee1a79871cb5f97395eff00.jpg'"
+                :preview-src-list = "['https://vika.cn/developers/assets/images/datasheetid-65000287dee1a79871cb5f97395eff00.jpg']"></el-image>
+          </div>
+          <div style="height: 20px"/>
           <div class="btn-warp">
             <el-button @click="save('vika')" type="success">保存</el-button>
           </div>
@@ -229,20 +264,23 @@ export default class DataList extends Vue {
   color: #ff7070;
 }
 .form_title {
-  height: 60px;
-  font-size: 30px;
-  font-weight: 700;
+  height: 30px;
+  font-weight: 500;
+  font-size: 20px;
   color: #333;
 }
 .form_title_mid {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 16px;
   color: #333;
 }
 .form_title_mid_warn{
   font-size: 14px;
   font-weight: 700;
   color: #ad0707;
+}
+.form_title_mid_notice{
+  font-size: 14px;
+  color: #000000;
 }
 .btn-warp {
   width: calc(100% - 160px);
